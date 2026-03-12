@@ -1,11 +1,9 @@
 # Astro Starter Kit: Minimal
 
-```sh
-pnpm create astro@latest -- --template minimal
-```
+## Install
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
+Please use pnpm instead of npm for installing packages
+https://pnpm.io/fr/installation
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
