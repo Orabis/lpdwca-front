@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
+/* TODO Renommer les variables customs pour mieux les comprendre*/
 :root {
-  --color-primary: #0a1954;
-  --color-primary-hover: #12287a;
+  --color-primary: #0e2886;
+  --color-primary-hover: #1637a2;
 
   --color-bg-base: #ffffff;
+  --color-bg-base-hover: rgb(248,248,248,0.55);
   --color-bg-alt: #f9f9fb;
 
   --color-text-heading: #111827;
-  --color-text-body: #4b5563;
-  --font-family-base: "Roboto", sans-serif;
+  --color-text-body: #000000;
+  --color-text-contrast: #f1f1f1;
+  --font-family-base: "Roboto";
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -22,10 +24,10 @@
 }
 
 body {
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), sans-serif;
   background-color: var(--color-bg-base);
   color: var(--color-text-body);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -43,6 +45,7 @@ ul,
 menu {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 a {
@@ -50,5 +53,15 @@ a {
   color: var(--color-text-body);
   &:hover {
     text-decoration: underline;
+  }
+}
+button {
+  border: none;
+  background: var(--color-primary);
+  padding: 0.75rem 2rem;
+  color: var(--color-text-contrast);
+  border-radius: var(--radius-sm);
+  &:hover {
+    background-color: var(--color-primary-hover);
   }
 }
