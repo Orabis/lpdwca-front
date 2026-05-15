@@ -1,8 +1,12 @@
 ---
-
+interface Props {
+  variant?: "filled" | "outline";
+  href?: string;
+}
+const { variant = "filled", href } = Astro.props;
+const Tag = href ? "a" : "button";
 ---
-<div class="wrapper__button">
-  <button class="nav__button">
-    <slot />
-  </button>
-</div>
+
+<Tag href={href} class:list={["btn", `btn--${variant}`]}>
+  <slot />
+</Tag>
