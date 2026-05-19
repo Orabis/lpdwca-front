@@ -1,6 +1,8 @@
 ---
 
 import Button from "@/components/Button.astro";
+import Stepline from "@/components/StepLine.astro";
+import PictureSteps from "@/components/PictureSteps.astro";
 interface CardProps {
   title: string;
   description: string;
@@ -9,20 +11,27 @@ interface CardProps {
   buttonText: string;
   buttonLink: string;
 }
+const {description} = Astro.props;
 
 ---
+/*
+@description: Card component for displaying course information in formation page
+@parameter : for text and title use an array to insert data in the card, for image use props to insert the image source and alt text, for button use props to insert the button text and link
+*/
 
 <section>
   <div>
-    <h2></h2>
-    <p></p>
+    <div>
+      <h2 title="Les bases de la conception web"></h2> // TODO: replace with data form an array for text insertion?
+      <p>{description}</p>
+    </div>
+    <Button/>
   </div>
   <figure>
-    <img>
+    <PictureSteps/>
     <figcaption>
-      <h3></h3>
-      <p></p>
-      <Button/>
+      <h3 title="Programme d'études"></h3>
+      <Stepline/>
     </figcaption>
   </figure>
 </section>
