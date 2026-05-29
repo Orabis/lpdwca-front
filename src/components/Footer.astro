@@ -7,7 +7,7 @@
     <div class="footer__items">
       <div class="footer__item">
         <p class="footer__text">support@lpdwca.fr</p>
-        <p class="footer__text">+ 33 00 00 00 00 </p>
+        <p class="footer__text">+ 33 00 00 00 00</p>
         <p class="footer__text">Strasbourg - 67100</p>
       </div>
       <div class="footer__item">
@@ -34,4 +34,25 @@
   </div>
 </footer>
 <style>
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem 2rem 0 2rem;
+    > .footer__copyright {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    > .footer__items {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+
+      > .footer__item {
+        &:nth-child(2) {
+          grid-column: 3;
+        }
+      }
+    }
+  }
 </style>
