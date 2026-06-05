@@ -14,9 +14,13 @@ const { title, intro, actionLabel, actionHref } = Astro.props;
       <h2>{title}</h2>
       {intro && <p>{intro}</p>}
     </div>
-    {actionLabel && actionHref && (
-      <a class="section__action" href={actionHref}>{actionLabel}</a>
-    )}
+    {
+      actionLabel && actionHref && (
+        <a class="section__action" href={actionHref}>
+          {actionLabel}
+        </a>
+      )
+    }
   </header>
 
   <div class="section__content">

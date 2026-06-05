@@ -6,7 +6,12 @@ interface Props {
   "aria-label"?: string;
 }
 
-const { variant = "filled", href, type = "button", "aria-label": ariaLabel } = Astro.props;
+const {
+  variant = "filled",
+  href,
+  type = "button",
+  "aria-label": ariaLabel,
+} = Astro.props;
 const Tag = href ? "a" : "button";
 ---
 

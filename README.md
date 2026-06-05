@@ -4,6 +4,7 @@
 
 Please use pnpm instead of npm for installing packages
 https://pnpm.io/fr/installation
+
 ## 🚀 Project Structure
 
 Inside your Astro project, you'll see the following folders and files:
@@ -28,7 +29,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 All commands are run from the root of the project, from a terminal:
 
 | Command                | Action                                           |
-|:-----------------------|:-------------------------------------------------|
+| :--------------------- | :----------------------------------------------- |
 | `pnpm install`         | Installs dependencies                            |
 | `pnpm dev`             | Starts local dev server at `localhost:4321`      |
 | `pnpm build`           | Build your production site to `./dist/`          |
