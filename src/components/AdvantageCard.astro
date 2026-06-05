@@ -1,11 +1,19 @@
 ---
-import Button from "./Button.astro"
+import Button from "./Button.astro";
+
+interface Props {
+  number: string;
+  title: string;
+  text: string;
+  }
+const { number, title, text } = Astro.props;
 ---
-<section>
-  <div>
-    <p>01</p>
-  </div>
-  <h4>title card</h4>
-  <p>texte de la carte</p>
-  <Button></Button>
-</section>
+
+<article class="adv-card">
+  <div class="adv-card__number">{number}</div>
+  <h3 class="adv-card__title">{title}</h3>
+  <p class="adv-card__text">{text}</p>
+  <Button variant="outline" aria-label={title}>
+    <span class="material-icons">arrow_forward</span>
+  </Button>
+</article>

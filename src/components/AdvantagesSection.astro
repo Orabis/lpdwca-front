@@ -1,0 +1,34 @@
+---
+import SectionBase from "./SectionBase.astro";
+import AdvantageCard from "./AdvantageCard.astro";
+
+interface Advantage {
+  id: number;
+  number: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  advantages: Advantage[];
+}
+
+const { advantages } = Astro.props;
+---
+
+<SectionBase
+  title="Avantages"
+  intro="Lorem ipsum dolor sit amet consectetur..."
+  actionLabel="Tout afficher"
+  actionHref="#"
+>
+  <div class="advantages__grid">
+    {advantages.map((item) => (
+      <AdvantageCard
+        number={item.number}
+        title={item.title}
+        text={item.text}
+      />
+    ))}
+  </div>
+</SectionBase>

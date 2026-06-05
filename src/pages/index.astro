@@ -1,7 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import AdvantagesSection from "../components/AdvantagesSection.astro";
+
+const res = await fetch("https://ton-strapi/api/advantages");
+const data = await res.json();
+
+const advantages = data?.data?.map((item: { id: any; attributes: { number: any; title: any; text: any; }; }) => ({
+  id: item.id,
+  number: item.attributes.number,
+  title: item.attributes.title,
+  text: item.attributes.text,
+  })) ?? [];
 ---
 
 <BaseLayout title="LPDWCA | Page d'accueil">
-  <h1>Boostez Votre carrière avec une formation universitaire</h1>
+  <AdvantagesSection advantages={advantages} />
 </BaseLayout>
