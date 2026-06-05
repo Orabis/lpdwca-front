@@ -1,0 +1,41 @@
+---
+import SectionBase from "./SectionBase.astro";
+import CourseCard from "./CourseCard.astro";
+
+interface Course {
+  id: number;
+  title: string;
+  description: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  href?: string;
+}
+
+interface Props {
+  courses: Course[];
+  intro?: string;
+}
+
+const { courses, intro } = Astro.props;
+---
+
+<SectionBase
+  title="Le programme en un coup d'oeil"
+  intro={intro}
+  actionLabel="Tout afficher"
+  actionHref="#"
+>
+  <div class="courses__grid">
+    {
+      courses.map((item) => (
+        <CourseCard
+          title={item.title}
+          description={item.description}
+          imageSrc={item.imageSrc}
+          imageAlt={item.imageAlt}
+          href={item.href}
+        />
+      ))
+    }
+  </div>
+</SectionBase>

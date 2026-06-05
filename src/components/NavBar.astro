@@ -1,32 +1,39 @@
 ---
 import Navigation from "./Navigation.astro";
-import Button from "./Button.astro";
 ---
 
 <nav class="nav">
-  <div class="nav__container">
-    <Navigation />
-  </div>
-  <Button />
-</nav>
-<style>
-    .nav {
-        margin: 1rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 1rem;
+  <div class="nav__inner">
 
-    }
-    .nav__item{
-        padding: 0.75rem 1rem;
-        &:hover{
-            background-color:var(--color-bg-base-hover);
-            border-radius: var(--radius-md);
-        }
-    }
-    .nav__list {
-        display: flex;
-        gap: 1rem;
-    }
-</style>
+    <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
+      <span class="nav__logo-name">DW:CA</span>
+      <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+    </a>
+
+    <Navigation />
+
+    <a href="/contact" class="nav__cta">Candidature</a>
+
+    <button
+      class="nav__toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+
+  </div>
+</nav>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".nav__toggle");
+  const menu = document.querySelector<HTMLElement>(".nav__menu");
+
+  toggle?.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(open));
+    menu?.classList.toggle("nav__menu--open", open);
+  });
+</script>

@@ -114,7 +114,9 @@ html {
 
 body {
   margin: 0;
-  min-height: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-family-primary);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-regular);
@@ -127,6 +129,18 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+main {
+  flex: 1;
+}
+
+/* Utilitaire centrage — utilisable dans tous les composants */
+.container {
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding-inline: var(--layout-gutter);
+  width: 100%;
 }
 
 a {
@@ -205,6 +219,7 @@ strong {
 }
 
 .banner {
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-banner-gap);
@@ -243,12 +258,39 @@ strong {
 .nav__logo {
   display: flex;
   flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  padding: var(--space-xs) var(--space-2xl);
+  text-decoration: none;
+}
+
+.nav__logo:hover {
+  opacity: 0.9;
 }
 
 .nav__logo-img {
   width: var(--layout-logo-width);
   height: var(--layout-logo-height);
+}
+
+/* Logo texte — à remplacer par l'image finale */
+.nav__logo-name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  color: var(--color-absolute-white);
+  line-height: 1.2;
+}
+
+.nav__logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-absolute-white);
+  opacity: 0.8;
 }
 
 .nav__menu {
@@ -798,6 +840,28 @@ body.nav-open .nav__toggle-bar:nth-child(3) {
   height: 40px;
 }
 
+/* Icônes Material Icons dans les liens sociaux */
+.site-footer__social-link span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: var(--color-text-footer-link);
+  transition: color 0.15s;
+}
+
+.site-footer__social-link:hover span {
+  color: var(--color-primary);
+}
+
+/* Icône X (Twitter) — pas dans Material Icons */
+.site-footer__social-x {
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+}
+
 .site-footer__divider {
   width: 100%;
   max-width: var(--layout-max);
@@ -858,8 +922,8 @@ body.nav-open .nav__toggle-bar:nth-child(3) {
 
   .nav__toggle {
     display: flex;
-    order: 2;
-    margin-left: auto;
+    order: 3;
+    margin-left: 0;
   }
 
   .nav__logo {
@@ -867,8 +931,8 @@ body.nav-open .nav__toggle-bar:nth-child(3) {
   }
 
   .nav__cta {
-    order: 3;
-    width: 100%;
+    order: 2;
+    width: auto;
     text-align: center;
   }
 
@@ -967,4 +1031,279 @@ body.nav-open .nav__toggle-bar:nth-child(3) {
     line-height: 40px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Boutons génériques (Button.astro)
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px var(--space-3xl);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s,
+    filter 0.15s;
+  white-space: nowrap;
+}
+
+.btn--filled {
+  background: var(--color-primary);
+  color: var(--color-absolute-white);
+  border-color: var(--color-primary);
+}
+
+.btn--filled:hover {
+  filter: brightness(1.2);
+}
+
+.btn--outline {
+  background: var(--color-absolute-white);
+  color: var(--color-text-heading);
+  border-color: var(--color-border-hero);
+}
+
+.btn--outline:hover {
+  background: var(--color-bg-page);
+}
+
+/* --------------------------------------------------------------------------
+   SectionBase
+   -------------------------------------------------------------------------- */
+
+.section {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: var(--space-10xl) var(--layout-gutter);
+}
+
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3xl);
+  margin-bottom: var(--space-9xl);
+}
+
+.section__intro h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  line-height: var(--line-height-xl);
+  margin-bottom: var(--space-md);
+}
+
+.section__intro p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+  max-width: 60ch;
+}
+
+.section__action {
+  flex-shrink: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-heading);
+  padding: var(--space-xs) var(--space-2xl);
+  border: 1px solid var(--color-border-hero);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  background: var(--color-absolute-white);
+  transition: background-color 0.15s;
+}
+
+.section__action:hover {
+  background: var(--color-bg-page);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: var(--space-9xl) var(--layout-gutter);
+  }
+  .section__header {
+    flex-direction: column;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   AdvantagesSection & AdvantageCard
+   -------------------------------------------------------------------------- */
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3xl);
+}
+
+.adv-card {
+  background: var(--color-absolute-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-3xl);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.adv-card__number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-border-hero);
+  text-align: right;
+  line-height: 1;
+  margin-bottom: var(--space-xl);
+}
+
+.adv-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.adv-card__text {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  flex: 1;
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 1024px) {
+  .advantages__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CoursesSection & CourseCard
+   -------------------------------------------------------------------------- */
+
+.courses__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3xl);
+}
+
+.course-card {
+  background: var(--color-absolute-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card__img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.course-card__body {
+  padding: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-md);
+}
+
+.course-card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+}
+
+.course-card__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-body);
+  line-height: var(--line-height-base);
+  flex: 1;
+}
+
+.course-card__footer {
+  padding: 0 var(--space-3xl) var(--space-3xl);
+}
+
+@media (max-width: 1024px) {
+  .courses__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TestimonialCard
+   -------------------------------------------------------------------------- */
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3xl);
+}
+
+.testimonial-card {
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-hero);
+  border-radius: var(--radius-md);
+  padding: var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+}
+
+.testimonial-card__quote {
+  margin: 0;
+}
+
+.testimonial-card__text {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  color: var(--color-text-body);
+}
+
+.testimonial-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-heading);
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer → voir les classes .site-footer__* ci-dessus */
 

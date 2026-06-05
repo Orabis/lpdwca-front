@@ -1,37 +1,78 @@
 ---
-
 ---
 
-<footer>
-  <div class="footer__container">
-    <div class="footer__items">
-      <div class="footer__item">
-        <p class="footer__text">support@lpdwca.fr</p>
-        <p class="footer__text">+ 33 00 00 00 00 </p>
-        <p class="footer__text">Strasbourg - 67100</p>
-      </div>
-      <div class="footer__item">
-        <p class="footer__title">Accueil</p>
-        <a href="#" class="footer__link">Avantages</a>
-        <a href="#" class="footer__link">Nos formations</a>
-        <a href="#" class="footer__link">Témoignages alumni</a>
-        <a href="#" class="footer__link">Notre FAQ</a>
-      </div>
-      <div class="footer__item">
-        <p class="footer__title">A propos de nous</p>
-        <a href="#" class="footer__link">INSPE de Strasbourg</a>
-        <a href="#" class="footer__link">Diplôme obtenu</a>
-        <a href="#" class="footer__link">Volume horaire</a>
-      </div>
-      <div class="footer__item">
-        <p class="footer__title">Réseaux sociaux</p>
-        <a href="#" class="footer__link">Facebook</a>
-        <a href="#" class="footer__link">Twitter</a>
-        <a href="#" class="footer__link">LinkedIn</a>
-      </div>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+
+    <!-- Colonne marque & contact -->
+    <div class="site-footer__brand">
+      <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
+        <span class="nav__logo-name">DW:CA</span>
+        <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+      </a>
+
+      <address class="site-footer__contact">
+        <a href="mailto:support@lpdwca.fr" class="site-footer__contact-link">
+          <span class="material-icons site-footer__contact-icon">mail</span>
+          support@lpdwca.fr
+        </a>
+        <a href="tel:+33000000000" class="site-footer__contact-link">
+          <span class="material-icons site-footer__contact-icon">phone</span>
+          +33 00 00 00 00 00
+        </a>
+        <span class="site-footer__contact-item">
+          <span class="material-icons site-footer__contact-icon">location_on</span>
+          Quelque part en alsace
+        </span>
+      </address>
     </div>
-    <p class="footer__copyright">2026 LPDWCA. Tous droits réservés</p>
+
+    <!-- Colonnes de navigation -->
+    <div class="site-footer__links">
+
+      <nav class="site-footer__nav" aria-label="Accueil">
+        <p class="site-footer__nav-title">Accueil</p>
+        <ul class="site-footer__nav-list">
+          <li><a href="/#avantages" class="site-footer__nav-link">Avantages</a></li>
+          <li><a href="/licence" class="site-footer__nav-link">Nos formations</a></li>
+          <li><a href="/#temoignages" class="site-footer__nav-link">Témoignages alumni</a></li>
+          <li><a href="/#faq" class="site-footer__nav-link">Notre FAQ</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__nav" aria-label="À propos de nous">
+        <p class="site-footer__nav-title">À propos de nous</p>
+        <ul class="site-footer__nav-list">
+          <li><a href="#" class="site-footer__nav-link">INSPE de Strasbourg</a></li>
+          <li><a href="#" class="site-footer__nav-link">Diplôme obtenu</a></li>
+          <li><a href="#" class="site-footer__nav-link">Volume horaire</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__nav">
+        <p class="site-footer__nav-title">Profils sociaux</p>
+        <ul class="site-footer__social-list">
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Facebook">
+              <span class="material-icons">facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="Twitter / X">
+              <span class="site-footer__social-x">𝕏</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="LinkedIn">
+              <span class="material-icons">business</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </div>
+
+  <hr class="site-footer__divider" />
+  <p class="site-footer__copyright">© 2026 Lpdwca. Tous droits réservés.</p>
 </footer>
-<style>
-</style>

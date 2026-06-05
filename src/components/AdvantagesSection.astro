@@ -6,29 +6,32 @@ interface Advantage {
   id: number;
   number: string;
   title: string;
-  text: string;
+  description: string;
 }
 
 interface Props {
   advantages: Advantage[];
+  intro?: string;
 }
 
-const { advantages } = Astro.props;
+const { advantages, intro } = Astro.props;
 ---
 
 <SectionBase
   title="Avantages"
-  intro="Lorem ipsum dolor sit amet consectetur..."
+  intro={intro}
   actionLabel="Tout afficher"
   actionHref="#"
 >
   <div class="advantages__grid">
-    {advantages.map((item) => (
-      <AdvantageCard
-        number={item.number}
-        title={item.title}
-        text={item.text}
-      />
-    ))}
+    {
+      advantages.map((item) => (
+        <AdvantageCard
+          number={item.number}
+          title={item.title}
+          description={item.description}
+        />
+      ))
+    }
   </div>
 </SectionBase>
