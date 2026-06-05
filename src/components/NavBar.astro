@@ -1,46 +1,37 @@
 ---
-import Button from "./Button.astro";
+import Navigation from "./Navigation.astro";
 ---
 
 <nav class="nav">
-  <div class="nav__container">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a class="nav__link" href="/">Accueil</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/licence/">Licence</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/formation/">Formation</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/financement/">Tarifs</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/contact/">Contact</a>
-      </li>
-    </ul>
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
+      <span class="nav__logo-name">DW:CA</span>
+      <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+    </a>
+
+    <Navigation />
+
+    <a href="/contact" class="nav__cta">Candidature</a>
+
+    <button
+      class="nav__toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
   </div>
-  <Button>Candidature</Button>
 </nav>
-<style>
-  .nav {
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 10rem;
-  }
-  .nav__item {
-    padding: 0.75rem 1rem;
-    &:hover {
-      background-color: var(--color-bg-base-hover);
-      border-radius: var(--radius-md);
-    }
-  }
-  .nav__list {
-    display: flex;
-    gap: 1rem;
-  }
-</style>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".nav__toggle");
+  const menu = document.querySelector<HTMLElement>(".nav__menu");
+
+  toggle?.addEventListener("click", () => {
+    const open = document.body.classList.toggle("nav-open");
+    toggle.setAttribute("aria-expanded", String(open));
+    menu?.classList.toggle("nav__menu--open", open);
+  });
+</script>

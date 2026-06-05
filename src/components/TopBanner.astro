@@ -1,33 +1,16 @@
 ---
-
+interface Props {
+  title: string;
+  href: string;
+}
+const { title, href } = Astro.props;
 ---
 
-<div>
-  <p>
-    licence professionnelle développement web communication et apprentissages.
-    <a href="./formation"
-      >Plus d'infos <span class="material-icons">arrow_forward</span></a
-    >
-  </p>
+<div class="site-header__banner">
+  <div class="banner">
+    <p class="banner__text">{title}</p>
+    <a href={href} aria-label="Plus d'infos">
+      <span class="material-icons banner__icon">arrow_forward</span>
+    </a>
+  </div>
 </div>
-
-<style>
-  div {
-    margin-top: 1rem;
-    width: 95%;
-    padding: 0.7rem;
-    border-radius: var(--radius-sm);
-    text-align: center;
-    background-color: var(--color-primary);
-    p,
-    a {
-      color: var(--color-text-contrast);
-      margin: 0;
-    }
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-  }
-</style>
