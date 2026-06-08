@@ -3,10 +3,9 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getArticles } from '@/services/articles.ts'
 
 const articles =  await getArticles()
-console.log(articles)
 ---
 
 <BaseLayout title='LPDWCA | Articles'>
   <h2>Articles</h2>
-
+  {articles?.map((article: any) => <li><p>{article.title}</p></li>)}
 </BaseLayout>
