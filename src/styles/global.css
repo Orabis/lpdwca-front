@@ -58,16 +58,23 @@
   --color-border-light: #f1f1f3;
   --color-border-hero: #e4e4e7;
   --color-focus: #4a90e2;
+  --color-accent-border: #f4dec5;
+  --color-accent-bg: #fffaf5;
+  --color-bg-card-soft: #fcfcfd;
+  --color-bg-icon-muted: #f6f6f8;
+  --color-text-placeholder: #8f8f92;
 
   /* Typographie */
   --font-family-primary: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
   --font-family-secondary: "Open Sans", Helvetica, Arial, sans-serif;
+  --font-size-2xs: 13px;
   --font-size-xs: 14px;
   --font-size-sm: 16px;
   --font-size-md: 18px;
   --font-size-lg: 20px;
   --font-size-xl: 24px;
   --font-size-2xl: 48px;
+  --font-size-page-title: 42px;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -80,6 +87,7 @@
   --line-height-xl: 60px;
   --line-height-2xl: 72px;
   --line-height-title: 92px;
+  --line-height-page-title: 52px;
   --line-height-semester: 45.6px;
   --letter-spacing-semester: 1.2px;
   --letter-spacing-ue: -0.14px;
@@ -131,7 +139,9 @@
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 25px;
+  --radius-xl: 20px;
   --shadow-card: 0 2px 20px 16px rgba(174, 174, 174, 0.2);
+  --shadow-card-soft: 0 2px 18px rgba(174, 174, 174, 0.12);
   --shadow-ue: 0 0 0 1px transparent;
 }
 
@@ -417,43 +427,31 @@ strong {
   padding: var(--space-2xl) var(--layout-gutter);
 }
 
-.nav__logo {
+/* Logo — visuel de l'atome Logo.astro, réutilisé navbar & footer */
+.logo {
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
   gap: 2px;
-  order: 1;
   border-radius: var(--radius-md);
   background-color: var(--color-primary);
   padding: var(--space-xs) var(--space-2xl);
   text-decoration: none;
 }
 
-.nav__logo:hover {
+.logo:hover {
   opacity: 0.9;
 }
 
-.nav__logo-img {
+.logo__img {
   width: var(--layout-logo-width);
   height: var(--layout-logo-height);
 }
 
-/* Logo texte — à remplacer par l'image finale */
-.nav__logo-name {
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.05em;
-  color: var(--color-absolute-white);
-  line-height: 1.2;
-}
-
-.nav__logo-sub {
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-absolute-white);
-  opacity: 0.8;
+/* Placement du logo dans la navbar */
+.nav__logo {
+  order: 1;
 }
 
 .nav__cta {
@@ -626,14 +624,6 @@ strong {
   margin-top: -1px;
   font-size: var(--font-size-md);
   line-height: var(--line-height-base);
-  color: var(--color-text-muted);
-}
-
-.hero__text-normal {
-  color: var(--color-text-muted);
-}
-.hero__text-strong {
-  font-weight: var(--font-weight-bold);
   color: var(--color-text-muted);
 }
 
@@ -829,14 +819,6 @@ strong {
   line-height: var(--line-height-base);
   color: var(--color-text-body);
 }
-.objectives__text-normal {
-  color: var(--color-text-body);
-}
-.objectives__text-strong {
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-body);
-}
-
 /* Desktop */
 @media (min-width: 1024px) {
   .objectives__inner {
@@ -1058,11 +1040,6 @@ strong {
   gap: var(--space-footer-gap);
 }
 
-.site-footer__logo-img {
-  width: var(--layout-logo-width);
-  height: var(--layout-logo-height);
-}
-
 .site-footer__contact {
   display: flex;
   flex-wrap: wrap;
@@ -1145,11 +1122,6 @@ strong {
   color: var(--color-primary);
 }
 
-.site-footer__social-x {
-  font-size: 20px;
-  font-weight: var(--font-weight-bold);
-}
-
 .site-footer__divider {
   width: 100%;
   max-width: var(--layout-max);
@@ -1182,24 +1154,6 @@ strong {
 }
 
 /* --------------------------------------------------------------------------
-   Pages secondaires (stub)
-   -------------------------------------------------------------------------- */
-
-.page-stub {
-  width: 100%;
-  max-width: var(--layout-content);
-  padding: var(--space-10xl) var(--layout-gutter);
-  text-align: center;
-}
-
-.page-stub__title {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-2xl);
-  color: var(--color-text-heading);
-}
-
-/* --------------------------------------------------------------------------
    Page header
    -------------------------------------------------------------------------- */
 
@@ -1215,16 +1169,16 @@ strong {
 }
 
 .page-header__title {
-  font-size: 42px;
+  font-size: var(--font-size-page-title);
   font-weight: var(--font-weight-semibold);
-  line-height: 52px;
+  line-height: var(--line-height-page-title);
   color: var(--color-text-heading);
 }
 
 .page-header__description {
   margin: 0;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
 }
 
@@ -1281,8 +1235,8 @@ strong {
   gap: 16px;
   padding: 56px 28px 52px;
   background-color: var(--color-absolute-white);
-  border-radius: 20px;
-  box-shadow: 0 2px 18px rgba(174, 174, 174, 0.12);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card-soft);
 }
 
 .formation-type-card__icon-box,
@@ -1292,9 +1246,9 @@ strong {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid #f4dec5;
+  border: 1px solid var(--color-accent-border);
   border-radius: 8px;
-  background-color: #fffaf5;
+  background-color: var(--color-accent-bg);
 }
 
 .formation-type-card__icon-svg,
@@ -1308,26 +1262,26 @@ strong {
 }
 
 .formation-type-card__title {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  line-height: 30px;
+  line-height: var(--line-height-lg);
   color: var(--color-text-heading);
   text-align: left;
 }
 
 .formation-type-card__description {
   width: 100%;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
   text-align: center;
 }
 
 .formation-type-card__question {
   width: 100%;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  line-height: 21px;
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
   text-align: center;
 }
@@ -1345,16 +1299,16 @@ strong {
 }
 
 .formation-section__title {
-  font-size: 48px;
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-semibold);
-  line-height: 60px;
+  line-height: var(--line-height-xl);
   color: var(--color-text-heading);
 }
 
 .formation-section__description {
   margin-top: 8px;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
 }
 
@@ -1371,14 +1325,14 @@ strong {
   gap: 18px;
   padding: 36px 30px;
   background-color: var(--color-absolute-white);
-  border-radius: 20px;
-  box-shadow: 0 2px 18px rgba(174, 174, 174, 0.12);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card-soft);
 }
 
 .info-card__title {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
-  line-height: 30px;
+  line-height: var(--line-height-lg);
   color: var(--color-text-heading);
 }
 
@@ -1391,8 +1345,8 @@ strong {
 }
 
 .info-card__list li {
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
 }
 
@@ -1436,7 +1390,7 @@ strong {
   display: grid;
   background: var(--color-absolute-white);
   border: 1px solid var(--color-border-light);
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
 }
 
@@ -1469,9 +1423,9 @@ strong {
 }
 
 .contact-field__label {
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  line-height: 21px;
+  line-height: var(--line-height-sm);
   color: var(--color-text-heading);
 }
 
@@ -1483,13 +1437,13 @@ strong {
   border-radius: 8px;
   background: var(--color-absolute-white);
   font-family: var(--font-family-primary);
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-heading);
 }
 
 .contact-field__input::placeholder {
-  color: #8f8f92;
+  color: var(--color-text-placeholder);
 }
 
 .contact-field__input--textarea {
@@ -1508,7 +1462,7 @@ strong {
   align-items: center;
   gap: 18px;
   padding: 28px 20px;
-  background: #fcfcfd;
+  background: var(--color-bg-card-soft);
   border: 1px solid var(--color-border-light);
   border-radius: 12px;
   text-align: center;
@@ -1521,7 +1475,7 @@ strong {
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: #f6f6f8;
+  background: var(--color-bg-icon-muted);
 }
 
 .contact-info-card__icon {
@@ -1530,8 +1484,8 @@ strong {
 }
 
 .contact-info-card__text {
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
   text-decoration: none;
 }
@@ -1550,7 +1504,7 @@ strong {
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: #f6f6f8;
+  background: var(--color-bg-icon-muted);
 }
 
 .contact-info-card__social-link img,
@@ -1582,8 +1536,8 @@ strong {
   border-radius: 6px;
   background: transparent;
   font-family: var(--font-family-primary);
-  font-size: 13px;
-  line-height: 20px;
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
   color: var(--color-text-body);
   cursor: pointer;
 }
@@ -1596,8 +1550,8 @@ strong {
 .financement-section__intro {
   max-width: 700px;
   margin: -12px auto 0;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
   color: var(--color-text-body);
   text-align: center;
 }
@@ -1607,7 +1561,7 @@ strong {
   padding: 32px;
   background: var(--color-absolute-white);
   border: 1px solid var(--color-border-light);
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
 }
 
 .financement-panel--secondary {
@@ -1632,9 +1586,9 @@ strong {
   padding: 12px 18px;
   border-radius: 4px;
   background: var(--color-primary);
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  line-height: 21px;
+  line-height: var(--line-height-sm);
   color: var(--color-absolute-white);
   text-align: center;
 }
@@ -1663,8 +1617,8 @@ strong {
 }
 
 .funding-card__item-text {
-  font-size: 13px;
-  line-height: 20px;
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
   color: var(--color-text-body);
 }
 
@@ -2078,7 +2032,7 @@ strong {
 
   .formation-type-card__title,
   .info-card__title {
-    font-size: 18px;
+    font-size: var(--font-size-md);
     line-height: 28px;
   }
 }

@@ -1,5 +1,6 @@
 ---
-import PageHeader from './PagerHeader.astro';
+import SectionHeader from "./SectionHeader.astro";
+
 interface Props {
   id?: string;
   title: string;
@@ -11,7 +12,12 @@ const { id, title, intro, actionLabel, actionHref } = Astro.props;
 ---
 
 <section class="section" id={id}>
-  <PageHeader  />
+  <SectionHeader
+    title={title}
+    intro={intro}
+    actionLabel={actionLabel}
+    actionHref={actionHref}
+  />
 
   <div class="section__content">
     <slot />

@@ -7,12 +7,6 @@ export interface ContactInfoCard {
   href?: string;
 }
 
-export interface SocialLink {
-  icon: string;
-  label: string;
-  href: string;
-}
-
 export interface ContactField {
   id: string;
   name: string;
@@ -37,12 +31,6 @@ export const infoCards: ContactInfoCard[] = [
     icon: "location",
     label: "Quelque part en alsace",
   },
-];
-
-export const socialLinks: SocialLink[] = [
-  { icon: "facebook", label: "Facebook", href: "#" },
-  { icon: "twitter", label: "X (Twitter)", href: "#" },
-  { icon: "linkedin", label: "LinkedIn", href: "#" },
 ];
 
 export const contactFields: ContactField[] = [

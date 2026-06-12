@@ -1,18 +1,13 @@
 ---
-
+import Logo from "./Logo.astro";
+import { footerNavSections, socialLinks } from "@/data/navigation";
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
     <!-- Colonne marque & contact -->
     <div class="site-footer__brand">
-      <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
-        <img
-          class="site-footer__logo-img"
-          src="/assets/Logo.png"
-          alt="LPDWCA"
-        />
-      </a>
+      <Logo class="site-footer__logo" />
 
       <address class="site-footer__contact">
         <a href="mailto:support@lpdwca.fr" class="site-footer__contact-link">
@@ -38,63 +33,46 @@
 
     <!-- Colonnes de navigation -->
     <div class="site-footer__links">
-      <nav class="site-footer__nav" aria-label="Accueil">
-        <p class="site-footer__nav-title">Accueil</p>
-        <ul class="site-footer__nav-list">
-          <li>
-            <a href="/#avantages" class="site-footer__nav-link">Avantages</a>
-          </li>
-          <li>
-            <a href="/licence" class="site-footer__nav-link">Nos formations</a>
-          </li>
-          <li>
-            <a href="/#temoignages" class="site-footer__nav-link"
-              >Témoignages alumni</a
-            >
-          </li>
-          <li><a href="/#faq" class="site-footer__nav-link">Notre FAQ</a></li>
-        </ul>
-      </nav>
-
-      <nav class="site-footer__nav" aria-label="À propos de nous">
-        <p class="site-footer__nav-title">À propos de nous</p>
-        <ul class="site-footer__nav-list">
-          <li>
-            <a href="#" class="site-footer__nav-link">INSPE de Strasbourg</a>
-          </li>
-          <li><a href="#" class="site-footer__nav-link">Diplôme obtenu</a></li>
-          <li><a href="#" class="site-footer__nav-link">Volume horaire</a></li>
-        </ul>
-      </nav>
+      {
+        footerNavSections.map((section) => (
+          <nav class="site-footer__nav" aria-label={section.title}>
+            <p class="site-footer__nav-title">{section.title}</p>
+            <ul class="site-footer__nav-list">
+              {section.links.map((link) => (
+                <li>
+                  <a href={link.href} class="site-footer__nav-link">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
 
       <div class="site-footer__nav">
         <p class="site-footer__nav-title">Profils sociaux</p>
         <ul class="site-footer__social-list">
-          <li>
-            <a href="#" class="site-footer__social-link" aria-label="Facebook">
-              <span
-                class="icon icon--facebook site-footer__social-icon"
-                aria-hidden="true"></span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="site-footer__social-link"
-              aria-label="Twitter / X"
-            >
-              <span
-                class="icon icon--twitter site-footer__social-icon"
-                aria-hidden="true"></span>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="site-footer__social-link" aria-label="LinkedIn">
-              <span
-                class="icon icon--linkedin site-footer__social-icon"
-                aria-hidden="true"></span>
-            </a>
-          </li>
+          {
+            socialLinks.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="site-footer__social-link"
+                  aria-label={link.label}
+                >
+                  <span
+                    class:list={[
+                      "icon",
+                      `icon--${link.icon}`,
+                      "site-footer__social-icon",
+                    ]}
+                    aria-hidden="true"
+                  />
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </div>
     </div>

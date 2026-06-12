@@ -1,13 +1,70 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import AdvantagesSection from "@/components/AdvantagesSection.astro";
-import CoursesSection from "@/components/CoursesSection.astro";
-import TestimonialsSection from "@/components/TestimonialsSection.astro";
+import SectionBase from "@/components/SectionBase.astro";
+import AdvantageCard from "@/components/AdvantageCard.astro";
+import CourseCard from "@/components/CourseCard.astro";
+import TestimonialCard from "@/components/TestimonialCard.astro";
 import { advantages, courses, testimonials } from "@/data/home";
 ---
 
 <BaseLayout title="LPDWCA | Page d'accueil">
-  <AdvantagesSection advantages={advantages} />
-  <CoursesSection courses={courses} />
-  <TestimonialsSection testimonials={testimonials} />
+  <SectionBase
+    id="avantages"
+    title="Avantages"
+    actionLabel="Tout afficher"
+    actionHref="#"
+  >
+    <div class="advantages__grid">
+      {
+        advantages.map((item) => (
+          <AdvantageCard
+            number={item.number}
+            title={item.title}
+            description={item.description}
+          />
+        ))
+      }
+    </div>
+  </SectionBase>
+
+  <SectionBase
+    title="Le programme en un coup d'oeil"
+    actionLabel="Tout afficher"
+    actionHref="#"
+  >
+    <div class="courses__grid">
+      {
+        courses.map((item) => (
+          <CourseCard
+            title={item.title}
+            description={item.description}
+            imageSrc={item.imageSrc}
+            imageAlt={item.imageAlt}
+            href={item.href}
+          />
+        ))
+      }
+    </div>
+  </SectionBase>
+
+  <SectionBase
+    id="temoignages"
+    title="Témoignages alumni"
+    actionLabel="Tout afficher"
+    actionHref="#"
+  >
+    <div class="testimonials__grid">
+      {
+        testimonials.map((item) => (
+          <TestimonialCard
+            name={item.name}
+            quote={item.quote}
+            href={item.href}
+            avatarSrc={item.avatarSrc}
+            avatarAlt={item.avatarAlt}
+          />
+        ))
+      }
+    </div>
+  </SectionBase>
 </BaseLayout>

@@ -1,18 +1,12 @@
 ---
-const navLinks = [
-  { href: "/", label: "Accueil" },
-  { href: "/licence/", label: "Licence" },
-  { href: "/formation/", label: "Formation" },
-  { href: "/financement/", label: "Financement" },
-  { href: "/contact/", label: "Contact" },
-];
+import { mainNavLinks } from "@/data/navigation";
 
 const currentPath = Astro.url.pathname;
 ---
 
 <ul class="nav__menu" id="nav-menu">
   {
-    navLinks.map(({ href, label }) => (
+    mainNavLinks.map(({ href, label }) => (
       <li class="nav__item">
         <a
           href={href}
