@@ -1,14 +1,17 @@
 ---
 import NavBar from "./NavBar.astro";
 import TopBanner from "./TopBanner.astro";
+
+interface Props {
+  title: string;
+  text: string;
+  href: string;
+}
+
+const { title, text, href } = Astro.props;
 ---
 
 <header>
-  <TopBanner
-    title="licence professionnelle développement web communication et apprentissages. "
-    text="Plus d'infos"
-    href="/licence"
-    icon="../assets/svg/right-arrow.svg"
-  />
+  <TopBanner title={title} text={text} href={href} />
   <NavBar />
 </header>
