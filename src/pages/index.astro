@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import AdvantagesSection from "../components/AdvantagesSection.astro";
 import CoursesSection from "../components/CoursesSection.astro";
+import TestimonialsSection from "../components/TestimonialsSection.astro";
 
 /* ── Données en dur — à remplacer par fetch Strapi quand l'API sera prête ── */
 
@@ -94,9 +95,45 @@ const courses = [
     href: "/licence",
   },
 ];
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah L",
+    quote:
+      "Le cours de conception web m'a permis d'acquérir des bases solides. Les formateurs étaient compétents et encourageants, et l'environnement d'apprentissage interactif était stimulant. Je le recommande vivement !",
+    avatarSrc: "/assets/testimonials/sarah-l.png",
+    avatarAlt: "Portrait de Sarah L",
+  },
+  {
+    id: 2,
+    name: "Jason M",
+    quote:
+      "Le cours de conception UI/UX a dépassé mes attentes. L'expertise du formateur et les exercices pratiques m'ont aidé à améliorer mes compétences en conception. Je me sens désormais plus confiant dans ma carrière. Merci !",
+    avatarSrc: "/assets/testimonials/jason-m.png",
+    avatarAlt: "Portrait de Jason M",
+  },
+  {
+    id: 3,
+    name: "Emily R",
+    quote:
+      "Le cours sur le développement d'applications mobiles était fantastique ! Les unités d'enseignement étape par étape et les projets pratiques m'ont aidé à comprendre facilement les concepts. Je suis maintenant en train de créer ma propre application. Excellent cours !",
+    avatarSrc: "/assets/testimonials/emily-r.png",
+    avatarAlt: "Portrait d'Emily R",
+  },
+  {
+    id: 4,
+    name: "Michael K",
+    quote:
+      "J'ai assisté au cours de conception graphique sur Figma en tant que débutant, et cela a été un excellent point de départ. Les conseils et les commentaires du professeur m'ont permis d'améliorer considérablement mes compétences en conception. Je suis très reconnaissant d'avoir suivi ces cours !",
+    avatarSrc: "/assets/testimonials/michael-k.png",
+    avatarAlt: "Portrait de Michael K",
+  },
+];
 ---
 
 <BaseLayout title="LPDWCA | Page d'accueil">
   <AdvantagesSection advantages={advantages} />
   <CoursesSection courses={courses} />
+  <TestimonialsSection testimonials={testimonials} />
 </BaseLayout>

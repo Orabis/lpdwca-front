@@ -5,15 +5,15 @@ interface Props {
   class?: string;
 }
 
-const {label = "Ouvrir le menu", controls, class: className} = Astro.props;
-
+const { label = "Ouvrir le menu", controls, class: className } = Astro.props;
 ---
+
 <button
   class:list={["burger", className]}
   aria-label={label}
   aria-expanded="false"
   aria-controls={controls}
-  >
+>
   <span class="burger__bar"></span>
   <span class="burger__bar"></span>
   <span class="burger__bar"></span>

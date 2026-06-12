@@ -6,18 +6,17 @@ import BurgerButton from "./BurgerButton.astro";
 <nav class="nav">
   <div class="nav__inner">
     <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
-      <img src="/assets/Logo.png" alt="LPDWCA" />
+      <img class="nav__logo-img" src="/assets/Logo.png" alt="LPDWCA" />
     </a>
 
     <Navigation />
 
     <a href="/contact" class="nav__cta">Candidature</a>
 
-    <BurgerButton class="nav__toggle" label="Menu de navigation" controls="nav-menu" />
+    <BurgerButton
+      class="nav__toggle"
+      label="Menu de navigation"
+      controls="nav-menu"
+    />
   </div>
 </nav>
-
-<script>
-  import { initNavToggle } from "../scripts/nav-toggle";
-  initNavToggle();
-</script>
