@@ -1,9 +1,94 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const fundingColumns = [
+  {
+    title: "Pour les demandeurs d’emploi",
+    items: ["Pôle Emploi", "Votre région", "L’État"],
+  },
+  {
+    title: "Pour les salariés",
+    items: [
+      "Financement possible par l’entreprise",
+      "OPCO",
+      "CPF",
+    ],
+  },
+];
+
+const extraOptions = [
+  "Financement personnel",
+  "Possibilité de paiement échelonné sur l’année de formation",
+];
 ---
 
-<BaseLayout title="Tarifs — LPDWCA" pageClass="page--tarifs">
-  <section class="page-stub" aria-labelledby="tarifs-title">
-    <h1 class="page-stub__title" id="tarifs-title">Tarifs</h1>
+<BaseLayout title="Financement — LPDWCA" pageClass="page--financement">
+  <section class="page-header page-header--split" aria-labelledby="financement-title">
+    <div class="page-header__inner page-header__inner--split">
+      <h1 class="page-header__title" id="financement-title">Financement</h1>
+      <p class="page-header__description">
+        Le financement varie en fonction du type de formation suivie, qu’il
+        s’agisse de formation initiale ou continue. Référez-vous à la section
+        qui vous concerne.
+      </p>
+    </div>
+  </section>
+
+  <section class="financement-section" aria-labelledby="financement-options-title">
+    <div class="financement-switch" role="tablist" aria-label="Type de formation">
+      <button class="financement-switch__button financement-switch__button--active" type="button">
+        Formation continue
+      </button>
+      <button class="financement-switch__button" type="button">
+        Formation initiale
+      </button>
+    </div>
+
+    <p class="financement-section__intro" id="financement-options-title">
+      Le coût de la formation est de 5610 €. Il peut être pris en charge :
+      explorez toutes les pistes de financement avant d’opter pour un
+      financement personnel. Nous vous conseillons de commencer les démarches
+      le plus tôt possible.
+    </p>
+
+    <div class="financement-panel financement-panel--primary">
+      <div class="financement-grid">
+        {
+          fundingColumns.map((column) => (
+            <article class="funding-card">
+              <h2 class="funding-card__title">{column.title}</h2>
+              <div class="funding-card__body">
+                <ul class="funding-card__list">
+                  {column.items.map((item) => (
+                    <li class="funding-card__item">
+                      <span class="funding-card__item-text">{item}</span>
+                      <span class="funding-card__check" aria-hidden="true">✓</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="financement-panel financement-panel--secondary">
+      <article class="funding-card funding-card--wide">
+        <h2 class="funding-card__title">Autres options</h2>
+        <div class="funding-card__body">
+          <ul class="funding-card__list">
+            {
+              extraOptions.map((item) => (
+                <li class="funding-card__item">
+                  <span class="funding-card__item-text">{item}</span>
+                  <span class="funding-card__check" aria-hidden="true">✓</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </article>
+    </div>
   </section>
 </BaseLayout>
