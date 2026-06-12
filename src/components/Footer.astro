@@ -1,85 +1,103 @@
 ---
-
+import logoIcon from "@/assets/svg/Logo.svg";
+import mailIcon from "@/assets/svg/mail-icon.svg";
+import phoneIcon from "@/assets/svg/phone-icon.svg";
+import locationIcon from "@/assets/svg/location-icon.svg";
+import facebookIcon from "@/assets/svg/facebook.svg";
+import linkedinIcon from "@/assets/svg/linkedin-icon.svg";
+import twitterIcon from "@/assets/svg/x-twitter.svg";
 ---
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <!-- Colonne marque & contact -->
     <div class="site-footer__brand">
-      <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
-        <span class="nav__logo-name">DW:CA</span>
-        <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+      <a class="site-footer__logo" href="/" aria-label="Accueil">
+        <img
+          class="site-footer__logo-img"
+          src={logoIcon.src}
+          width="230"
+          height="55"
+          alt="Licence professionnelle développement web communication et apprentissages"
+        />
       </a>
 
       <address class="site-footer__contact">
         <a href="mailto:support@lpdwca.fr" class="site-footer__contact-link">
-          <span class="material-icons site-footer__contact-icon">mail</span>
-          support@lpdwca.fr
+          <img
+            class="site-footer__contact-icon"
+            src={mailIcon.src}
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>support@lpdwca.fr</span>
         </a>
-        <a href="tel:+33000000000" class="site-footer__contact-link">
-          <span class="material-icons site-footer__contact-icon">phone</span>
-          +33 00 00 00 00 00
+        <p class="site-footer__contact-item">
+          <img
+            class="site-footer__contact-icon"
+            src={phoneIcon.src}
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>+33 00 00 00 00 00</span>
+        </p>
+        <a href="#" class="site-footer__contact-link">
+          <img
+            class="site-footer__contact-icon"
+            src={locationIcon.src}
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>Quelque part en alsace</span>
         </a>
-        <span class="site-footer__contact-item">
-          <span class="material-icons site-footer__contact-icon"
-            >location_on</span
-          >
-          Quelque part en alsace
-        </span>
       </address>
     </div>
 
-    <!-- Colonnes de navigation -->
     <div class="site-footer__links">
-      <nav class="site-footer__nav" aria-label="Accueil">
-        <p class="site-footer__nav-title">Accueil</p>
+      <nav class="site-footer__nav" aria-label="Liens accueil">
+        <h2 class="site-footer__nav-title">Accueil</h2>
         <ul class="site-footer__nav-list">
+          <li><a href="/" class="site-footer__nav-link">Avantages</a></li>
           <li>
-            <a href="/#avantages" class="site-footer__nav-link">Avantages</a>
-          </li>
-          <li>
-            <a href="/licence" class="site-footer__nav-link">Nos formations</a>
-          </li>
-          <li>
-            <a href="/#temoignages" class="site-footer__nav-link"
-              >Témoignages alumni</a
+            <a href="/formation/" class="site-footer__nav-link"
+              >Nos formations</a
             >
           </li>
-          <li><a href="/#faq" class="site-footer__nav-link">Notre FAQ</a></li>
+          <li><a href="#" class="site-footer__nav-link">Témoignages alumni</a></li>
+          <li><a href="#" class="site-footer__nav-link">Notre FAQ</a></li>
         </ul>
       </nav>
 
-      <nav class="site-footer__nav" aria-label="À propos de nous">
-        <p class="site-footer__nav-title">À propos de nous</p>
+      <nav class="site-footer__nav" aria-label="Liens à propos de nous">
+        <h2 class="site-footer__nav-title">À propos de nous</h2>
         <ul class="site-footer__nav-list">
-          <li>
-            <a href="#" class="site-footer__nav-link">INSPE de Strasbourg</a>
-          </li>
+          <li><a href="#" class="site-footer__nav-link">INSPÉ de Strasbourg</a></li>
           <li><a href="#" class="site-footer__nav-link">Diplôme obtenu</a></li>
           <li><a href="#" class="site-footer__nav-link">Volume horaire</a></li>
         </ul>
       </nav>
 
-      <div class="site-footer__nav">
-        <p class="site-footer__nav-title">Profils sociaux</p>
-        <ul class="site-footer__social-list">
+      <div class="site-footer__social">
+        <h2 class="site-footer__nav-title">Profils sociaux</h2>
+        <ul class="site-footer__social-list" aria-label="Réseaux sociaux">
           <li>
             <a href="#" class="site-footer__social-link" aria-label="Facebook">
-              <span class="material-icons">facebook</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="site-footer__social-link"
-              aria-label="Twitter / X"
-            >
-              <span class="site-footer__social-x">𝕏</span>
+              <img src={facebookIcon.src} width="40" height="40" alt="Facebook" />
             </a>
           </li>
           <li>
             <a href="#" class="site-footer__social-link" aria-label="LinkedIn">
-              <span class="material-icons">business</span>
+              <img src={linkedinIcon.src} width="40" height="40" alt="LinkedIn" />
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-footer__social-link" aria-label="X Twitter">
+              <img src={twitterIcon.src} width="40" height="40" alt="X (Twitter)" />
             </a>
           </li>
         </ul>

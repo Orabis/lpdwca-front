@@ -1,37 +1,48 @@
 ---
 import Navigation from "./Navigation.astro";
+import logoIcon from "@/assets/svg/Logo.svg";
 ---
 
-<nav class="nav">
+<nav class="nav" aria-label="Navigation principale">
   <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
-      <span class="nav__logo-name">DW:CA</span>
-      <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+    <a class="nav__logo" href="/" aria-label="Accueil LPDWCA">
+      <img
+        class="nav__logo-img"
+        src={logoIcon.src}
+        width="230"
+        height="55"
+        alt="Licence professionnelle développement web communication et apprentissages"
+      />
     </a>
-
-    <Navigation />
-
-    <a href="/contact" class="nav__cta">Candidature</a>
 
     <button
       class="nav__toggle"
+      type="button"
+      aria-controls="nav-menu"
       aria-label="Ouvrir le menu"
       aria-expanded="false"
     >
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
+      <span class="nav__toggle-bar" aria-hidden="true"></span>
     </button>
+
+    <Navigation />
+
+    <button class="nav__cta" type="button">Candidature</button>
   </div>
 </nav>
 
 <script>
-  const toggle = document.querySelector<HTMLButtonElement>(".nav__toggle");
-  const menu = document.querySelector<HTMLElement>(".nav__menu");
+  const toggle = document.querySelector(".nav__toggle");
+  const menu = document.getElementById("nav-menu");
 
-  toggle?.addEventListener("click", () => {
-    const open = document.body.classList.toggle("nav-open");
-    toggle.setAttribute("aria-expanded", String(open));
-    menu?.classList.toggle("nav__menu--open", open);
-  });
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("nav__menu--open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+      document.body.classList.toggle("nav-open", open);
+    });
+  }
 </script>

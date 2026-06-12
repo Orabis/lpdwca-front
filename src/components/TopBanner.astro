@@ -1,16 +1,24 @@
 ---
+import rightArrowIcon from "@/assets/svg/right-arrow.svg";
+
 interface Props {
   title: string;
-  href: string;
 }
-const { title, href } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<div class="site-header__banner">
-  <div class="banner">
-    <p class="banner__text">{title}</p>
-    <a href={href} aria-label="Plus d'infos">
-      <span class="material-icons banner__icon">arrow_forward</span>
-    </a>
-  </div>
+<div
+  class="site-header__banner banner"
+  role="region"
+  aria-label="Bannière d'information"
+>
+  <p class="banner__text">{title}</p>
+  <img
+    class="banner__icon"
+    src={rightArrowIcon.src}
+    width="24"
+    height="24"
+    alt=""
+    aria-hidden="true"
+  />
 </div>

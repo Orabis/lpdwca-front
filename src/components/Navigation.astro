@@ -3,14 +3,14 @@ const navLinks = [
   { href: "/", label: "Accueil" },
   { href: "/licence/", label: "Licence" },
   { href: "/formation/", label: "Formation" },
-  { href: "/financement/", label: "Financement" },
+  { href: "/tarifs/", label: "Tarifs" },
   { href: "/contact/", label: "Contact" },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 
-<ul class="nav__menu">
+<ul class="nav__menu" id="nav-menu">
   {
     navLinks.map(({ href, label }) => (
       <li class="nav__item">

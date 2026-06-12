@@ -1,102 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AdvantagesSection from "../components/AdvantagesSection.astro";
-import CoursesSection from "../components/CoursesSection.astro";
-
-/* ── Données en dur — à remplacer par fetch Strapi quand l'API sera prête ── */
-
-const advantages = [
-  {
-    id: 1,
-    number: "01",
-    title: "Horaire d'apprentissage flexible",
-    description:
-      "Adaptez vos cours à vos engagements et obligations existants.",
-  },
-  {
-    id: 2,
-    number: "02",
-    title: "Enseignement par des experts",
-    description:
-      "Apprenez auprès d'experts du secteur qui possèdent une expérience pratique dans le développement.",
-  },
-  {
-    id: 3,
-    number: "03",
-    title: "Formations variées",
-    description:
-      "Découvrez un large éventail de cours de conception et de développement.",
-  },
-  {
-    id: 4,
-    number: "04",
-    title: "Programme d'études mis à jour",
-    description:
-      "Accédez à des cours dont le contenu est actualisé et reflète les dernières tendances du secteur.",
-  },
-  {
-    id: 5,
-    number: "05",
-    title: "Projets pratiques et devoirs",
-    description:
-      "Créez un portfolio présentant vos compétences et vos aptitudes à des employeurs potentiels.",
-  },
-  {
-    id: 6,
-    number: "06",
-    title: "Interactive Learning Environment",
-    description:
-      "Collaborez avec d'autres apprenants, échangez des idées pour améliorer votre compréhension.",
-  },
-];
-
-const courses = [
-  {
-    id: 1,
-    title: "Principes fondamentaux de la conception Web",
-    description:
-      "Apprenez les bases de la conception web, notamment le HTML, le CSS et les principes du responsive design. Développez les compétences nécessaires pour créer des sites web visuellement attrayants et conviviaux.",
-    href: "/licence",
-  },
-  {
-    id: 2,
-    title: "Conception UI/UX",
-    description:
-      "Maîtrisez l'art de créer des interfaces utilisateur intuitives et d'améliorer l'expérience utilisateur. Découvrez les principes de conception, la création de maquettes fonctionnelles et le prototypage.",
-    href: "/licence",
-  },
-  {
-    id: 3,
-    title: "Développement d'applications mobiles",
-    description:
-      "Plongez dans l'univers du développement d'applications mobiles. Apprenez à créer des applications natives pour iOS et Android à l'aide de langages de programmation de pointe.",
-    href: "/licence",
-  },
-  {
-    id: 4,
-    title: "Conception graphique sur Affinity et Adobe",
-    description:
-      "Découvrez les bases du graphisme, notamment la typographie, la théorie des couleurs, la mise en page et les techniques de manipulation d'images pour les supports numériques.",
-    href: "/licence",
-  },
-  {
-    id: 5,
-    title: "Développement web front-end",
-    description:
-      "Maîtrisez le développement web front-end. Apprenez le HTML, le CSS, le JavaScript, Bootstrap et React. Créez des sites web interactifs et réactifs.",
-    href: "/licence",
-  },
-  {
-    id: 6,
-    title: "JavaScript avancé",
-    description:
-      "Améliorez vos compétences en JavaScript. Explorez des concepts avancés tels que les fermetures, les prototypes, la programmation asynchrone et les fonctionnalités ES6.",
-    href: "/licence",
-  },
-];
 ---
 
-<BaseLayout title="LPDWCA | Page d'accueil">
-  <AdvantagesSection advantages={advantages} />
-  <CoursesSection courses={courses} />
+<BaseLayout
+  title="Licence Professionnelle Développement Web Communication et Apprentissages"
+  pageClass="page--home"
+>
+  <section class="page-stub" aria-labelledby="home-title">
+    <h1 class="page-stub__title" id="home-title">Accueil</h1>
+  </section>
 </BaseLayout>
