@@ -1,37 +1,23 @@
 ---
 import Navigation from "./Navigation.astro";
+import BurgerButton from "./BurgerButton.astro";
 ---
 
 <nav class="nav">
   <div class="nav__inner">
     <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
-      <span class="nav__logo-name">DW:CA</span>
-      <span class="nav__logo-sub">LICENCE PROFESSIONNELLE</span>
+      <img src="../../public/assets/logo.png" alt="LPDWCA" />
     </a>
 
     <Navigation />
 
     <a href="/contact" class="nav__cta">Candidature</a>
 
-    <button
-      class="nav__toggle"
-      aria-label="Ouvrir le menu"
-      aria-expanded="false"
-    >
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-    </button>
+    <BurgerButton class="nav__toggle" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-menu" />
   </div>
 </nav>
 
 <script>
-  const toggle = document.querySelector<HTMLButtonElement>(".nav__toggle");
-  const menu = document.querySelector<HTMLElement>(".nav__menu");
-
-  toggle?.addEventListener("click", () => {
-    const open = document.body.classList.toggle("nav-open");
-    toggle.setAttribute("aria-expanded", String(open));
-    menu?.classList.toggle("nav__menu--open", open);
-  });
+  import {initNavToggle} from "../scripts/nav-toggle.ts";
+  initNavToggle();
 </script>

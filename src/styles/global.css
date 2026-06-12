@@ -146,6 +146,11 @@
   }
 }
 
+/*---------------------------------------------------------------------------
+  Icon-SVG — filtre pour recolorier les icônes en blanc (ex. dans la bannière)
+ ----------------------------------------------------------------------------- */
+
+
 /* --------------------------------------------------------------------------
    Reset & base
    -------------------------------------------------------------------------- */
@@ -287,14 +292,28 @@ strong {
   white-space: normal;
   text-align: center;
 }
+.banner__link{
+  display: flex;
+  gap: var(--space-sm);
+  color: var(--color-absolute-white);
+}
 
 .banner__icon {
   flex-shrink: 0;
   filter: brightness(0) invert(1);
 }
+.banner__icon:after{
+  content: url("../assets/svg/right-arrow.svg");
+  display: block;
+  width: 100%;
+  height: 10px;
+}
 
 /* Desktop — bannière une ligne */
 @media (min-width: 1024px) {
+  header {
+    padding: var(--layout-side);
+  }
   .banner__text {
     font-size: var(--font-size-md);
     line-height: var(--line-height-base);

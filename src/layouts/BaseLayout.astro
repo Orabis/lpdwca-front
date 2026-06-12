@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
-import NavBar from "@/components/NavBar.astro";
-import TopBanner from "@/components/TopBanner.astro";
+
+import Header from "@/components/Header.astro";
 const { title } = Astro.props;
 ---
 
@@ -20,8 +20,12 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <TopBanner />
-    <NavBar />
+    <Header
+      title="Licence professionnelle développement web communication et apprentissages. "
+      text="Plus d'infos"
+      href="/licence"
+      icon="../assets/svg/right-arrow.svg"
+    />
     <main>
       <slot />
     </main>

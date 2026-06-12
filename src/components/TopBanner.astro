@@ -2,15 +2,17 @@
 interface Props {
   title: string;
   href: string;
+  text: string;
+  icon: string;
 }
-const { title, href } = Astro.props;
+const { title, href, text,  icon } = Astro.props;
 ---
 
-<div class="site-header__banner">
+<section class="site-header__banner">
   <div class="banner">
     <p class="banner__text">{title}</p>
-    <a href={href} aria-label="Plus d'infos">
-      <span class="material-icons banner__icon">arrow_forward</span>
+    <a class="banner__link" href={href} aria-label="Plus d'infos">{text}
+      <span class="banner__icon"></span>
     </a>
   </div>
-</div>
+</section>
