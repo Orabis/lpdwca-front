@@ -12,16 +12,19 @@ interface Advantage {
 interface Props {
   advantages: Advantage[];
   intro?: string;
+  actionHref?: string;
 }
 
-const { advantages, intro } = Astro.props;
+const { advantages, intro, actionHref = "/licence/" } = Astro.props;
 ---
 
 <SectionBase
   title="Avantages"
   intro={intro}
   actionLabel="Tout afficher"
-  actionHref="#"
+  actionHref={actionHref}
+  sectionId="avantages"
+  sectionClass="section--advantages"
 >
   <div class="advantages__grid">
     {

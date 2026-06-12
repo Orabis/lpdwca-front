@@ -1,0 +1,41 @@
+---
+import SectionBase from "./SectionBase.astro";
+import TestimonialCard from "./TestimonialCard.astro";
+
+interface Testimonial {
+  id: number;
+  name: string;
+  quote: string;
+  href?: string;
+  avatarSrc?: string;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+  intro?: string;
+}
+
+const { testimonials, intro } = Astro.props;
+---
+
+<SectionBase
+  title="Témoignages alumni"
+  intro={intro}
+  actionLabel="Tout afficher"
+  actionHref="/licence/"
+  sectionId="temoignages"
+  sectionClass="section--testimonials"
+>
+  <div class="testimonials__grid">
+    {
+      testimonials.map((item) => (
+        <TestimonialCard
+          name={item.name}
+          quote={item.quote}
+          href={item.href}
+          avatarSrc={item.avatarSrc}
+        />
+      ))
+    }
+  </div>
+</SectionBase>

@@ -14,16 +14,19 @@ interface Course {
 interface Props {
   courses: Course[];
   intro?: string;
+  actionHref?: string;
 }
 
-const { courses, intro } = Astro.props;
+const { courses, intro, actionHref = "/formation/" } = Astro.props;
 ---
 
 <SectionBase
   title="Le programme en un coup d'oeil"
   intro={intro}
   actionLabel="Tout afficher"
-  actionHref="#"
+  actionHref={actionHref}
+  sectionId="programme"
+  sectionClass="section--courses"
 >
   <div class="courses__grid">
     {

@@ -1,0 +1,70 @@
+---
+const items = [
+  {
+    question: "Puis-je m'inscrire au milieu de l'année ?",
+    answer:
+      "Vous ne pouvez vous inscrire en milieu de l'année, la formation débute en septembre.",
+  },
+  {
+    question: "Quel sont les conditions d'admission?",
+    answer:
+      "Les conditions exactes dépendent de votre situation. Le dossier de candidature, le niveau d'études et le projet professionnel sont examinés avant admission.",
+  },
+  {
+    question: "Quel type de soutien puis-je attendre des instructeurs ?",
+    answer:
+      "Les intervenants assurent un suivi pédagogique, des retours réguliers sur les travaux et un accompagnement tout au long de la formation.",
+  },
+  {
+    question:
+      "Les cours sont-ils à suivre à son propre rythme ou ont-ils des dates de début et de fin spécifiques ?",
+    answer:
+      "Le rythme combine des temps synchrones et du travail personnel. Certaines activités s'inscrivent dans un calendrier précis pendant l'année universitaire.",
+  },
+  {
+    question: "Quels sont les prérogatives d'inscription en lpdwca?",
+    answer:
+      "L'inscription dépend de l'adéquation entre votre parcours, les attendus de la licence et votre projet professionnel.",
+  },
+  {
+    question:
+      "Puis-je télécharger les supports de cours pour y accéder hors ligne ?",
+    answer:
+      "Cela dépend des ressources mises à disposition par les intervenants. Une partie des supports peut être consultée ou téléchargée selon les modules.",
+  },
+];
+---
+
+<section class="home-faq section" id="faq">
+  <div class="home-faq__layout">
+    <div class="home-faq__intro">
+      <h2 class="home-faq__title">Questions fréquentes</h2>
+      <p class="home-faq__text">
+        Vous avez encore des questions ? Contactez notre équipe à l'adresse support@lpdwca.fr.
+      </p>
+      <a class="home-faq__link" href="/contact/">Voir toutes les FAQ</a>
+    </div>
+
+    <div class="home-faq__items" aria-label="Questions fréquentes">
+      {
+        items.map((item, index) => (
+          <details
+            class:list={[
+              "home-faq__item",
+              index === 0 && "home-faq__item--featured",
+            ]}
+            open={index === 0}
+          >
+            <summary class="home-faq__summary">
+              <span class="home-faq__question">{item.question}</span>
+              <span class="home-faq__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="home-faq__panel">
+              <p class="home-faq__answer">{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
