@@ -3,7 +3,12 @@ import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 
 import Header from "@/components/Header.astro";
-const { title } = Astro.props;
+interface Props {
+  title: string;
+  pageClass?: string;
+}
+
+const { title, pageClass = "" } = Astro.props;
 ---
 
 <html lang="fr">
@@ -19,7 +24,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class:list={["page", pageClass]}>
     <Header
       title="Licence professionnelle développement web communication et apprentissages. "
       text="Plus d'infos"
