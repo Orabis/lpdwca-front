@@ -1,93 +1,18 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import PageHeader from "@/components/PageHeader.astro";
 import FormationTypeCard from "@/components/formation/FormationTypeCard.astro";
 import InfoCard from "@/components/formation/InfoCard.astro";
-
-const formationTypes = [
-  {
-    title: "Formation initiale",
-    description:
-      "Dans le cadre d’un contrat d’apprentissage ou de professionnalisation.",
-    question:
-      "Vous avez moins de 30 ans, vous souhaitez continuer vos études ou vous réorienter ?",
-    iconVariant: "book",
-  },
-  {
-    title: "Formation continue",
-    description:
-      "Organisation libre de l’emploi du temps. Stage ou projet personnel au 2nd semestre.",
-    question:
-      "Vous souhaitez vous reconvertir et développer de nouvelles compétences ?",
-    iconVariant: "badge",
-  },
-];
-
-const infoCards = [
-  {
-    title: "Public concerné",
-    iconName: "groups",
-    items: [
-      "Salariés en poste ou en reconversion",
-      "Demandeurs d’emploi",
-      "Travailleurs indépendants",
-      "Personnes en reprise d’études après une interruption de plus de deux ans",
-    ],
-  },
-  {
-    title: "Organisation",
-    iconName: "menu_book",
-    items: [
-      "Formation 100% à distance",
-      "Cours synchrones les jeudis et vendredis soirs (18h–22h)",
-      "Travail personnel flexible (soirs, week-ends)",
-      "Stage de 12 semaines minimum ou projet professionnel pour les salariés",
-    ],
-  },
-  {
-    title: "Financement",
-    iconName: "extension",
-    items: [
-      "Coût de la formation : 5610 € (tarif 2024–2025)",
-      "Possibilités de financement : entreprise, OPCO, Pôle Emploi, CPF, financement personnel",
-      "Paiement échelonné possible sur l’année de formation",
-    ],
-  },
-  {
-    title: "Avantages",
-    iconName: "wb_incandescent",
-    items: [
-      "Compatibilité avec une activité professionnelle",
-      "Flexibilité dans l’organisation du travail personnel",
-      "Valorisation de l’expérience professionnelle",
-      "Possibilité de réorientation ou d’évolution de carrière",
-    ],
-  },
-  {
-    title: "Processus",
-    iconName: "extension",
-    ordered: true,
-    items: [
-      "Candidature et admission à la formation",
-      "Recherche de financement",
-      "Inscription définitive",
-      "Suivi des cours à distance",
-      "Réalisation du stage ou du projet professionnel",
-    ],
-  },
-];
+import { formationTypes, infoCards } from "@/data/formation";
 ---
 
 <BaseLayout title="Formation — LPDWCA" pageClass="page--formation">
-  <section class="page-header page-header--formation" aria-labelledby="formation-title">
-    <div class="page-header__inner page-header__inner--formation">
-      <h1 class="page-header__title" id="formation-title">Formation</h1>
-      <p class="page-header__description">
-        La Licence Professionnelle Développement Web est une formation 100% à
-        distance. Deux manières différentes sont proposées pour réaliser la
-        formation.
-      </p>
-    </div>
-  </section>
+  <PageHeader
+    title="Formation"
+    description="La Licence Professionnelle Développement Web est une formation 100% à distance. Deux manières différentes sont proposées pour réaliser la formation."
+    variant="formation"
+    headingId="formation-title"
+  />
 
   <section class="formation-types" aria-label="Types de formation">
     <div class="formation-types__grid">
@@ -97,14 +22,17 @@ const infoCards = [
             title={item.title}
             description={item.description}
             question={item.question}
-            iconVariant={item.iconVariant}
+            icon={item.icon}
           />
         ))
       }
     </div>
   </section>
 
-  <section class="formation-section" aria-labelledby="formation-continue-title">
+  <section
+    class="formation-section"
+    aria-labelledby="formation-continue-title"
+  >
     <div class="formation-section__header">
       <h2 class="formation-section__title" id="formation-continue-title">
         Formation continue
@@ -119,7 +47,7 @@ const infoCards = [
         infoCards.map((item) => (
           <InfoCard
             title={item.title}
-            iconName={item.iconName}
+            icon={item.icon}
             items={item.items}
             ordered={item.ordered}
           />

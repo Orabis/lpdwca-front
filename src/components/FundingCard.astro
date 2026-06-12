@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  items: string[];
+  wide?: boolean;
+}
+
+const { title, items, wide = false } = Astro.props;
+---
+
+<article class:list={["funding-card", { "funding-card--wide": wide }]}>
+  <h2 class="funding-card__title">{title}</h2>
+  <div class="funding-card__body">
+    <ul class="funding-card__list">
+      {
+        items.map((item) => (
+          <li class="funding-card__item">
+            <span class="funding-card__item-text">{item}</span>
+            <span class="funding-card__check" aria-hidden="true">
+              ✓
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</article>

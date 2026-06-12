@@ -1,21 +1,23 @@
 ---
 interface Props {
   title: string;
-  iconName: string;
+  icon: string;
   items: string[];
   ordered?: boolean;
 }
 
-const { title, iconName, items, ordered = false } = Astro.props;
+const { title, icon, items, ordered = false } = Astro.props;
 const ListTag = ordered ? "ol" : "ul";
 ---
 
 <article class="info-card">
   <span class="info-card__icon-box" aria-hidden="true">
-    <span class="material-icons-outlined info-card__icon">{iconName}</span>
+    <span class:list={["icon", `icon--${icon}`, "info-card__icon"]}></span>
   </span>
   <h3 class="info-card__title">{title}</h3>
-  <ListTag class:list={["info-card__list", { "info-card__list--ordered": ordered }]}>
+  <ListTag
+    class:list={["info-card__list", { "info-card__list--ordered": ordered }]}
+  >
     {items.map((item) => <li>{item}</li>)}
   </ListTag>
 </article>

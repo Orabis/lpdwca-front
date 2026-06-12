@@ -1,0 +1,26 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  href?: string;
+}
+
+const { icon, title, description, href = "#" } = Astro.props;
+---
+
+<article class="program-card">
+  <div class="program-card__body">
+    <span
+      class:list={["icon", `icon--${icon}`, "program-card__icon"]}
+      aria-hidden="true"></span>
+    <h3 class="program-card__title">{title}</h3>
+    <p class="program-card__desc">{description}</p>
+  </div>
+  <a class="program-card__link" href={href}>
+    <span class="program-card__link-text">Voir le programme</span>
+    <span
+      class="icon icon--arrow-right program-card__link-icon"
+      aria-hidden="true"></span>
+  </a>
+</article>

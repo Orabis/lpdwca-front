@@ -251,6 +251,72 @@ strong {
 }
 
 /* --------------------------------------------------------------------------
+   Icônes — servies via CSS depuis assets/svg (jamais de SVG inline en HTML)
+   -------------------------------------------------------------------------- */
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon--mail {
+  background-image: url("../assets/svg/mail-icon.svg");
+}
+.icon--phone {
+  background-image: url("../assets/svg/phone-icon.svg");
+}
+.icon--location {
+  background-image: url("../assets/svg/location-icon.svg");
+}
+.icon--facebook {
+  background-image: url("../assets/svg/facebook.svg");
+}
+.icon--linkedin {
+  background-image: url("../assets/svg/linkedin-icon.svg");
+}
+.icon--twitter {
+  background-image: url("../assets/svg/x-twitter.svg");
+}
+.icon--arrow-right {
+  background-image: url("../assets/svg/right-arrow.svg");
+}
+.icon--book-open {
+  background-image: url("../assets/svg/book-open.svg");
+}
+.icon--chat-duo {
+  background-image: url("../assets/svg/chat-bubble-left-right.svg");
+}
+.icon--chat {
+  background-image: url("../assets/svg/chat-bubble-oval-left.svg");
+}
+.icon--command-line {
+  background-image: url("../assets/svg/command-line.svg");
+}
+.icon--paint-brush {
+  background-image: url("../assets/svg/paint-brush.svg");
+}
+.icon--pencil {
+  background-image: url("../assets/svg/pencil.svg");
+}
+.icon--pencil-square {
+  background-image: url("../assets/svg/pencil-square.svg");
+}
+.icon--sparkle {
+  background-image: url("../assets/svg/sparkle.svg");
+}
+.icon--formation-initiale {
+  background-image: url("../assets/svg/formation-initiale.svg");
+}
+.icon--formation-continue {
+  background-image: url("../assets/svg/formation-continue.svg");
+}
+
+/* --------------------------------------------------------------------------
    Page
    -------------------------------------------------------------------------- */
 
@@ -560,6 +626,7 @@ strong {
   margin-top: -1px;
   font-size: var(--font-size-md);
   line-height: var(--line-height-base);
+  color: var(--color-text-muted);
 }
 
 .hero__text-normal {
@@ -760,6 +827,7 @@ strong {
   align-self: stretch;
   font-size: var(--font-size-md);
   line-height: var(--line-height-base);
+  color: var(--color-text-body);
 }
 .objectives__text-normal {
   color: var(--color-text-body);
@@ -1056,7 +1124,8 @@ strong {
   gap: var(--space-md);
 }
 
-.site-footer__social-link img {
+.site-footer__social-link img,
+.site-footer__social-icon {
   width: 40px;
   height: 40px;
 }
@@ -1484,7 +1553,8 @@ strong {
   background: #f6f6f8;
 }
 
-.contact-info-card__social-link img {
+.contact-info-card__social-link img,
+.contact-info-card__social-link .icon {
   width: 16px;
   height: 16px;
 }

@@ -1,0 +1,43 @@
+---
+interface Props {
+  id: string;
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+  textarea?: boolean;
+  full?: boolean;
+}
+
+const {
+  id,
+  name,
+  label,
+  type = "text",
+  placeholder,
+  textarea = false,
+  full = false,
+} = Astro.props;
+---
+
+<div class:list={["contact-field", { "contact-field--full": full }]}>
+  <label class="contact-field__label" for={id}>{label}</label>
+  {
+    textarea ? (
+      <textarea
+        class="contact-field__input contact-field__input--textarea"
+        id={id}
+        name={name}
+        placeholder={placeholder}
+      />
+    ) : (
+      <input
+        class="contact-field__input"
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+      />
+    )
+  }
+</div>
