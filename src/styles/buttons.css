@@ -1,0 +1,45 @@
+/* --------------------------------------------------------------------------
+   Boutons (Button.astro)
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px var(--space-3xl);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s,
+    filter 0.15s;
+  white-space: nowrap;
+}
+
+.btn--filled {
+  background: var(--color-primary);
+  color: var(--color-absolute-white);
+  border-color: var(--color-primary);
+}
+
+.btn--filled:hover {
+  filter: brightness(1.2);
+}
+
+.btn--outline {
+  background: var(--color-absolute-white);
+  color: var(--color-text-heading);
+  border-color: var(--color-border-hero);
+}
+
+.btn--outline:hover {
+  background: var(--color-bg-page);
+}
+

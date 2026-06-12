@@ -1,0 +1,354 @@
+/* --------------------------------------------------------------------------
+   Contact & Financement
+   -------------------------------------------------------------------------- */
+
+.page-header__inner--split {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding-bottom: 44px;
+}
+
+.page-header__inner--split::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: 0;
+  left: -80px;
+  height: 1px;
+  background-color: var(--color-border-hero);
+}
+
+.contact-section,
+.financement-section {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: 70px var(--layout-gutter) 110px;
+}
+
+.contact-panel {
+  display: grid;
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.contact-panel__form {
+  padding: 36px 24px 40px;
+}
+
+.contact-panel__aside {
+  display: grid;
+  gap: 24px;
+  padding: 0 24px 36px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.contact-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px 18px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-field__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+}
+
+.contact-field__input {
+  width: 100%;
+  min-height: 58px;
+  padding: 16px 14px;
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  background: var(--color-absolute-white);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+}
+
+.contact-field__input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.contact-field__input--textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form__actions {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 20px;
+  background: var(--color-bg-card-soft);
+  border: 1px solid var(--color-border-light);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-info-card__icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--color-bg-icon-muted);
+}
+
+.contact-info-card__icon {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-info-card__text {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+  text-decoration: none;
+}
+
+.contact-info-card__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contact-info-card__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--color-bg-icon-muted);
+}
+
+.contact-info-card__social-link img,
+.contact-info-card__social-link .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.financement-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 42px;
+}
+
+.financement-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+}
+
+.financement-switch__button {
+  min-width: 150px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-body);
+  cursor: pointer;
+}
+
+.financement-switch__button--active {
+  background: var(--color-primary);
+  color: var(--color-absolute-white);
+}
+
+.financement-section__intro {
+  max-width: 700px;
+  margin: -12px auto 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+  text-align: center;
+}
+
+.financement-panel {
+  width: 100%;
+  padding: 32px;
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+}
+
+.financement-panel--secondary {
+  margin-top: 4px;
+}
+
+.financement-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.funding-card {
+  border: 1px solid var(--color-border-light);
+  border-radius: 14px;
+  padding: 18px 12px 12px;
+  background: var(--color-absolute-white);
+}
+
+.funding-card__title {
+  margin: 0 0 22px;
+  padding: 12px 18px;
+  border-radius: 4px;
+  background: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  color: var(--color-absolute-white);
+  text-align: center;
+}
+
+.funding-card__body {
+  border: 1px solid var(--color-border-light);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.funding-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.funding-card__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border-light);
+  border-radius: 4px;
+  background: var(--color-absolute-white);
+}
+
+.funding-card__item-text {
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-body);
+}
+
+.funding-card__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: var(--color-primary);
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-absolute-white);
+  flex-shrink: 0;
+}
+
+
+/* Tablette */
+@media (min-width: 768px) {
+  .contact-form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-field--full {
+    grid-column: 1 / -1;
+  }
+
+  .financement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .page-header__inner--split {
+    grid-template-columns: minmax(320px, 1fr) minmax(420px, 520px);
+    align-items: start;
+    gap: 92px;
+  }
+
+  .contact-panel {
+    grid-template-columns: minmax(0, 1.75fr) 290px;
+  }
+
+  .contact-panel__form {
+    padding: 42px 42px 44px;
+  }
+
+  .contact-panel__aside {
+    align-content: start;
+    padding: 42px 42px 42px 28px;
+    border-left: 1px solid var(--color-border-light);
+  }
+
+  .funding-card--wide .funding-card__body {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+}
+
+/* Petits écrans */
+@media (max-width: 480px) {
+  .contact-section,
+  .financement-section {
+    padding-top: 48px;
+    padding-bottom: 88px;
+  }
+
+  .contact-panel__form,
+  .contact-panel__aside,
+  .financement-panel {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .contact-info-card {
+    padding: 24px 18px;
+  }
+
+  .financement-switch {
+    width: 100%;
+  }
+
+  .financement-switch__button {
+    min-width: 0;
+    flex: 1;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

@@ -1,0 +1,41 @@
+---
+interface Props {
+  ue: string;
+  icon: string;
+  title: string;
+  lines: string[];
+  short?: boolean;
+  offset?: "top" | "bottom";
+}
+
+const { ue, icon, title, lines, short = false, offset } = Astro.props;
+---
+
+<article
+  class:list={[
+    "curriculum-card",
+    `curriculum-card--ue-${ue}`,
+    offset && `curriculum-card--offset-${offset}`,
+  ]}
+  role="listitem"
+>
+  <span
+    class:list={["icon", `icon--${icon}`, "curriculum-card__icon"]}
+    aria-hidden="true"></span>
+  <h3 class="curriculum-card__title">{title}</h3>
+  <p
+    class:list={[
+      "curriculum-card__content",
+      { "curriculum-card__content--short": short },
+    ]}
+  >
+    {
+      lines.map((line, index) => (
+        <Fragment>
+          {index > 0 && <br />}
+          {line}
+        </Fragment>
+      ))
+    }
+  </p>
+</article>

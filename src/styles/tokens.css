@@ -1,0 +1,165 @@
+/* --------------------------------------------------------------------------
+   Polices auto-hébergées — Be Vietnam Pro
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("/fonts/BeVietnamPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("/fonts/BeVietnamPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  src: url("/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Variables — valeurs mobile en :root, desktop via min-width
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Couleurs */
+  --color-absolute-white: #ffffff;
+  --color-absolute-black: #000000;
+  --color-primary: #142181;
+  --color-text-heading: #262626;
+  --color-text-body: #585859;
+  --color-text-muted: #59595a;
+  --color-text-footer: #656567;
+  --color-text-footer-link: #4c4c4d;
+  --color-text-dark: #0f0f0f;
+  --color-text-main: #2b3847;
+  --color-bg-page: #f7f7f8;
+  --color-border-light: #f1f1f3;
+  --color-border-hero: #e4e4e7;
+  --color-focus: #4a90e2;
+  --color-accent-border: #f4dec5;
+  --color-accent-bg: #fffaf5;
+  --color-bg-card-soft: #fcfcfd;
+  --color-bg-icon-muted: #f6f6f8;
+  --color-text-placeholder: #8f8f92;
+  --color-border-soft: #f0f0f4;
+  --color-bg-soft: #fbfbfc;
+  --color-bg-chip: #f7f7fa;
+  --color-bg-accent-warm: #fff4e5;
+  --color-bg-media: #101214;
+  --color-text-soft: #67676b;
+  --color-text-quote: #555559;
+
+  /* Typographie */
+  --font-family-primary: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  --font-family-secondary: "Open Sans", Helvetica, Arial, sans-serif;
+  --font-size-2xs: 13px;
+  --font-size-xs: 14px;
+  --font-size-sm: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 48px;
+  --font-size-page-title: 42px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 20px;
+  --line-height-sm: 21px;
+  --line-height-md: 24px;
+  --line-height-base: 27px;
+  --line-height-lg: 30px;
+  --line-height-xl: 60px;
+  --line-height-2xl: 72px;
+  --line-height-title: 92px;
+  --line-height-page-title: 52px;
+  --line-height-semester: 45.6px;
+  --letter-spacing-semester: 1.2px;
+  --letter-spacing-ue: -0.14px;
+
+  /* Espacement */
+  --space-2xs: 6px;
+  --space-xs: 8px;
+  --space-sm: 10px;
+  --space-md: 12px;
+  --space-lg: 14px;
+  --space-xl: 16px;
+  --space-2xl: 20px;
+  --space-3xl: 24px;
+  --space-4xl: 26px;
+  --space-5xl: 30px;
+  --space-6xl: 32px;
+  --space-7xl: 34px;
+  --space-8xl: 50px;
+  --space-9xl: 64px;
+  --space-10xl: 80px;
+  --space-11xl: 90px;
+  --space-12xl: 100px;
+  --space-banner-gap: 23px;
+  --space-nav-gap: 50px;
+  --space-nav-links: 26px;
+  --space-program-gap: 90px;
+  --space-footer-gap: 40px;
+  --space-footer-col: 30px;
+  --space-footer-nav: 8px;
+  --space-footer-inner: 14px;
+
+  /* Layout — valeurs MOBILE (base) */
+  --layout-max: 1920px;
+  --layout-header: 1860px;
+  --layout-content: 1440px;
+  --layout-objectives: 1597px;
+  --layout-hero: 1860px;
+  --layout-gutter: 24px;
+  --layout-gutter-footer: 24px;
+  --layout-side: 16px;
+  --layout-card-width: 336px;
+  --layout-card-height: 310px;
+  --layout-ue-width: 417px;
+  --layout-ue-height: 545px;
+  --layout-logo-width: 180px;
+  --layout-logo-height: auto;
+
+  /* Rayons & ombres */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 25px;
+  --radius-xl: 20px;
+  --shadow-card: 0 2px 20px 16px rgba(174, 174, 174, 0.2);
+  --shadow-card-soft: 0 2px 18px rgba(174, 174, 174, 0.12);
+  --shadow-ue: 0 0 0 1px transparent;
+}
+
+/* Desktop — override variables layout */
+@media (min-width: 1024px) {
+  :root {
+    --layout-gutter: 132px;
+    --layout-gutter-footer: 162px;
+    --layout-side: 30px;
+    --layout-logo-width: 230px;
+    --layout-logo-height: 55px;
+  }
+}
+
+/*---------------------------------------------------------------------------
+  Icon-SVG — filtre pour recolorier les icônes en blanc (ex. dans la bannière)
+ ----------------------------------------------------------------------------- */
+

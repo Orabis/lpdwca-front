@@ -1,0 +1,237 @@
+/* --------------------------------------------------------------------------
+   Header & bannière
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  width: 100%;
+  max-width: var(--layout-header);
+  margin: var(--space-2xl) auto 0;
+  padding: 0 var(--layout-side);
+}
+
+.site-header__banner {
+  display: flex;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-banner-gap);
+  width: 100%;
+  padding: var(--space-lg) 0;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+/* Mobile — texte sur plusieurs lignes */
+.banner__text {
+  margin: -1px 0 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-md);
+  color: var(--color-absolute-white);
+  white-space: normal;
+  text-align: center;
+}
+.banner__link {
+  display: flex;
+  gap: var(--space-sm);
+  color: var(--color-absolute-white);
+}
+
+.banner__icon {
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+.banner__icon:after {
+  content: url("../assets/svg/right-arrow.svg");
+  display: block;
+  width: 100%;
+  height: 10px;
+}
+
+/* Desktop — bannière une ligne */
+@media (min-width: 1024px) {
+  header {
+    padding: var(--layout-side);
+  }
+  .banner__text {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-base);
+    white-space: nowrap;
+    text-align: unset;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Navigation
+   -------------------------------------------------------------------------- */
+
+.nav {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Mobile — flex wrap : Logo | CTA | Toggle */
+.nav__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3xl);
+  padding: var(--space-2xl) var(--layout-gutter);
+}
+
+/* Logo — visuel de l'atome Logo.astro, réutilisé navbar & footer */
+.logo {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  padding: var(--space-xs) var(--space-2xl);
+  text-decoration: none;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logo__img {
+  width: var(--layout-logo-width);
+  height: var(--layout-logo-height);
+}
+
+/* Placement du logo dans la navbar */
+.nav__logo {
+  order: 1;
+}
+
+.nav__cta {
+  order: 2;
+  flex-shrink: 0;
+  padding: var(--space-lg) var(--space-7xl);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-absolute-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+/* Burger — visuel du composant BurgerButton, réutilisable hors navbar */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-border-light);
+}
+
+.burger__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-heading);
+  border-radius: 1px;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Animation en croix pilotée par l'état du bouton lui-même */
+.burger[aria-expanded="true"] .burger__bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger[aria-expanded="true"] .burger__bar:nth-child(2) {
+  opacity: 0;
+}
+.burger[aria-expanded="true"] .burger__bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile — placement du burger dans la navbar */
+.nav__toggle {
+  order: 3;
+}
+
+/* Mobile — menu vertical caché par défaut */
+.nav__menu {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  order: 4;
+  width: 100%;
+  gap: 0;
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.nav__menu--open {
+  display: flex;
+}
+
+.nav__item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.nav__link {
+  display: block;
+  padding: var(--space-lg) 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-heading);
+  white-space: nowrap;
+}
+
+.nav__link--active {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Desktop — nav horizontale, toggle caché */
+@media (min-width: 1024px) {
+  .nav__inner {
+    flex-wrap: nowrap;
+    padding: var(--space-2xl) var(--layout-gutter) var(--space-3xl);
+  }
+
+  .nav__logo {
+    order: 0;
+  }
+  .nav__cta {
+    order: 0;
+  }
+
+  .nav__toggle {
+    display: none;
+    order: 0;
+  }
+
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    order: 0;
+    width: auto;
+    gap: var(--space-nav-links);
+    padding: 0;
+    border-top: none;
+  }
+
+  .nav__item {
+    border-bottom: none;
+  }
+
+  .nav__link {
+    padding: 0;
+  }
+}
+

@@ -1,0 +1,291 @@
+/* --------------------------------------------------------------------------
+   AdvantageCard — mobile 1 col · tablette 2 col · desktop 3 col
+   -------------------------------------------------------------------------- */
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.adv-card {
+  position: relative;
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-soft);
+  border-radius: 16px;
+  padding: 28px 34px 34px;
+  display: flex;
+  flex-direction: column;
+  min-height: 308px;
+}
+
+.adv-card__number {
+  margin-bottom: 24px;
+  font-size: 62px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  text-align: right;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.adv-card__title {
+  max-width: 90%;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.adv-card__text {
+  max-width: 92%;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-body);
+  line-height: 22px;
+  flex: 1;
+  margin-bottom: 28px;
+}
+
+.adv-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  width: 54px;
+  height: 54px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 10px;
+  background: var(--color-bg-soft);
+  color: var(--color-primary);
+}
+
+.adv-card__link-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .advantages__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .advantages__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CourseCard — mobile 1 col · desktop 2 col
+   -------------------------------------------------------------------------- */
+
+.courses__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.course-card {
+  min-height: 100%;
+  padding: 24px;
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card__media {
+  margin-bottom: 28px;
+}
+
+.course-card__img {
+  display: block;
+  width: 100%;
+  height: 308px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.course-card__placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 308px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f7efe3 0%, #f4f6fb 52%, #eef6fa 100%);
+}
+
+.course-card__placeholder::before,
+.course-card__placeholder::after {
+  content: "";
+  position: absolute;
+  border-radius: 18px;
+  background: rgba(20, 33, 129, 0.08);
+}
+
+.course-card__placeholder::before {
+  width: 38%;
+  height: 58%;
+  top: 18%;
+  left: 12%;
+  transform: rotate(-8deg);
+}
+
+.course-card__placeholder::after {
+  width: 22%;
+  height: 26%;
+  right: 12%;
+  bottom: 16%;
+}
+
+.course-card__placeholder-icon {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  opacity: 0.95;
+}
+
+.course-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+}
+
+.course-card__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.45;
+  color: var(--color-text-heading);
+}
+
+.course-card__desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-soft);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.course-card__footer {
+  padding-top: 28px;
+}
+
+.course-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 10px;
+  background: var(--color-bg-chip);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+}
+
+@media (min-width: 1024px) {
+  .courses__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TestimonialCard — mobile 1 col · tablette 2 col
+   -------------------------------------------------------------------------- */
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--color-absolute-white);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.testimonial-card__quote {
+  margin: 0;
+  padding: 34px 34px 30px;
+}
+
+.testimonial-card__text {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-quote);
+}
+
+.testimonial-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 34px;
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.testimonial-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial-card__avatar-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(20, 33, 129, 0.12);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-heading);
+  flex: 1;
+}
+
+.testimonial-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 10px;
+  background: var(--color-bg-chip);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+  white-space: nowrap;
+}
+
+
+@media (min-width: 768px) {
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,20 +1,19 @@
 ---
-import Button from "./Button.astro";
-
 interface Props {
   number: string;
   title: string;
   description: string;
+  href?: string;
 }
 
-const { number, title, description } = Astro.props;
+const { number, title, description, href = "/licence/" } = Astro.props;
 ---
 
 <article class="adv-card">
   <div class="adv-card__number">{number}</div>
   <h3 class="adv-card__title">{title}</h3>
   <p class="adv-card__text">{description}</p>
-  <Button variant="outline" aria-label={title}>
-    <span class="material-icons">arrow_forward</span>
-  </Button>
+  <a class="adv-card__link" href={href} aria-label={title}>
+    <span class="adv-card__link-icon" aria-hidden="true">↗</span>
+  </a>
 </article>
