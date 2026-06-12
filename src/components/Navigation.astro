@@ -10,7 +10,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<ul class="nav__menu">
+<ul class="nav__menu" id="nav-menu">
   {
     navLinks.map(({ href, label }) => (
       <li class="nav__item">
