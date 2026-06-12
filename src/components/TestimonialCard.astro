@@ -1,0 +1,44 @@
+---
+/*
+  TestimonialCard — témoignage d'un alumni
+  Props :
+    - name      : prénom et nom de l'alumni
+    - quote     : texte du témoignage
+    - href      : lien "Lire l'article complet" (optionnel)
+    - avatarSrc : URL de la photo de profil (optionnel)
+    - avatarAlt : texte alternatif de la photo (optionnel)
+  TODO : alimenter via Strapi (collection Testimonials)
+*/
+import Button from "@/components/Button.astro";
+
+interface Props {
+  name: string;
+  quote: string;
+  href?: string;
+  avatarSrc?: string;
+  avatarAlt?: string;
+}
+
+const { name, quote, href = "#", avatarSrc, avatarAlt } = Astro.props;
+---
+
+<article class="testimonial-card">
+  <blockquote class="testimonial-card__quote">
+    <p class="testimonial-card__text">{quote}</p>
+  </blockquote>
+  <footer class="testimonial-card__footer">
+    {
+      avatarSrc && (
+        <img
+          class="testimonial-card__avatar"
+          src={avatarSrc}
+          alt={avatarAlt ?? name}
+          width="40"
+          height="40"
+        />
+      )
+    }
+    <span class="testimonial-card__name">{name}</span>
+    <Button href={href} variant="outline">Lire l'article complet</Button>
+  </footer>
+</article>

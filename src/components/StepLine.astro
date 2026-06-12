@@ -1,0 +1,25 @@
+---
+/*
+  StepLine — liste numérotée des étapes d'un programme d'études
+  Props :
+    - steps : tableau de chaînes, chaque entrée = intitulé d'une étape
+  TODO : alimenter via Strapi (collection Steps)
+*/
+
+interface Props {
+  steps?: string[];
+}
+
+const { steps = [] } = Astro.props;
+---
+
+<ol class="step-line">
+  {
+    steps.map((step, i) => (
+      <li class="step-line__item">
+        <span class="step-line__number">0{i + 1}</span>
+        <p class="step-line__label">{step}</p>
+      </li>
+    ))
+  }
+</ol>

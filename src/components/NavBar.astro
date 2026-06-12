@@ -1,47 +1,22 @@
 ---
-
+import Navigation from "./Navigation.astro";
+import BurgerButton from "./BurgerButton.astro";
 ---
 
 <nav class="nav">
-  <div class="nav__container">
-    <ul class="nav__list">
-      <li class="nav__item">
-        <a class="nav__link" href="/">Accueil</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/licence">Licence</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/formation">Formation</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/tarifs">Tarifs</a>
-      </li>
-      <li class="nav__item">
-        <a class="nav__link" href="/contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-  <button class="nav__button"> Candidater </button>
-</nav>
-<style>
-    .nav {
-        margin: 1rem;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 1rem;
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="LPDWCA - Accueil">
+      <img class="nav__logo-img" src="/assets/Logo.png" alt="LPDWCA" />
+    </a>
 
-    }
-    .nav__item{
-        padding: 0.75rem 1rem;
-        &:hover{
-            background-color:var(--color-bg-base-hover);
-            border-radius: var(--radius-md);
-        }
-    }
-    .nav__list {
-        display: flex;
-        gap: 1rem;
-    }
-</style>
+    <Navigation />
+
+    <a href="/contact" class="nav__cta">Candidature</a>
+
+    <BurgerButton
+      class="nav__toggle"
+      label="Menu de navigation"
+      controls="nav-menu"
+    />
+  </div>
+</nav>

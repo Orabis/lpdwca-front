@@ -1,7 +1,408 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import bookOpenIcon from "@/assets/svg/book-open.svg";
+import chatBubbleLeftRightIcon from "@/assets/svg/chat-bubble-left-right.svg";
+import chatBubbleOvalLeftIcon from "@/assets/svg/chat-bubble-oval-left.svg";
+import commandLineIcon from "@/assets/svg/command-line.svg";
+import paintBrushIcon from "@/assets/svg/paint-brush.svg";
+import pencilIcon from "@/assets/svg/pencil.svg";
+import rightArrowIcon from "@/assets/svg/right-arrow.svg";
+import sparkleIcon from "@/assets/svg/sparkle.svg";
 ---
 
-<BaseLayout title="LPDWCA | Licence">
-  <h2>Licence</h2>
+<BaseLayout
+  title="Licence Professionnelle Développement Web Communication et Apprentissages"
+  pageClass="page--licence"
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <h1 class="hero__title" id="hero-title">Licence</h1>
+      <p class="hero__text">
+        <span class="hero__text-normal">La </span>
+        <strong class="hero__text-strong"
+          >Licence Professionnelle Développement Web, Communication et
+          Apprentissages</strong
+        >
+        <span class="hero__text-normal">
+          (DWCA) de l’Université de Strasbourg est une formation
+        </span>
+        <strong class="hero__text-strong">100% à distance</strong>
+        <span class="hero__text-normal"> alliant </span>
+        <strong class="hero__text-strong"
+          >développement web, communication digitale</strong
+        >
+        <span class="hero__text-normal"> et </span>
+        <strong class="hero__text-strong">apprentissages numériques</strong>
+        <span class="hero__text-normal"
+          >.<br />Axée sur la pratique, elle prépare les étudiants aux métiers
+          du multimédia en pleine expansion.<br />Accessible en
+        </span>
+        <strong class="hero__text-strong">apprentissage</strong>
+        <span class="hero__text-normal">, en </span>
+        <strong class="hero__text-strong">formation initiale</strong>
+        <span class="hero__text-normal"> ou </span>
+        <strong class="hero__text-strong">continue</strong>
+        <span class="hero__text-normal"
+          >, cette licence offre une approche flexible et professionnalisante,
+          répondant aux besoins actuels du marché numérique.</span
+        >
+      </p>
+    </div>
+  </section>
+
+  <section class="program" aria-labelledby="program-title">
+    <div class="program__inner">
+      <header class="program__header">
+        <h2 class="program__title" id="program-title">
+          Le programme en un coup d'oeil
+        </h2>
+        <p class="program__intro">
+          Le programme de la licence est déclinée en 10 unités d'enseignement
+          qui couvrent trois domaines principaux.
+        </p>
+      </header>
+      <div class="program__cards">
+        <article class="program-card">
+          <div class="program-card__body">
+            <img
+              class="program-card__icon"
+              src={commandLineIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="program-card__title">Développement Web</h3>
+            <p class="program-card__desc">
+              Front-End : HTML/CSS, Javascript, ReactJS et Back-End :
+              PHP/MySQL
+            </p>
+          </div>
+          <a class="program-card__link" href="#">
+            <span class="program-card__link-text">Voir le programme</span>
+            <img
+              class="program-card__link-icon"
+              src={rightArrowIcon.src}
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </article>
+        <article class="program-card">
+          <div class="program-card__body">
+            <img
+              class="program-card__icon"
+              src={chatBubbleLeftRightIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="program-card__title">Communication</h3>
+            <p class="program-card__desc">
+              Gestion de projet web, Digital marketing, Réseaux sociaux, Droit
+              du multimédia
+            </p>
+          </div>
+          <a class="program-card__link" href="#">
+            <span class="program-card__link-text">Voir le programme</span>
+            <img
+              class="program-card__link-icon"
+              src={rightArrowIcon.src}
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </article>
+        <article class="program-card">
+          <div class="program-card__body">
+            <img
+              class="program-card__icon"
+              src={bookOpenIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="program-card__title">Apprentissages</h3>
+            <p class="program-card__desc">
+              E-learning, jeux sérieux et mondes virtuels Blender, Unity
+            </p>
+          </div>
+          <a class="program-card__link" href="#">
+            <span class="program-card__link-text">Voir le programme</span>
+            <img
+              class="program-card__link-icon"
+              src={rightArrowIcon.src}
+              width="24"
+              height="24"
+              alt=""
+              aria-hidden="true"
+            />
+          </a>
+        </article>
+      </div>
+      <a class="program__cta" href="#">
+        <span class="program__cta-text">En savoir plus</span>
+        <img
+          class="program__cta-icon"
+          src={rightArrowIcon.src}
+          width="24"
+          height="24"
+          alt=""
+          aria-hidden="true"
+        />
+      </a>
+    </div>
+  </section>
+
+  <section class="objectives" aria-labelledby="objectives-title">
+    <div class="objectives__inner">
+      <h2 class="objectives__title" id="objectives-title">Objectifs</h2>
+      <p class="objectives__text">
+        <span class="objectives__text-normal">La </span>
+        <strong class="objectives__text-strong">Licence Professionnelle DWCA</strong>
+        <span class="objectives__text-normal">
+          forme des professionnels polyvalents pour le secteur numérique. Notre
+          programme vise à maîtriser le développement web front-end et back-end,
+          tout en acquérant des compétences en
+        </span>
+        <strong class="objectives__text-strong">communication digitale</strong>
+        <span class="objectives__text-normal"> et </span>
+        <strong class="objectives__text-strong">gestion de projet</strong>
+        <span class="objectives__text-normal">
+          . Les étudiants approfondissent leur compréhension des enjeux liés aux
+        </span>
+        <strong class="objectives__text-strong">apprentissages numériques</strong>
+        <span class="objectives__text-normal"> et au </span>
+        <strong class="objectives__text-strong">e-learning</strong>
+        <span class="objectives__text-normal">, développent une expertise en </span>
+        <strong class="objectives__text-strong">conception graphique</strong>
+        <span class="objectives__text-normal"> et </span>
+        <strong class="objectives__text-strong">expérience utilisateur</strong>
+        <span class="objectives__text-normal">
+          , et se préparent à s’adapter aux évolutions rapides du secteur.
+          Cette  formation pratique et complète permet aux diplômés
+          d’intégrer  efficacement le marché du travail ou d’évoluer
+          dans leur carrière  actuelle.
+        </span>
+      </p>
+    </div>
+  </section>
+
+  <section class="curriculum" aria-labelledby="curriculum-title">
+    <div class="curriculum__inner">
+      <h2 class="curriculum__title" id="curriculum-title">
+        Les enseignements en détail
+      </h2>
+
+      <div class="curriculum__semester">
+        <div
+          class="curriculum__grid curriculum__grid--semester-1"
+          role="list"
+          aria-label="Unités d'enseignement du semestre 1"
+        >
+          <article class="curriculum-card curriculum-card--ue-51" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={paintBrushIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 5.1 Conception et réalisation graphiques pour le web et
+              Technologie Web
+            </h3>
+            <p class="curriculum-card__content">
+              Création graphique<br />Relation client/commanditaire<br />Ergonomie
+              et UX design<br />Design web<br />Droit du multimédia (58h)
+            </p>
+          </article>
+          <article
+            class="curriculum-card curriculum-card--ue-52 curriculum-card--offset-top"
+            role="listitem"
+          >
+            <img
+              class="curriculum-card__icon"
+              src={commandLineIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 5.2 Développement Front-End : fondamentaux de la programmation
+            </h3>
+            <p class="curriculum-card__content">
+              HTML et CSS<br />Javascript, API et framework<br />Intégration
+              web<br />Référencement (38h)
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-53" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={chatBubbleLeftRightIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 5.3 Gestion de projet multimédia et commercialisation
+            </h3>
+            <p class="curriculum-card__content">
+              Cahier des charges<br />Gestion de projet<br />Marketing
+              digital<br />Communication publicitaire<br />Community Management
+              (48h)
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-54" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={chatBubbleOvalLeftIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">UE 5.4 Langues</h3>
+            <p class="curriculum-card__content">
+              Anglais : Expression écrite et orale<br />Anglais : Culture des
+              entreprises (16h)
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-55" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={sparkleIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">UE 5.5 Projet Tuteuré, Étape 1</h3>
+            <p class="curriculum-card__content curriculum-card__content--short">
+              Préparation et Analyse du projet (50h)
+            </p>
+          </article>
+        </div>
+        <p class="curriculum__semester-label">Semestre 1 (210 heures)</p>
+      </div>
+
+      <div class="curriculum__semester">
+        <div
+          class="curriculum__grid curriculum__grid--semester-2"
+          role="list"
+          aria-label="Unités d'enseignement du semestre 2"
+        >
+          <article class="curriculum-card curriculum-card--ue-61" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={commandLineIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">UE 6.1 Développement Back-End</h3>
+            <p class="curriculum-card__content">
+              PHP &amp; Base de données<br />CMS<br />Sécurité des SI et web (36h)
+            </p>
+          </article>
+          <article
+            class="curriculum-card curriculum-card--ue-62 curriculum-card--offset-top"
+            role="listitem"
+          >
+            <img
+              class="curriculum-card__icon"
+              src={paintBrushIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 6.2 Design et application 3D immersives
+            </h3>
+            <p class="curriculum-card__content">
+              Design 3D<br />Développement 3D<br />Réalité virtuelle (VR) 30h
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-63" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={commandLineIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 6.3 Développement Web : approfondissement
+            </h3>
+            <p class="curriculum-card__content">
+              ReactJS, NodeJS<br />Progressive Web App<br />Architecture MVC et
+              frameworks (30h)
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-64" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={bookOpenIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">
+              UE 6.4 Interactivité numérique et apprentissage tout au long de la
+              vie
+            </h3>
+            <p class="curriculum-card__content">
+              TICE et Apprentissages<br />Ingénierie des EIAH<br />Scénarii
+              pédagogiques<br />Dispositifs de formation pour la FTLV 32h
+            </p>
+          </article>
+          <article
+            class="curriculum-card curriculum-card--ue-65 curriculum-card--offset-bottom"
+            role="listitem"
+          >
+            <img
+              class="curriculum-card__icon"
+              src={pencilIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">UE 6.5 Projet Tuteuré, Étape 2</h3>
+            <p class="curriculum-card__content curriculum-card__content--short">
+              Conception du projet (70h)
+            </p>
+          </article>
+          <article class="curriculum-card curriculum-card--ue-66" role="listitem">
+            <img
+              class="curriculum-card__icon"
+              src={bookOpenIcon.src}
+              width="48"
+              height="48"
+              alt=""
+              aria-hidden="true"
+            />
+            <h3 class="curriculum-card__title">UE 6.6 Stage ou Apprentissage</h3>
+            <p class="curriculum-card__content curriculum-card__content--short">
+              Projet personnel ou professionnel (420h)
+            </p>
+          </article>
+        </div>
+        <p class="curriculum__semester-label">Semestre 2 (198 heures)</p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
