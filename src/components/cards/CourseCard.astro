@@ -1,38 +1,49 @@
 ---
-/*
-  CourseCard — carte de présentation d'un cours (page d'accueil)
-  Props :
-    - title       : intitulé du cours
-    - description : description courte
-    - imageSrc    : URL de l'image (optionnel)
-    - imageAlt    : texte alternatif de l'image (optionnel)
-    - href        : lien "En savoir plus" (optionnel, défaut "#")
-  TODO : alimenter via Strapi (collection Courses)
-*/
-import Button from "@/components/ui/Button.astro";
-
 interface Props {
   title: string;
   description: string;
   imageSrc?: string;
   imageAlt?: string;
   href?: string;
+  placeholderIcon?: string;
 }
 
-const { title, description, imageSrc, imageAlt = "", href = "#" } = Astro.props;
+const {
+  title,
+  description,
+  imageSrc,
+  imageAlt = "",
+  href = "#",
+  placeholderIcon,
+} = Astro.props;
 ---
 
 <article class="course-card">
   {
     imageSrc && (
-      <img
-        class="course-card__img"
-        src={imageSrc}
-        alt={imageAlt}
-        width="600"
-        height="338"
-        loading="lazy"
-      />
+      <div class="course-card__media">
+        <img
+          class="course-card__img"
+          src={imageSrc}
+          alt={imageAlt}
+          width="600"
+          height="338"
+          loading="lazy"
+        />
+      </div>
+    )
+  }
+  {
+    !imageSrc && placeholderIcon && (
+      <div class="course-card__placeholder" aria-hidden="true">
+        <span
+          class:list={[
+            "icon",
+            `icon--${placeholderIcon}`,
+            "course-card__placeholder-icon",
+          ]}
+        />
+      </div>
     )
   }
   <div class="course-card__body">
@@ -40,6 +51,6 @@ const { title, description, imageSrc, imageAlt = "", href = "#" } = Astro.props;
     <p class="course-card__desc">{description}</p>
   </div>
   <div class="course-card__footer">
-    <Button href={href} variant="outline">En savoir plus</Button>
+    <a class="course-card__link" href={href}>En savoir plus</a>
   </div>
 </article>

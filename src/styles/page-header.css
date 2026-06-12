@@ -1,0 +1,44 @@
+/* --------------------------------------------------------------------------
+   Page header
+   -------------------------------------------------------------------------- */
+
+.page-header {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: 74px var(--layout-gutter) 0;
+}
+
+.page-header__inner {
+  width: 100%;
+  max-width: 1280px;
+}
+
+.page-header__title {
+  font-size: var(--font-size-page-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-page-title);
+  color: var(--color-text-heading);
+}
+
+.page-header__description {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+
+@media (min-width: 1024px) {
+  .page-header__description {
+    max-width: 480px;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

@@ -7,11 +7,13 @@ interface Props {
   intro?: string;
   actionLabel?: string;
   actionHref?: string;
+  sectionClass?: string;
 }
-const { id, title, intro, actionLabel, actionHref } = Astro.props;
+const { id, title, intro, actionLabel, actionHref, sectionClass } =
+  Astro.props;
 ---
 
-<section class="section" id={id}>
+<section class:list={["section", sectionClass]} id={id}>
   <SectionHeader
     title={title}
     intro={intro}

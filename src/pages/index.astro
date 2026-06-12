@@ -1,18 +1,30 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import HomeHero from "@/components/sections/HomeHero.astro";
+import FaqSection from "@/components/sections/FaqSection.astro";
 import SectionBase from "@/components/ui/SectionBase.astro";
 import AdvantageCard from "@/components/cards/AdvantageCard.astro";
 import CourseCard from "@/components/cards/CourseCard.astro";
 import TestimonialCard from "@/components/cards/TestimonialCard.astro";
 import { advantages, courses, testimonials } from "@/data/home";
+
+const sectionIntro =
+  "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.";
 ---
 
-<BaseLayout title="LPDWCA | Page d'accueil">
+<BaseLayout
+  title="Licence Professionnelle Développement Web Communication et Apprentissages"
+  pageClass="page--home"
+>
+  <HomeHero />
+
   <SectionBase
     id="avantages"
+    sectionClass="section--advantages"
     title="Avantages"
+    intro={sectionIntro}
     actionLabel="Tout afficher"
-    actionHref="#"
+    actionHref="/licence/"
   >
     <div class="advantages__grid">
       {
@@ -28,9 +40,12 @@ import { advantages, courses, testimonials } from "@/data/home";
   </SectionBase>
 
   <SectionBase
+    id="programme"
+    sectionClass="section--courses"
     title="Le programme en un coup d'oeil"
+    intro={sectionIntro}
     actionLabel="Tout afficher"
-    actionHref="#"
+    actionHref="/formation/"
   >
     <div class="courses__grid">
       {
@@ -49,9 +64,11 @@ import { advantages, courses, testimonials } from "@/data/home";
 
   <SectionBase
     id="temoignages"
+    sectionClass="section--testimonials"
     title="Témoignages alumni"
+    intro={sectionIntro}
     actionLabel="Tout afficher"
-    actionHref="#"
+    actionHref="/licence/"
   >
     <div class="testimonials__grid">
       {
@@ -67,4 +84,6 @@ import { advantages, courses, testimonials } from "@/data/home";
       }
     </div>
   </SectionBase>
+
+  <FaqSection />
 </BaseLayout>
