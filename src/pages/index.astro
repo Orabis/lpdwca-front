@@ -1,7 +1,149 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCarousel from "@/components/ArticleCarousel.astro";
 ---
 
 <BaseLayout title="LPDWCA | Page d'accueil">
-  <h2>Page d'accueil</h2>
+  <div class="homepage">
+    <!-- Section Hero -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Développez l'avenir du Web</h1>
+        <p class="hero-subtitle">
+          Licence Professionnelle Développeur Web et Mobile en Alternance (LPDWCA) à Strasbourg. Apprenez les technologies modernes de l'industrie.
+        </p>
+        <div class="hero-cta">
+          <a href="/formation" class="cta-btn cta-btn--primary">Découvrir la formation</a>
+          <a href="/contact" class="cta-btn cta-btn--secondary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Dernières Actualités (Carrousel) -->
+    <section class="carousel-section">
+      <div class="section-header">
+        <span class="section-tag">Actualités</span>
+        <h2 class="section-title">Les Dernières Nouvelles</h2>
+        <p class="section-subtitle">
+          Restez informé sur la formation, les projets étudiants et les tendances technologiques.
+        </p>
+      </div>
+      
+      <ArticleCarousel limit={3} />
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  .homepage {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(14, 40, 134, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .cta-btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-contrast);
+  }
+
+  .cta-btn--primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .cta-btn--secondary {
+    background-color: #f3f4f6;
+    color: var(--color-text-heading);
+    border: 1px solid #e5e7eb;
+  }
+
+  .cta-btn--secondary:hover {
+    background-color: #e5e7eb;
+  }
+
+  /* Carousel Section */
+  .carousel-section {
+    padding: 4rem 1.5rem;
+    background-color: #f9f9fb;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-tag {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-text-heading);
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+</style>
