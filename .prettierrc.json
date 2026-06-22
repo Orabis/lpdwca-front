@@ -1,4 +1,22 @@
 {
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "printWidth": 120,
+  "semi": false,
+  "singleQuote": true,
+  "quoteProps": "consistent",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "singleAttributePerLine": true,
+  "bracketSameLine": false,
+  "vueIndentScriptAndStyle": false,
+  "htmlWhitespaceSensitivity": "strict",
+  "jsxSingleQuote": true,
+  "objectWrap": "preserve",
+  "proseWrap": "preserve",
+  "embeddedLanguageFormatting": "auto",
   "plugins": ["prettier-plugin-astro"],
   "overrides": [
     {

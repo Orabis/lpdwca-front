@@ -13,54 +13,53 @@
 }
 
 .icon--mail {
-  background-image: url("../assets/svg/mail-icon.svg");
+  background-image: url('../assets/svg/mail-icon.svg');
 }
 .icon--phone {
-  background-image: url("../assets/svg/phone-icon.svg");
+  background-image: url('../assets/svg/phone-icon.svg');
 }
 .icon--location {
-  background-image: url("../assets/svg/location-icon.svg");
+  background-image: url('../assets/svg/location-icon.svg');
 }
 .icon--facebook {
-  background-image: url("../assets/svg/facebook.svg");
+  background-image: url('../assets/svg/facebook.svg');
 }
 .icon--linkedin {
-  background-image: url("../assets/svg/linkedin-icon.svg");
+  background-image: url('../assets/svg/linkedin-icon.svg');
 }
 .icon--twitter {
-  background-image: url("../assets/svg/x-twitter.svg");
+  background-image: url('../assets/svg/x-twitter.svg');
 }
 .icon--arrow-right {
-  background-image: url("../assets/svg/right-arrow.svg");
+  background-image: url('../assets/svg/right-arrow.svg');
 }
 .icon--book-open {
-  background-image: url("../assets/svg/book-open.svg");
+  background-image: url('../assets/svg/book-open.svg');
 }
 .icon--chat-duo {
-  background-image: url("../assets/svg/chat-bubble-left-right.svg");
+  background-image: url('../assets/svg/chat-bubble-left-right.svg');
 }
 .icon--chat {
-  background-image: url("../assets/svg/chat-bubble-oval-left.svg");
+  background-image: url('../assets/svg/chat-bubble-oval-left.svg');
 }
 .icon--command-line {
-  background-image: url("../assets/svg/command-line.svg");
+  background-image: url('../assets/svg/command-line.svg');
 }
 .icon--paint-brush {
-  background-image: url("../assets/svg/paint-brush.svg");
+  background-image: url('../assets/svg/paint-brush.svg');
 }
 .icon--pencil {
-  background-image: url("../assets/svg/pencil.svg");
+  background-image: url('../assets/svg/pencil.svg');
 }
 .icon--pencil-square {
-  background-image: url("../assets/svg/pencil-square.svg");
+  background-image: url('../assets/svg/pencil-square.svg');
 }
 .icon--sparkle {
-  background-image: url("../assets/svg/sparkle.svg");
+  background-image: url('../assets/svg/sparkle.svg');
 }
 .icon--formation-initiale {
-  background-image: url("../assets/svg/formation-initiale.svg");
+  background-image: url('../assets/svg/formation-initiale.svg');
 }
 .icon--formation-continue {
-  background-image: url("../assets/svg/formation-continue.svg");
+  background-image: url('../assets/svg/formation-continue.svg');
 }
-

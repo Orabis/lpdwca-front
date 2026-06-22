@@ -1,25 +1,24 @@
 ---
 interface Props {
-  title: string;
-  description?: string;
-  variant?: "split" | "formation";
-  headingId: string;
+  title: string
+  description?: string
+  variant?: 'split' | 'formation'
+  headingId: string
 }
 
-const { title, description, variant, headingId } = Astro.props;
+const { title, description, variant, headingId } = Astro.props
 ---
 
 <section
-  class:list={["page-header", variant && `page-header--${variant}`]}
+  class:list={['page-header', variant && `page-header--${variant}`]}
   aria-labelledby={headingId}
 >
-  <div
-    class:list={[
-      "page-header__inner",
-      variant && `page-header__inner--${variant}`,
-    ]}
-  >
-    <h1 class="page-header__title" id={headingId}>{title}</h1>
-    {description && <p class="page-header__description">{description}</p>}
+  <div class:list={['page-header__inner', variant && `page-header__inner--${variant}`]}>
+    <h1
+      class='page-header__title'
+      id={headingId}
+      >{title}</h1
+    >
+    {description && <p class='page-header__description'>{description}</p>}
   </div>
 </section>

@@ -1,25 +1,20 @@
 ---
 interface Props {
-  variant?: "filled" | "outline";
-  href?: string;
-  type?: "button" | "submit" | "reset";
-  "aria-label"?: string;
+  'variant'?: 'filled' | 'outline'
+  'href'?: string
+  'type'?: 'button' | 'submit' | 'reset'
+  'aria-label'?: string
 }
 
-const {
-  variant = "filled",
-  href,
-  type = "button",
-  "aria-label": ariaLabel,
-} = Astro.props;
-const Tag = href ? "a" : "button";
+const { variant = 'filled', href, type = 'button', 'aria-label': ariaLabel } = Astro.props
+const Tag = href ? 'a' : 'button'
 ---
 
 <Tag
   href={href}
   type={!href ? type : undefined}
   aria-label={ariaLabel}
-  class:list={["btn", `btn--${variant}`]}
+  class:list={['btn', `btn--${variant}`]}
 >
   <slot />
 </Tag>

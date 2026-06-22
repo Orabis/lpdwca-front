@@ -3,32 +3,32 @@
    -------------------------------------------------------------------------- */
 
 @font-face {
-  font-family: "Be Vietnam Pro";
-  src: url("/fonts/BeVietnamPro-Regular.ttf") format("truetype");
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/BeVietnamPro-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Be Vietnam Pro";
-  src: url("/fonts/BeVietnamPro-Medium.ttf") format("truetype");
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/BeVietnamPro-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Be Vietnam Pro";
-  src: url("/fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/BeVietnamPro-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Be Vietnam Pro";
-  src: url("/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+  font-family: 'Be Vietnam Pro';
+  src: url('/fonts/BeVietnamPro-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -68,8 +68,8 @@
   --color-text-quote: #555559;
 
   /* Typographie */
-  --font-family-primary: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
-  --font-family-secondary: "Open Sans", Helvetica, Arial, sans-serif;
+  --font-family-primary: 'Be Vietnam Pro', Helvetica, Arial, sans-serif;
+  --font-family-secondary: 'Open Sans', Helvetica, Arial, sans-serif;
   --font-size-2xs: 13px;
   --font-size-xs: 14px;
   --font-size-sm: 16px;
@@ -162,4 +162,3 @@
 /*---------------------------------------------------------------------------
   Icon-SVG — filtre pour recolorier les icônes en blanc (ex. dans la bannière)
  ----------------------------------------------------------------------------- */
-

@@ -10,7 +10,7 @@
 }
 
 .page-header__inner--split::after {
-  content: "";
+  content: '';
   position: absolute;
   right: -80px;
   bottom: 0;
@@ -277,7 +277,6 @@
   color: var(--color-absolute-white);
   flex-shrink: 0;
 }
-
 
 /* Tablette */
 @media (min-width: 768px) {

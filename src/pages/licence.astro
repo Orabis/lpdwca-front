@@ -1,47 +1,55 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import ProgramCard from "@/components/cards/ProgramCard.astro";
-import CurriculumCard from "@/components/cards/CurriculumCard.astro";
-import { programDomains, semesters } from "@/data/licence";
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import ProgramCard from '@/components/cards/ProgramCard.astro'
+import CurriculumCard from '@/components/cards/CurriculumCard.astro'
+import { programDomains, semesters } from '@/data/licence'
 ---
 
 <BaseLayout
-  title="Licence Professionnelle Développement Web Communication et Apprentissages"
-  pageClass="page--licence"
+  title='Licence Professionnelle Développement Web Communication et Apprentissages'
+  pageClass='page--licence'
 >
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero__inner">
-      <h1 class="hero__title" id="hero-title">Licence</h1>
-      <p class="hero__text">
-        La <strong
-          >Licence Professionnelle Développement Web, Communication et
-          Apprentissages</strong
-        > (DWCA) de l'Université de Strasbourg est une formation <strong
-          >100% à distance</strong
-        > alliant <strong>développement web, communication digitale</strong> et
-        <strong>apprentissages numériques</strong>.<br />Axée sur la pratique,
-        elle prépare les étudiants aux métiers du multimédia en pleine
-        expansion.<br />Accessible en <strong>apprentissage</strong>, en <strong
+  <section
+    class='hero'
+    aria-labelledby='hero-title'
+  >
+    <div class='hero__inner'>
+      <h1
+        class='hero__title'
+        id='hero-title'
+        >Licence</h1
+      >
+      <p class='hero__text'>
+        La <strong>Licence Professionnelle Développement Web, Communication et Apprentissages</strong> (DWCA) de l'Université
+        de Strasbourg est une formation <strong>100% à distance</strong> alliant <strong
+          >développement web, communication digitale</strong
+        > et
+        <strong>apprentissages numériques</strong>.<br />Axée sur la pratique, elle prépare les étudiants aux métiers du
+        multimédia en pleine expansion.<br />Accessible en <strong>apprentissage</strong>, en <strong
           >formation initiale</strong
-        > ou <strong>continue</strong>, cette licence offre une approche
-        flexible et professionnalisante, répondant aux besoins actuels du
-        marché numérique.
+        > ou <strong>continue</strong>, cette licence offre une approche flexible et professionnalisante, répondant aux
+        besoins actuels du marché numérique.
       </p>
     </div>
   </section>
 
-  <section class="program" aria-labelledby="program-title">
-    <div class="program__inner">
-      <header class="program__header">
-        <h2 class="program__title" id="program-title">
+  <section
+    class='program'
+    aria-labelledby='program-title'
+  >
+    <div class='program__inner'>
+      <header class='program__header'>
+        <h2
+          class='program__title'
+          id='program-title'
+        >
           Le programme en un coup d'oeil
         </h2>
-        <p class="program__intro">
-          Le programme de la licence est déclinée en 10 unités d'enseignement
-          qui couvrent trois domaines principaux.
+        <p class='program__intro'>
+          Le programme de la licence est déclinée en 10 unités d'enseignement qui couvrent trois domaines principaux.
         </p>
       </header>
-      <div class="program__cards">
+      <div class='program__cards'>
         {
           programDomains.map((domain) => (
             <ProgramCard
@@ -53,51 +61,62 @@ import { programDomains, semesters } from "@/data/licence";
           ))
         }
       </div>
-      <a class="program__cta" href="#">
-        <span class="program__cta-text">En savoir plus</span>
+      <a
+        class='program__cta'
+        href='#'
+      >
+        <span class='program__cta-text'>En savoir plus</span>
         <span
-          class="icon icon--arrow-right program__cta-icon"
-          aria-hidden="true"></span>
+          class='icon icon--arrow-right program__cta-icon'
+          aria-hidden='true'
+        ></span>
       </a>
     </div>
   </section>
 
-  <section class="objectives" aria-labelledby="objectives-title">
-    <div class="objectives__inner">
-      <h2 class="objectives__title" id="objectives-title">Objectifs</h2>
-      <p class="objectives__text">
-        La <strong>Licence Professionnelle DWCA</strong> forme des
-        professionnels polyvalents pour le secteur numérique. Notre programme
-        vise à maîtriser le développement web front-end et back-end, tout en
-        acquérant des compétences en <strong>communication digitale</strong> et
-        <strong>gestion de projet</strong>. Les étudiants approfondissent leur
-        compréhension des enjeux liés aux <strong
+  <section
+    class='objectives'
+    aria-labelledby='objectives-title'
+  >
+    <div class='objectives__inner'>
+      <h2
+        class='objectives__title'
+        id='objectives-title'
+        >Objectifs</h2
+      >
+      <p class='objectives__text'>
+        La <strong>Licence Professionnelle DWCA</strong> forme des professionnels polyvalents pour le secteur numérique. Notre
+        programme vise à maîtriser le développement web front-end et back-end, tout en acquérant des compétences en <strong
+          >communication digitale</strong
+        > et
+        <strong>gestion de projet</strong>. Les étudiants approfondissent leur compréhension des enjeux liés aux <strong
           >apprentissages numériques</strong
-        > et au <strong>e-learning</strong>, développent une expertise en <strong
-          >conception graphique</strong
-        > et <strong>expérience utilisateur</strong>, et se préparent à
-        s'adapter aux évolutions rapides du secteur. Cette formation pratique
-        et complète permet aux diplômés d'intégrer efficacement le marché du
-        travail ou d'évoluer dans leur carrière actuelle.
+        > et au <strong>e-learning</strong>, développent une expertise en <strong>conception graphique</strong> et <strong
+          >expérience utilisateur</strong
+        >, et se préparent à s'adapter aux évolutions rapides du secteur. Cette formation pratique et complète permet
+        aux diplômés d'intégrer efficacement le marché du travail ou d'évoluer dans leur carrière actuelle.
       </p>
     </div>
   </section>
 
-  <section class="curriculum" aria-labelledby="curriculum-title">
-    <div class="curriculum__inner">
-      <h2 class="curriculum__title" id="curriculum-title">
+  <section
+    class='curriculum'
+    aria-labelledby='curriculum-title'
+  >
+    <div class='curriculum__inner'>
+      <h2
+        class='curriculum__title'
+        id='curriculum-title'
+      >
         Les enseignements en détail
       </h2>
 
       {
         semesters.map((semester) => (
-          <div class="curriculum__semester">
+          <div class='curriculum__semester'>
             <div
-              class:list={[
-                "curriculum__grid",
-                `curriculum__grid--${semester.gridModifier}`,
-              ]}
-              role="list"
+              class:list={['curriculum__grid', `curriculum__grid--${semester.gridModifier}`]}
+              role='list'
               aria-label={semester.ariaLabel}
             >
               {semester.ues.map((ue) => (
@@ -111,7 +130,7 @@ import { programDomains, semesters } from "@/data/licence";
                 />
               ))}
             </div>
-            <p class="curriculum__semester-label">{semester.label}</p>
+            <p class='curriculum__semester-label'>{semester.label}</p>
           </div>
         ))
       }

@@ -1,17 +1,21 @@
 ---
-import NavBar from "./NavBar.astro";
-import TopBanner from "./TopBanner.astro";
+import NavBar from './NavBar.astro'
+import TopBanner from './TopBanner.astro'
 
 interface Props {
-  title: string;
-  text: string;
-  href: string;
+  title: string
+  text: string
+  href: string
 }
 
-const { title, text, href } = Astro.props;
+const { title, text, href } = Astro.props
 ---
 
-<header class="site-header">
-  <TopBanner title={title} text={text} href={href} />
+<header class='site-header'>
+  <TopBanner
+    title={title}
+    text={text}
+    href={href}
+  />
   <NavBar />
 </header>

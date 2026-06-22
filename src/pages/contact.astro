@@ -1,27 +1,37 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import PageHeader from "@/components/ui/PageHeader.astro";
-import FormField from "@/components/ui/FormField.astro";
-import Button from "@/components/ui/Button.astro";
-import { infoCards, contactFields } from "@/data/contact";
-import { socialLinks } from "@/data/navigation";
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import FormField from '@/components/ui/FormField.astro'
+import Button from '@/components/ui/Button.astro'
+import { infoCards, contactFields } from '@/data/contact'
+import { socialLinks } from '@/data/navigation'
 ---
 
-<BaseLayout title="Contact — LPDWCA" pageClass="page--contact">
+<BaseLayout
+  title='Contact — LPDWCA'
+  pageClass='page--contact'
+>
   <PageHeader
-    title="Contactez-nous"
-    description="Bienvenue sur la page contact de LPDWCA, où vous pouvez faire une demande de renseignement. Que vous soyez un particulier souhaitant améliorer ses compétences ou une entreprise à la recherche de solutions de développement professionnel, nous avons à cœur de répondre à vos questionnement."
-    variant="split"
-    headingId="contact-title"
+    title='Contactez-nous'
+    description='Bienvenue sur la page contact de LPDWCA, où vous pouvez faire une demande de renseignement. Que vous soyez un particulier souhaitant améliorer ses compétences ou une entreprise à la recherche de solutions de développement professionnel, nous avons à cœur de répondre à vos questionnement.'
+    variant='split'
+    headingId='contact-title'
   />
 
-  <section class="contact-section" aria-labelledby="contact-form-title">
-    <div class="contact-panel">
-      <div class="contact-panel__form">
-        <h2 class="sr-only" id="contact-form-title">Formulaire de contact</h2>
+  <section
+    class='contact-section'
+    aria-labelledby='contact-form-title'
+  >
+    <div class='contact-panel'>
+      <div class='contact-panel__form'>
+        <h2
+          class='sr-only'
+          id='contact-form-title'
+          >Formulaire de contact</h2
+        >
 
-        <form class="contact-form">
-          <div class="contact-form__grid">
+        <form class='contact-form'>
+          <div class='contact-form__grid'>
             {
               contactFields.map((field) => (
                 <FormField
@@ -37,54 +47,60 @@ import { socialLinks } from "@/data/navigation";
             }
           </div>
 
-          <div class="contact-form__actions">
-            <Button type="submit">Envoyez votre message</Button>
+          <div class='contact-form__actions'>
+            <Button type='submit'>Envoyez votre message</Button>
           </div>
         </form>
       </div>
 
-      <aside class="contact-panel__aside" aria-label="Informations de contact">
+      <aside
+        class='contact-panel__aside'
+        aria-label='Informations de contact'
+      >
         {
           infoCards.map((item) => (
-            <article class="contact-info-card">
-              <span class="contact-info-card__icon-box" aria-hidden="true">
-                <span
-                  class:list={[
-                    "icon",
-                    `icon--${item.icon}`,
-                    "contact-info-card__icon",
-                  ]}
-                />
+            <article class='contact-info-card'>
+              <span
+                class='contact-info-card__icon-box'
+                aria-hidden='true'
+              >
+                <span class:list={['icon', `icon--${item.icon}`, 'contact-info-card__icon']} />
               </span>
               {item.href ? (
-                <a class="contact-info-card__text" href={item.href}>
+                <a
+                  class='contact-info-card__text'
+                  href={item.href}
+                >
                   {item.label}
                 </a>
               ) : (
-                <p class="contact-info-card__text">{item.label}</p>
+                <p class='contact-info-card__text'>{item.label}</p>
               )}
             </article>
           ))
         }
 
-        <article class="contact-info-card">
-          <div class="contact-info-card__social" aria-label="Profils sociaux">
+        <article class='contact-info-card'>
+          <div
+            class='contact-info-card__social'
+            aria-label='Profils sociaux'
+          >
             {
               socialLinks.map((link) => (
                 <a
-                  class="contact-info-card__social-link"
+                  class='contact-info-card__social-link'
                   href={link.href}
                   aria-label={link.label}
                 >
                   <span
-                    class:list={["icon", `icon--${link.icon}`]}
-                    aria-hidden="true"
+                    class:list={['icon', `icon--${link.icon}`]}
+                    aria-hidden='true'
                   />
                 </a>
               ))
             }
           </div>
-          <p class="contact-info-card__text">Profils sur les réseaux sociaux</p>
+          <p class='contact-info-card__text'>Profils sur les réseaux sociaux</p>
         </article>
       </aside>
     </div>

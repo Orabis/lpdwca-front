@@ -1,22 +1,22 @@
 ---
-import { mainNavLinks } from "@/data/navigation";
+import { mainNavLinks } from '@/data/navigation'
 
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname
 ---
 
-<ul class="nav__menu" id="nav-menu">
+<ul
+  class='nav__menu'
+  id='nav-menu'
+>
   {
     mainNavLinks.map(({ href, label }) => (
-      <li class="nav__item">
+      <li class='nav__item'>
         <a
           href={href}
           class:list={[
-            "nav__link",
+            'nav__link',
             {
-              "nav__link--active":
-                href === "/"
-                  ? currentPath === "/"
-                  : currentPath.startsWith(href.replace(/\/$/, "")),
+              'nav__link--active': href === '/' ? currentPath === '/' : currentPath.startsWith(href.replace(/\/$/, '')),
             },
           ]}
         >

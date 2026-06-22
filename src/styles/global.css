@@ -5,22 +5,22 @@
    ========================================================================== */
 
 /* Fondations */
-@import "./tokens.css";
-@import "./base.css";
-@import "./icons.css";
-@import "./buttons.css";
+@import './tokens.css';
+@import './base.css';
+@import './icons.css';
+@import './buttons.css';
 
 /* Chrome du layout (header / footer) */
-@import "./header.css";
-@import "./footer.css";
+@import './header.css';
+@import './footer.css';
 
 /* Composants partagés */
-@import "./sections.css";
-@import "./page-header.css";
-@import "./cards.css";
+@import './sections.css';
+@import './page-header.css';
+@import './cards.css';
 
 /* Pages */
-@import "./home.css";
-@import "./licence.css";
-@import "./formation.css";
-@import "./contact-financement.css";
+@import './home.css';
+@import './licence.css';
+@import './formation.css';
+@import './contact-financement.css';

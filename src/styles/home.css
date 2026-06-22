@@ -223,14 +223,14 @@
 }
 
 .home-faq__toggle::before {
-  content: "+";
+  content: '+';
   font-size: 32px;
   font-weight: 300;
   line-height: 1;
 }
 
 .home-faq__item[open] .home-faq__toggle::before {
-  content: "×";
+  content: '×';
   font-size: 36px;
 }
 

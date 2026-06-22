@@ -1,46 +1,53 @@
 ---
 interface Props {
-  name: string;
-  quote: string;
-  href?: string;
-  avatarSrc?: string;
-  avatarAlt?: string;
+  name: string
+  quote: string
+  href?: string
+  avatarSrc?: string
+  avatarAlt?: string
 }
 
-const { name, quote, href = "#", avatarSrc, avatarAlt } = Astro.props;
+const { name, quote, href = '#', avatarSrc, avatarAlt } = Astro.props
 const initials = name
-  .split(" ")
+  .split(' ')
   .map((part) => part[0])
-  .join("")
+  .join('')
   .slice(0, 2)
-  .toUpperCase();
+  .toUpperCase()
 ---
 
-<article class="testimonial-card">
-  <blockquote class="testimonial-card__quote">
-    <p class="testimonial-card__text">{quote}</p>
+<article class='testimonial-card'>
+  <blockquote class='testimonial-card__quote'>
+    <p class='testimonial-card__text'>{quote}</p>
   </blockquote>
-  <footer class="testimonial-card__footer">
+  <footer class='testimonial-card__footer'>
     {
       avatarSrc && (
         <img
-          class="testimonial-card__avatar"
+          class='testimonial-card__avatar'
           src={avatarSrc}
           alt={avatarAlt ?? name}
-          width="60"
-          height="60"
-          loading="lazy"
+          width='60'
+          height='60'
+          loading='lazy'
         />
       )
     }
     {
       !avatarSrc && (
-        <span class="testimonial-card__avatar-placeholder" aria-hidden="true">
+        <span
+          class='testimonial-card__avatar-placeholder'
+          aria-hidden='true'
+        >
           {initials}
         </span>
       )
     }
-    <span class="testimonial-card__name">{name}</span>
-    <a class="testimonial-card__link" href={href}>Lire l'article complet</a>
+    <span class='testimonial-card__name'>{name}</span>
+    <a
+      class='testimonial-card__link'
+      href={href}
+      >Lire l'article complet</a
+    >
   </footer>
 </article>

@@ -28,7 +28,6 @@
   color: var(--color-text-body);
 }
 
-
 @media (min-width: 1024px) {
   .page-header__description {
     max-width: 480px;

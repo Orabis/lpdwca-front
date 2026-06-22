@@ -124,7 +124,7 @@
 
 .course-card__placeholder::before,
 .course-card__placeholder::after {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 18px;
   background: rgba(20, 33, 129, 0.08);
@@ -282,7 +282,6 @@
   color: var(--color-text-heading);
   white-space: nowrap;
 }
-
 
 @media (min-width: 768px) {
   .testimonials__grid {

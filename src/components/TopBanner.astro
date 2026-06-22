@@ -1,18 +1,21 @@
 ---
 interface Props {
-  title: string;
-  href: string;
-  text: string;
+  title: string
+  href: string
+  text: string
 }
-const { title, href, text } = Astro.props;
+const { title, href, text } = Astro.props
 ---
 
-<section class="site-header__banner">
-  <div class="banner">
-    <p class="banner__text">{title}</p>
-    <a class="banner__link" href={href} aria-label="Plus d'infos"
+<section class='site-header__banner'>
+  <div class='banner'>
+    <p class='banner__text'>{title}</p>
+    <a
+      class='banner__link'
+      href={href}
+      aria-label="Plus d'infos"
       >{text}
-      <span class="banner__icon"></span>
+      <span class='banner__icon'></span>
     </a>
   </div>
 </section>

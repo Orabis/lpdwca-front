@@ -1,21 +1,27 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import PageHeader from "@/components/ui/PageHeader.astro";
-import FormationTypeCard from "@/components/cards/FormationTypeCard.astro";
-import InfoCard from "@/components/cards/InfoCard.astro";
-import { formationTypes, infoCards } from "@/data/formation";
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import FormationTypeCard from '@/components/cards/FormationTypeCard.astro'
+import InfoCard from '@/components/cards/InfoCard.astro'
+import { formationTypes, infoCards } from '@/data/formation'
 ---
 
-<BaseLayout title="Formation — LPDWCA" pageClass="page--formation">
+<BaseLayout
+  title='Formation — LPDWCA'
+  pageClass='page--formation'
+>
   <PageHeader
-    title="Formation"
-    description="La Licence Professionnelle Développement Web est une formation 100% à distance. Deux manières différentes sont proposées pour réaliser la formation."
-    variant="formation"
-    headingId="formation-title"
+    title='Formation'
+    description='La Licence Professionnelle Développement Web est une formation 100% à distance. Deux manières différentes sont proposées pour réaliser la formation.'
+    variant='formation'
+    headingId='formation-title'
   />
 
-  <section class="formation-types" aria-label="Types de formation">
-    <div class="formation-types__grid">
+  <section
+    class='formation-types'
+    aria-label='Types de formation'
+  >
+    <div class='formation-types__grid'>
       {
         formationTypes.map((item) => (
           <FormationTypeCard
@@ -30,19 +36,20 @@ import { formationTypes, infoCards } from "@/data/formation";
   </section>
 
   <section
-    class="formation-section"
-    aria-labelledby="formation-continue-title"
+    class='formation-section'
+    aria-labelledby='formation-continue-title'
   >
-    <div class="formation-section__header">
-      <h2 class="formation-section__title" id="formation-continue-title">
+    <div class='formation-section__header'>
+      <h2
+        class='formation-section__title'
+        id='formation-continue-title'
+      >
         Formation continue
       </h2>
-      <p class="formation-section__description">
-        Organisez votre travail en fonction de votre emploi du temps.
-      </p>
+      <p class='formation-section__description'> Organisez votre travail en fonction de votre emploi du temps. </p>
     </div>
 
-    <div class="info-cards-grid">
+    <div class='info-cards-grid'>
       {
         infoCards.map((item) => (
           <InfoCard

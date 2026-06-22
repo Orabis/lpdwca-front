@@ -1,56 +1,50 @@
 ---
 interface Props {
-  title: string;
-  description: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  href?: string;
-  placeholderIcon?: string;
+  title: string
+  description: string
+  imageSrc?: string
+  imageAlt?: string
+  href?: string
+  placeholderIcon?: string
 }
 
-const {
-  title,
-  description,
-  imageSrc,
-  imageAlt = "",
-  href = "#",
-  placeholderIcon,
-} = Astro.props;
+const { title, description, imageSrc, imageAlt = '', href = '#', placeholderIcon } = Astro.props
 ---
 
-<article class="course-card">
+<article class='course-card'>
   {
     imageSrc && (
-      <div class="course-card__media">
+      <div class='course-card__media'>
         <img
-          class="course-card__img"
+          class='course-card__img'
           src={imageSrc}
           alt={imageAlt}
-          width="600"
-          height="338"
-          loading="lazy"
+          width='600'
+          height='338'
+          loading='lazy'
         />
       </div>
     )
   }
   {
     !imageSrc && placeholderIcon && (
-      <div class="course-card__placeholder" aria-hidden="true">
-        <span
-          class:list={[
-            "icon",
-            `icon--${placeholderIcon}`,
-            "course-card__placeholder-icon",
-          ]}
-        />
+      <div
+        class='course-card__placeholder'
+        aria-hidden='true'
+      >
+        <span class:list={['icon', `icon--${placeholderIcon}`, 'course-card__placeholder-icon']} />
       </div>
     )
   }
-  <div class="course-card__body">
-    <h3 class="course-card__title">{title}</h3>
-    <p class="course-card__desc">{description}</p>
+  <div class='course-card__body'>
+    <h3 class='course-card__title'>{title}</h3>
+    <p class='course-card__desc'>{description}</p>
   </div>
-  <div class="course-card__footer">
-    <a class="course-card__link" href={href}>En savoir plus</a>
+  <div class='course-card__footer'>
+    <a
+      class='course-card__link'
+      href={href}
+      >En savoir plus</a
+    >
   </div>
 </article>

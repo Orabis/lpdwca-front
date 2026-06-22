@@ -1,20 +1,22 @@
 ---
 interface Props {
-  title: string;
-  description: string;
-  question: string;
-  icon: string;
+  title: string
+  description: string
+  question: string
+  icon: string
 }
 
-const { title, description, question, icon } = Astro.props;
+const { title, description, question, icon } = Astro.props
 ---
 
-<article class="formation-type-card">
-  <span class="formation-type-card__icon-box" aria-hidden="true">
-    <span class:list={["icon", `icon--${icon}`, "formation-type-card__icon-svg"]}
-    ></span>
+<article class='formation-type-card'>
+  <span
+    class='formation-type-card__icon-box'
+    aria-hidden='true'
+  >
+    <span class:list={['icon', `icon--${icon}`, 'formation-type-card__icon-svg']}></span>
   </span>
-  <h2 class="formation-type-card__title">{title}</h2>
-  <p class="formation-type-card__description">{description}</p>
-  <p class="formation-type-card__question">{question}</p>
+  <h2 class='formation-type-card__title'>{title}</h2>
+  <p class='formation-type-card__description'>{description}</p>
+  <p class='formation-type-card__question'>{question}</p>
 </article>

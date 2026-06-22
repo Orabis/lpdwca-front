@@ -45,7 +45,7 @@
   filter: brightness(0) invert(1);
 }
 .banner__icon:after {
-  content: url("../assets/svg/right-arrow.svg");
+  content: url('../assets/svg/right-arrow.svg');
   display: block;
   width: 100%;
   height: 10px;
@@ -147,13 +147,13 @@
 }
 
 /* Animation en croix pilotée par l'état du bouton lui-même */
-.burger[aria-expanded="true"] .burger__bar:nth-child(1) {
+.burger[aria-expanded='true'] .burger__bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-.burger[aria-expanded="true"] .burger__bar:nth-child(2) {
+.burger[aria-expanded='true'] .burger__bar:nth-child(2) {
   opacity: 0;
 }
-.burger[aria-expanded="true"] .burger__bar:nth-child(3) {
+.burger[aria-expanded='true'] .burger__bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -234,4 +234,3 @@
     padding: 0;
   }
 }
-

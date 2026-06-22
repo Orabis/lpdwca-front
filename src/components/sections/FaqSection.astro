@@ -1,34 +1,43 @@
 ---
-import { faqItems } from "@/data/home";
+import { faqItems } from '@/data/home'
 ---
 
-<section class="home-faq section" id="faq">
-  <div class="home-faq__layout">
-    <div class="home-faq__intro">
-      <h2 class="home-faq__title">Questions fréquentes</h2>
-      <p class="home-faq__text">
-        Vous avez encore des questions ? Contactez notre équipe à l'adresse
-        support@lpdwca.fr.
+<section
+  class='home-faq section'
+  id='faq'
+>
+  <div class='home-faq__layout'>
+    <div class='home-faq__intro'>
+      <h2 class='home-faq__title'>Questions fréquentes</h2>
+      <p class='home-faq__text'>
+        Vous avez encore des questions ? Contactez notre équipe à l'adresse support@lpdwca.fr.
       </p>
-      <a class="home-faq__link" href="/contact/">Voir toutes les FAQ</a>
+      <a
+        class='home-faq__link'
+        href='/contact/'
+        >Voir toutes les FAQ</a
+      >
     </div>
 
-    <div class="home-faq__items" aria-label="Questions fréquentes">
+    <div
+      class='home-faq__items'
+      aria-label='Questions fréquentes'
+    >
       {
         faqItems.map((item, index) => (
           <details
-            class:list={[
-              "home-faq__item",
-              index === 0 && "home-faq__item--featured",
-            ]}
+            class:list={['home-faq__item', index === 0 && 'home-faq__item--featured']}
             open={index === 0}
           >
-            <summary class="home-faq__summary">
-              <span class="home-faq__question">{item.question}</span>
-              <span class="home-faq__toggle" aria-hidden="true" />
+            <summary class='home-faq__summary'>
+              <span class='home-faq__question'>{item.question}</span>
+              <span
+                class='home-faq__toggle'
+                aria-hidden='true'
+              />
             </summary>
-            <div class="home-faq__panel">
-              <p class="home-faq__answer">{item.answer}</p>
+            <div class='home-faq__panel'>
+              <p class='home-faq__answer'>{item.answer}</p>
             </div>
           </details>
         ))

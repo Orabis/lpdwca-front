@@ -1,32 +1,36 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import HomeHero from "@/components/sections/HomeHero.astro";
-import FaqSection from "@/components/sections/FaqSection.astro";
-import SectionBase from "@/components/ui/SectionBase.astro";
-import AdvantageCard from "@/components/cards/AdvantageCard.astro";
-import CourseCard from "@/components/cards/CourseCard.astro";
-import TestimonialCard from "@/components/cards/TestimonialCard.astro";
-import { advantages, courses, testimonials } from "@/data/home";
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import ArticleCarousel from '@/components/ArticleCarousel.astro'
+import HomeHero from '@/components/sections/HomeHero.astro'
+import FaqSection from '@/components/sections/FaqSection.astro'
+import SectionBase from '@/components/ui/SectionBase.astro'
+import AdvantageCard from '@/components/cards/AdvantageCard.astro'
+import CourseCard from '@/components/cards/CourseCard.astro'
+import TestimonialCard from '@/components/cards/TestimonialCard.astro'
+import { advantages, courses, testimonials } from '@/data/home'
 
 const sectionIntro =
-  "Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.";
+  'Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.'
+
+const articlesIntro =
+  'nt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus'
 ---
 
 <BaseLayout
-  title="Licence Professionnelle Développement Web Communication et Apprentissages"
-  pageClass="page--home"
+  title='Licence Professionnelle Développement Web Communication et Apprentissages'
+  pageClass='page--home'
 >
   <HomeHero />
 
   <SectionBase
-    id="avantages"
-    sectionClass="section--advantages"
-    title="Avantages"
+    id='avantages'
+    sectionClass='section--advantages'
+    title='Avantages'
     intro={sectionIntro}
-    actionLabel="Tout afficher"
-    actionHref="/licence/"
+    actionLabel='Tout afficher'
+    actionHref='/licence/'
   >
-    <div class="advantages__grid">
+    <div class='advantages__grid'>
       {
         advantages.map((item) => (
           <AdvantageCard
@@ -38,16 +42,25 @@ const sectionIntro =
       }
     </div>
   </SectionBase>
-
   <SectionBase
-    id="programme"
-    sectionClass="section--courses"
+    id='carousel'
+    sectionClass='carousel-section'
+    title='Les Dernières Nouvelles'
+    actionLabel='Voir les articles'
+    actionHref='/articles/'
+    intro={articlesIntro}
+  >
+    <ArticleCarousel limit={3} />
+  </SectionBase>
+  <SectionBase
+    id='programme'
+    sectionClass='section--courses'
     title="Le programme en un coup d'oeil"
     intro={sectionIntro}
-    actionLabel="Tout afficher"
-    actionHref="/formation/"
+    actionLabel='Tout afficher'
+    actionHref='/formation/'
   >
-    <div class="courses__grid">
+    <div class='courses__grid'>
       {
         courses.map((item) => (
           <CourseCard
@@ -63,14 +76,14 @@ const sectionIntro =
   </SectionBase>
 
   <SectionBase
-    id="temoignages"
-    sectionClass="section--testimonials"
-    title="Témoignages alumni"
+    id='temoignages'
+    sectionClass='section--testimonials'
+    title='Témoignages alumni'
     intro={sectionIntro}
-    actionLabel="Tout afficher"
-    actionHref="/licence/"
+    actionLabel='Tout afficher'
+    actionHref='/licence/'
   >
-    <div class="testimonials__grid">
+    <div class='testimonials__grid'>
       {
         testimonials.map((item) => (
           <TestimonialCard
