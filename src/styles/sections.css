@@ -100,18 +100,21 @@
   background: var(--color-bg-soft);
 }
 
+.section--carousel,
 .section--courses,
 .section--testimonials {
   padding-top: 82px;
   padding-bottom: 62px;
 }
 
+.section--carousel .section__header,
 .section--courses .section__header,
 .section--testimonials .section__header {
   gap: 18px;
   margin-bottom: 42px;
 }
 
+.section--carousel .section__intro h2,
 .section--courses .section__intro h2,
 .section--testimonials .section__intro h2 {
   margin-bottom: 10px;
@@ -120,6 +123,7 @@
   line-height: 1.08;
 }
 
+.section--carousel .section__intro p,
 .section--courses .section__intro p,
 .section--testimonials .section__intro p {
   max-width: 1120px;
@@ -128,6 +132,7 @@
   color: var(--color-text-soft);
 }
 
+.section--carousel .section__action,
 .section--courses .section__action,
 .section--testimonials .section__action {
   padding: 12px 18px;
@@ -141,12 +146,14 @@
 
 @media (min-width: 1024px) {
   .section--advantages .section__header,
+  .section--carousel .section__header,
   .section--courses .section__header,
   .section--testimonials .section__header {
     align-items: flex-start;
   }
 
   .section--advantages .section__action,
+  .section--carousel .section__action,
   .section--courses .section__action,
   .section--testimonials .section__action {
     margin-top: 16px;

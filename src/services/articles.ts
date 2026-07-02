@@ -66,14 +66,24 @@ export type Article = {
   blocks?: any[]
 }
 
-export type Articles = Article
+export type Pagination = {
+  page: number
+  pageSize: number
+  pageCount: number
+  total: number
+}
 
 export type ApiResponse<data> = {
   data: data
-  meta?: unknown
+  meta?: {
+    pagination?: Pagination
+  }
 }
 
 const baseApiUrl = import.meta.env.BASE_URL_API
+if (!baseApiUrl) {
+  throw new Error("La variable d'environnement BASE_URL_API est manquante (voir .env.example)")
+}
 export const STRAPI_URL = baseApiUrl.replace(/\/api\/?$/, '')
 
 const api: AxiosInstance = axios.create({
@@ -88,16 +98,32 @@ export function getImageUrl(url?: string): string {
   return `${STRAPI_URL}${url}`
 }
 
-export async function getArticles(): Promise<Article[] | null> {
+// Strapi pagine par défaut (25 éléments) : on parcourt toutes les pages
+// pour ne perdre aucun article dans le build statique.
+export async function getArticles(): Promise<Article[]> {
   try {
-    const response = await api.get<ApiResponse<Article[]>>(`/articles?populate=*`)
-    return response.data.data
+    const articles: Article[] = []
+    let page = 1
+    let pageCount = 1
+
+    do {
+      const response = await api.get<ApiResponse<Article[]>>('/articles', {
+        params: {
+          populate: '*',
+          sort: 'publishedAt:desc',
+          'pagination[page]': page,
+          'pagination[pageSize]': 100,
+        },
+      })
+      articles.push(...response.data.data)
+      pageCount = response.data.meta?.pagination?.pageCount ?? 1
+      page++
+    } while (page <= pageCount)
+
+    return articles
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.error('API Error:', error.message)
-    } else {
-      console.error('Erreur inatendue:', error)
-    }
-    return null
+    // On fait échouer le build plutôt que de publier un site sans articles.
+    const detail = axios.isAxiosError(error) ? error.message || error.code || 'erreur réseau' : String(error)
+    throw new Error(`Impossible de récupérer les articles depuis Strapi (${baseApiUrl}) : ${detail}`)
   }
 }

@@ -1,29 +1,20 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getArticles, getImageUrl, type Article } from '@/services/articles.ts'
+import { formatDate } from '@/utils/format-date.ts'
 import { marked } from 'marked'
 
 export async function getStaticPaths() {
   const articles = await getArticles()
-  return (
-    articles?.map((article) => {
-      return {
-        params: { article: article.slug },
-        props: { data: article },
-      }
-    }) || []
-  )
+  return articles.map((article) => {
+    return {
+      params: { article: article.slug },
+      props: { data: article },
+    }
+  })
 }
 
 const { data } = Astro.props as { data: Article }
-
-const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
 
 const parsedBlocks = data.blocks
   ? await Promise.all(
@@ -39,7 +30,7 @@ const parsedBlocks = data.blocks
     )
   : []
 
-const coverUrl = data.cover ? getImageUrl(data.cover.url) : null
+const coverUrl = data.cover ? getImageUrl(data.cover.formats?.large?.url ?? data.cover.url) : null
 ---
 
 <BaseLayout title={`LPDWCA | ${data.title}`}>
@@ -106,7 +97,7 @@ const coverUrl = data.cover ? getImageUrl(data.cover.url) : null
             <div class='article-cover-container'>
               <img
                 src={coverUrl}
-                alt={data.title}
+                alt={data.cover?.alternativeText || data.title}
                 class='article-cover-image'
               />
             </div>

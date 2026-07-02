@@ -1,16 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getArticles, getImageUrl } from '@/services/articles.ts'
+import { formatDate } from '@/utils/format-date.ts'
 
 const articles = await getArticles()
-
-const formatDate = (dateStr: string) => {
-  return new Date(dateStr).toLocaleDateString('fr-FR', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-}
 ---
 
 <BaseLayout title='LPDWCA | Articles'>
@@ -24,10 +17,11 @@ const formatDate = (dateStr: string) => {
     </header>
 
     {
-      articles && articles.length > 0 ? (
+      articles.length > 0 ? (
         <div class='articles-grid'>
           {articles.map((article) => {
-            const coverUrl = article.cover ? getImageUrl(article.cover.url) : null
+            const cover = article.cover
+            const coverUrl = cover ? getImageUrl(cover.formats?.small?.url ?? cover.formats?.medium?.url ?? cover.url) : null
             return (
               <article class='article-card'>
                 <a
@@ -38,7 +32,7 @@ const formatDate = (dateStr: string) => {
                     {coverUrl ? (
                       <img
                         src={coverUrl}
-                        alt={article.title}
+                        alt={cover?.alternativeText || article.title}
                         class='article-card__image'
                         loading='lazy'
                       />
