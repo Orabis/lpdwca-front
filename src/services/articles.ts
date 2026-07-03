@@ -80,17 +80,20 @@ export type ApiResponse<data> = {
   }
 }
 
-const baseApiUrl = import.meta.env.BASE_URL_API
-if (!baseApiUrl) {
-  throw new Error("La variable d'environnement BASE_URL_API est manquante (voir .env.example)")
-}
-export const STRAPI_URL = baseApiUrl.replace(/\/api\/?$/, '')
+const baseApiUrl = import.meta.env.BASE_URL_API?.trim() ?? ''
+const apiToken = import.meta.env.TOKEN_API?.trim() ?? ''
 
-const api: AxiosInstance = axios.create({
-  baseURL: baseApiUrl,
-  timeout: 10000,
-  headers: { Authorization: `Bearer ${import.meta.env.TOKEN_API}` },
-})
+export const STRAPI_URL = baseApiUrl ? baseApiUrl.replace(/\/api\/?$/, '') : ''
+export const hasStrapiConfig = Boolean(baseApiUrl && apiToken)
+let hasWarnedMissingStrapiConfig = false
+
+const api: AxiosInstance | null = hasStrapiConfig
+  ? axios.create({
+      baseURL: baseApiUrl,
+      timeout: 10000,
+      headers: { Authorization: `Bearer ${apiToken}` },
+    })
+  : null
 
 export function getImageUrl(url?: string): string {
   if (!url) return ''
@@ -101,6 +104,16 @@ export function getImageUrl(url?: string): string {
 // Strapi pagine par défaut (25 éléments) : on parcourt toutes les pages
 // pour ne perdre aucun article dans le build statique.
 export async function getArticles(): Promise<Article[]> {
+  if (!api) {
+    if (!hasWarnedMissingStrapiConfig) {
+      console.warn(
+        "Les variables d'environnement BASE_URL_API et TOKEN_API sont absentes ou incomplètes : le front continue sans articles."
+      )
+      hasWarnedMissingStrapiConfig = true
+    }
+    return []
+  }
+
   try {
     const articles: Article[] = []
     let page = 1

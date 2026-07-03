@@ -8,6 +8,7 @@ import AdvantageCard from '@/components/cards/AdvantageCard.astro'
 import CourseCard from '@/components/cards/CourseCard.astro'
 import TestimonialCard from '@/components/cards/TestimonialCard.astro'
 import { advantages, courses, testimonials } from '@/data/home'
+import { hasStrapiConfig } from '@/services/articles'
 
 const sectionIntro =
   'Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.'
@@ -42,16 +43,20 @@ const articlesIntro =
       }
     </div>
   </SectionBase>
-  <SectionBase
-    id='carousel'
-    sectionClass='section--carousel'
-    title='Les Dernières Nouvelles'
-    actionLabel='Voir les articles'
-    actionHref='/articles/'
-    intro={articlesIntro}
-  >
-    <ArticleCarousel limit={3} />
-  </SectionBase>
+  {
+    hasStrapiConfig && (
+      <SectionBase
+        id='carousel'
+        sectionClass='section--carousel'
+        title='Les Dernières Nouvelles'
+        actionLabel='Voir les articles'
+        actionHref='/articles/'
+        intro={articlesIntro}
+      >
+        <ArticleCarousel limit={3} />
+      </SectionBase>
+    )
+  }
   <SectionBase
     id='programme'
     sectionClass='section--courses'
