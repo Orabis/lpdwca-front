@@ -2,7 +2,17 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ProgramCard from "@/components/cards/ProgramCard.astro";
 import CurriculumCard from "@/components/cards/CurriculumCard.astro";
-import { programDomains, semesters } from "@/data/licence";
+import ScientificLeadCard from "@/components/cards/ScientificLeadCard.astro";
+import LicencePanel from "@/components/cards/LicencePanel.astro";
+import InsertionStatsCard from "@/components/cards/InsertionStatsCard.astro";
+import {
+  programDomains,
+  semesters,
+  scientificLeads,
+  organisationPanels,
+  afterGraduationPanels,
+  insertionStats,
+} from "@/data/licence";
 ---
 
 <BaseLayout
@@ -115,6 +125,68 @@ import { programDomains, semesters } from "@/data/licence";
           </div>
         ))
       }
+    </div>
+  </section>
+
+  <section class="leads" aria-labelledby="leads-title">
+    <div class="leads__inner">
+      <h2 class="leads__title" id="leads-title">Les responsables scientifiques</h2>
+      <div class="leads__grid">
+        {
+          scientificLeads.map((lead) => (
+            <ScientificLeadCard
+              name={lead.name}
+              role={lead.role}
+              imageSrc={lead.imageSrc}
+              imageAlt={lead.imageAlt}
+              align={lead.align}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="organisation" aria-labelledby="organisation-title">
+    <div class="organisation__inner">
+      <h2 class="organisation__title" id="organisation-title">Organisation</h2>
+      <div class="licence-panels-grid">
+        {
+          organisationPanels.map((panel) => (
+            <LicencePanel blocks={panel.blocks} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="after-graduation" aria-labelledby="after-graduation-title">
+    <div class="after-graduation__inner">
+      <h2 class="after-graduation__title" id="after-graduation-title">
+        Et après ?
+      </h2>
+      <div class="licence-panels-grid">
+        {
+          afterGraduationPanels.map((panel) => (
+            <LicencePanel blocks={panel.blocks} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="insertion" aria-labelledby="insertion-title">
+    <div class="insertion__inner">
+      <h2 class="insertion__title" id="insertion-title">
+        {insertionStats.title}
+      </h2>
+      <InsertionStatsCard
+        title={insertionStats.title}
+        intro={insertionStats.intro}
+        stats={insertionStats.stats}
+        href={insertionStats.href}
+        linkLabel={insertionStats.linkLabel}
+      />
     </div>
   </section>
 </BaseLayout>

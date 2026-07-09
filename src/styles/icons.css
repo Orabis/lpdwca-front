@@ -63,4 +63,7 @@
 .icon--formation-continue {
   background-image: url("../assets/svg/formation-continue.svg");
 }
+.icon--chart-bar {
+  background-image: url("../assets/svg/chart-bar.svg");
+}
 
