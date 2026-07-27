@@ -1,55 +1,45 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import ProgramCard from '@/components/cards/ProgramCard.astro'
-import CurriculumCard from '@/components/cards/CurriculumCard.astro'
-import { programDomains, semesters } from '@/data/licence'
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ProgramCard from "@/components/cards/ProgramCard.astro";
+import CurriculumCard from "@/components/cards/CurriculumCard.astro";
+import ScientificLeadCard from "@/components/cards/ScientificLeadCard.astro";
+import LicencePanel from "@/components/cards/LicencePanel.astro";
+import InsertionStatsCard from "@/components/cards/InsertionStatsCard.astro";
+import {
+  programDomains,
+  semesters,
+  scientificLeads,
+  organisationPanels,
+  afterGraduationPanels,
+  insertionStats,
+} from "@/data/licence";
+import PageHeader from "@/components/ui/PageHeader.astro";
 ---
 
 <BaseLayout
-  title='Licence Professionnelle Développement Web Communication et Apprentissages'
-  pageClass='page--licence'
+  title="Licence Professionnelle Développement Web Communication et Apprentissages"
+  pageClass="page--licence"
 >
-  <section
-    class='hero'
-    aria-labelledby='hero-title'
-  >
-    <div class='hero__inner'>
-      <h1
-        class='hero__title'
-        id='hero-title'
-        >Licence</h1
-      >
-      <p class='hero__text'>
-        La <strong>Licence Professionnelle Développement Web, Communication et Apprentissages</strong> (DWCA) de l'Université
-        de Strasbourg est une formation <strong>100% à distance</strong> alliant <strong
-          >développement web, communication digitale</strong
-        > et
-        <strong>apprentissages numériques</strong>.<br />Axée sur la pratique, elle prépare les étudiants aux métiers du
-        multimédia en pleine expansion.<br />Accessible en <strong>apprentissage</strong>, en <strong
-          >formation initiale</strong
-        > ou <strong>continue</strong>, cette licence offre une approche flexible et professionnalisante, répondant aux
-        besoins actuels du marché numérique.
-      </p>
-    </div>
-  </section>
+  <PageHeader
+    title='Licence'
+    description="100% à distance alliant développement web, communication digitale et apprentissages numériques.Axée sur la pratique, elle prépare les étudiants aux métiers du multimédia en pleine expansion.Accessible en apprentissage, en formation initiale ou continue "
+    variant='split'
+    headingId='licence-title'
+  />
 
-  <section
-    class='program'
-    aria-labelledby='program-title'
-  >
-    <div class='program__inner'>
-      <header class='program__header'>
-        <h2
-          class='program__title'
-          id='program-title'
-        >
+
+  <section class="program" aria-labelledby="program-title">
+    <div class="program__inner">
+      <header class="program__header">
+        <h2 class="program__title" id="program-title">
           Le programme en un coup d'oeil
         </h2>
-        <p class='program__intro'>
-          Le programme de la licence est déclinée en 10 unités d'enseignement qui couvrent trois domaines principaux.
+        <p class="program__intro">
+          Le programme de la licence est déclinée en 10 unités d'enseignement
+          qui couvrent trois domaines principaux.
         </p>
       </header>
-      <div class='program__cards'>
+      <div class="program__cards">
         {
           programDomains.map((domain) => (
             <ProgramCard
@@ -61,62 +51,51 @@ import { programDomains, semesters } from '@/data/licence'
           ))
         }
       </div>
-      <a
-        class='program__cta'
-        href='#'
-      >
-        <span class='program__cta-text'>En savoir plus</span>
+      <a class="program__cta" href="#">
+        <span class="program__cta-text">En savoir plus</span>
         <span
-          class='icon icon--arrow-right program__cta-icon'
-          aria-hidden='true'
-        ></span>
+          class="icon icon--arrow-right program__cta-icon"
+          aria-hidden="true"></span>
       </a>
     </div>
   </section>
 
-  <section
-    class='objectives'
-    aria-labelledby='objectives-title'
-  >
-    <div class='objectives__inner'>
-      <h2
-        class='objectives__title'
-        id='objectives-title'
-        >Objectifs</h2
-      >
-      <p class='objectives__text'>
-        La <strong>Licence Professionnelle DWCA</strong> forme des professionnels polyvalents pour le secteur numérique. Notre
-        programme vise à maîtriser le développement web front-end et back-end, tout en acquérant des compétences en <strong
-          >communication digitale</strong
-        > et
-        <strong>gestion de projet</strong>. Les étudiants approfondissent leur compréhension des enjeux liés aux <strong
+  <section class="objectives" aria-labelledby="objectives-title">
+    <div class="objectives__inner">
+      <h2 class="objectives__title" id="objectives-title">Objectifs</h2>
+      <p class="objectives__text">
+        La <strong>Licence Professionnelle DWCA</strong> forme des
+        professionnels polyvalents pour le secteur numérique. Notre programme
+        vise à maîtriser le développement web front-end et back-end, tout en
+        acquérant des compétences en <strong>communication digitale</strong> et
+        <strong>gestion de projet</strong>. Les étudiants approfondissent leur
+        compréhension des enjeux liés aux <strong
           >apprentissages numériques</strong
-        > et au <strong>e-learning</strong>, développent une expertise en <strong>conception graphique</strong> et <strong
-          >expérience utilisateur</strong
-        >, et se préparent à s'adapter aux évolutions rapides du secteur. Cette formation pratique et complète permet
-        aux diplômés d'intégrer efficacement le marché du travail ou d'évoluer dans leur carrière actuelle.
+        > et au <strong>e-learning</strong>, développent une expertise en <strong
+          >conception graphique</strong
+        > et <strong>expérience utilisateur</strong>, et se préparent à
+        s'adapter aux évolutions rapides du secteur. Cette formation pratique
+        et complète permet aux diplômés d'intégrer efficacement le marché du
+        travail ou d'évoluer dans leur carrière actuelle.
       </p>
     </div>
   </section>
 
-  <section
-    class='curriculum'
-    aria-labelledby='curriculum-title'
-  >
-    <div class='curriculum__inner'>
-      <h2
-        class='curriculum__title'
-        id='curriculum-title'
-      >
+  <section class="curriculum" aria-labelledby="curriculum-title">
+    <div class="curriculum__inner">
+      <h2 class="curriculum__title" id="curriculum-title">
         Les enseignements en détail
       </h2>
 
       {
         semesters.map((semester) => (
-          <div class='curriculum__semester'>
+          <div class="curriculum__semester">
             <div
-              class:list={['curriculum__grid', `curriculum__grid--${semester.gridModifier}`]}
-              role='list'
+              class:list={[
+                "curriculum__grid",
+                `curriculum__grid--${semester.gridModifier}`,
+              ]}
+              role="list"
               aria-label={semester.ariaLabel}
             >
               {semester.ues.map((ue) => (
@@ -130,10 +109,72 @@ import { programDomains, semesters } from '@/data/licence'
                 />
               ))}
             </div>
-            <p class='curriculum__semester-label'>{semester.label}</p>
+            <p class="curriculum__semester-label">{semester.label}</p>
           </div>
         ))
       }
+    </div>
+  </section>
+
+  <section class="leads" aria-labelledby="leads-title">
+    <div class="leads__inner">
+      <h2 class="leads__title" id="leads-title">Les responsables scientifiques</h2>
+      <div class="leads__grid">
+        {
+          scientificLeads.map((lead) => (
+            <ScientificLeadCard
+              name={lead.name}
+              role={lead.role}
+              imageSrc={lead.imageSrc}
+              imageAlt={lead.imageAlt}
+              align={lead.align}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="organisation" aria-labelledby="organisation-title">
+    <div class="organisation__inner">
+      <h2 class="organisation__title" id="organisation-title">Organisation</h2>
+      <div class="licence-panels-grid">
+        {
+          organisationPanels.map((panel) => (
+            <LicencePanel blocks={panel.blocks} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="after-graduation" aria-labelledby="after-graduation-title">
+    <div class="after-graduation__inner">
+      <h2 class="after-graduation__title" id="after-graduation-title">
+        Et après ?
+      </h2>
+      <div class="licence-panels-grid">
+        {
+          afterGraduationPanels.map((panel) => (
+            <LicencePanel blocks={panel.blocks} />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="insertion" aria-labelledby="insertion-title">
+    <div class="insertion__inner">
+      <h2 class="insertion__title" id="insertion-title">
+        {insertionStats.title}
+      </h2>
+      <InsertionStatsCard
+        title={insertionStats.title}
+        intro={insertionStats.intro}
+        stats={insertionStats.stats}
+        href={insertionStats.href}
+        linkLabel={insertionStats.linkLabel}
+      />
     </div>
   </section>
 </BaseLayout>

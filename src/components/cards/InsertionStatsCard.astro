@@ -1,0 +1,33 @@
+---
+interface Props {
+  title: string;
+  intro: string;
+  stats: string[];
+  href?: string;
+  linkLabel?: string;
+}
+
+const {
+  title,
+  intro,
+  stats,
+  href = "#",
+  linkLabel = "Consulter les données",
+} = Astro.props;
+---
+
+<article class="insertion-stats">
+  <span class="insertion-stats__icon" aria-hidden="true"></span>
+  <h3 class="insertion-stats__title">{title}</h3>
+  <p class="insertion-stats__intro">{intro}</p>
+  <ul class="insertion-stats__list">
+    {stats.map((stat) => <li class="insertion-stats__item">{stat}</li>)}
+  </ul>
+  <a class="insertion-stats__link" href={href}>
+    <span class="insertion-stats__link-text">{linkLabel}</span>
+    <span
+      class="icon icon--arrow-right insertion-stats__link-icon"
+      aria-hidden="true"
+    ></span>
+  </a>
+</article>

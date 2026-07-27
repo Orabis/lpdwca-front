@@ -1,0 +1,42 @@
+---
+import type { LicencePanelBlock } from "@/data/licence";
+
+interface Props {
+  blocks: LicencePanelBlock[];
+}
+
+const { blocks } = Astro.props;
+---
+
+<article class="licence-panel">
+  {
+    blocks.map((block) => (
+      <div class="licence-panel__block">
+        <h3 class="licence-panel__title">
+          {
+            block.mobileTitle ? (
+              <>
+                <span class="licence-panel__title-desktop">{block.title}</span>
+                <span class="licence-panel__title-mobile">
+                  {block.mobileTitle}
+                </span>
+              </>
+            ) : (
+              block.title
+            )
+          }
+        </h3>
+        {block.paragraphs?.map((paragraph) => (
+          <p class="licence-panel__text">{paragraph}</p>
+        ))}
+        {block.items && (
+          <ul class="licence-panel__list">
+            {block.items.map((item) => (
+              <li class="licence-panel__item">{item}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))
+  }
+</article>

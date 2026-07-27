@@ -1,0 +1,30 @@
+---
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  name: string;
+  role: string;
+  imageSrc: ImageMetadata;
+  imageAlt: string;
+  align?: "left" | "right";
+}
+
+const { name, role, imageSrc, imageAlt, align = "left" } = Astro.props;
+---
+
+<article
+  class:list={["lead-card", `lead-card--align-${align}`]}
+>
+  <img
+    class="lead-card__photo"
+    src={imageSrc.src}
+    alt={imageAlt}
+    width="120"
+    height="120"
+    loading="lazy"
+  />
+  <div class="lead-card__content">
+    <h3 class="lead-card__name">{name}</h3>
+    <p class="lead-card__role">{role}</p>
+  </div>
+</article>
