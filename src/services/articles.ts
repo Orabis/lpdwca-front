@@ -135,8 +135,7 @@ export async function getArticles(): Promise<Article[]> {
 
     return articles
   } catch (error) {
-    // On fait échouer le build plutôt que de publier un site sans articles.
-    const detail = axios.isAxiosError(error) ? error.message || error.code || 'erreur réseau' : String(error)
-    throw new Error(`Impossible de récupérer les articles depuis Strapi (${baseApiUrl}) : ${detail}`)
+    console.error('Erreur lors de la récupération des articles:', error)
+    return []
   }
 }
