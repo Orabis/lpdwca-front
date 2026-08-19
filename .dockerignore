@@ -1,0 +1,10 @@
+.pnpm-store
+dist
+.astro
+npm-debug.log
+.idea
+.env
+README.md
+.editorconfig
+.prettierrc.json
+node_modules
