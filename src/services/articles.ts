@@ -80,8 +80,8 @@ export type ApiResponse<data> = {
   }
 }
 
-const baseApiUrl = import.meta.env.BASE_URL_API?.trim() ?? ''
-const apiToken = import.meta.env.TOKEN_API?.trim() ?? ''
+const baseApiUrl = (process.env.BASE_URL_API || import.meta.env.BASE_URL_API)?.trim() ?? ''
+const apiToken = (process.env.TOKEN_API || import.meta.env.TOKEN_API)?.trim() ?? ''
 
 export const STRAPI_URL = baseApiUrl ? baseApiUrl.replace(/\/api\/?$/, '') : ''
 export const hasStrapiConfig = Boolean(baseApiUrl && apiToken)
