@@ -1,0 +1,19 @@
+[
+  {
+    "id": "rebuild-front",
+    "execute-command": "/opt/lpdwca-deploy/rebuild-front.sh",
+    "command-working-directory": "/opt/lpdwca-deploy",
+    "response-message": "Reconstruction du front lancée.",
+    "include-command-output-in-response": false,
+    "trigger-rule": {
+      "match": {
+        "type": "value",
+        "value": "CHANGER-CE-SECRET",
+        "parameter": {
+          "source": "header",
+          "name": "X-Webhook-Secret"
+        }
+      }
+    }
+  }
+]
