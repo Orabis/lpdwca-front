@@ -11,6 +11,7 @@ import { getUiLabels } from "@/services/ui-labels";
 import type { LicencePanelBlock } from "@/data/licence";
 import ericPhoto from "@/assets/images/Eric.png";
 import marcTrestiniPhoto from "@/assets/images/Marc_Trestini.jpg";
+import type { ImageMetadata } from "astro";
 
 const c = (await getPageContent<any>("licence-page", {
   "populate[header]": true,
@@ -90,7 +91,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
       </header>
       <div class="program__cards">
         {
-          programDomains.map((domain) => (
+          programDomains.map((domain: { icon: string; title: string; description: string; href: string | undefined; }) => (
             <ProgramCard
               icon={domain.icon}
               title={domain.title}
@@ -121,7 +122,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
       <h2 class="curriculum__title" id="curriculum-title">{c.curriculumTitle}</h2>
 
       {
-        semesters.map((semester) => (
+        semesters.map((semester: { gridModifier: any; ariaLabel: string | null | undefined; ues: { ue: string; icon: string; title: string; lines: string[]; short: boolean | undefined; offset: "top" | "bottom" | undefined; }[]; label: unknown; }) => (
           <div class="curriculum__semester">
             <div
               class:list={[
@@ -131,7 +132,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
               role="list"
               aria-label={semester.ariaLabel}
             >
-              {semester.ues.map((ue) => (
+              {semester.ues.map((ue: { ue: string; icon: string; title: string; lines: string[]; short: boolean | undefined; offset: "top" | "bottom" | undefined; }) => (
                 <CurriculumCard
                   ue={ue.ue}
                   icon={ue.icon}
@@ -172,7 +173,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
       </h2>
       <div class="leads__grid">
         {
-          scientificLeads.map((lead) => (
+          scientificLeads.map((lead: { name: string; role: string; imageSrc: ImageMetadata; imageAlt: string; align: "right" |"left" | undefined; }) => (
             <ScientificLeadCard
               name={lead.name}
               role={lead.role}
@@ -191,7 +192,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
       <h2 class="organisation__title" id="organisation-title">{c.organisationTitle}</h2>
       <div class="licence-panels-grid">
         {
-          organisationPanels.map((panel) => (
+          organisationPanels.map((panel: { blocks: LicencePanelBlock[]; }) => (
             <LicencePanel blocks={panel.blocks} />
           ))
         }
@@ -204,7 +205,7 @@ const scientificLeads = (c.leads ?? []).map((l: any) => ({
       <h2 class="after-graduation__title" id="after-graduation-title">{c.afterTitle}</h2>
       <div class="licence-panels-grid">
         {
-          afterGraduationPanels.map((panel) => (
+          afterGraduationPanels.map((panel: { blocks: LicencePanelBlock[]; }) => (
             <LicencePanel blocks={panel.blocks} />
           ))
         }

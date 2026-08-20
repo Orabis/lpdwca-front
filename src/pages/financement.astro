@@ -65,7 +65,7 @@ const extraOptions = (c.extraOptions ?? []).map((i: any) => i.label)
     <div class='financement-panel financement-panel--primary'>
       <div class='financement-grid'>
         {
-          fundingColumns.map((column) => (
+          fundingColumns.map((column: { title: string; items: string[] }) => (
             <FundingCard
               title={column.title}
               items={column.items}
