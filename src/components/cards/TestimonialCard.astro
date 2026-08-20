@@ -7,7 +7,10 @@ interface Props {
   avatarAlt?: string
 }
 
-const { name, quote, href = '#', avatarSrc, avatarAlt } = Astro.props
+import { getUiLabels } from '@/services/ui-labels'
+
+const { name, quote, href = '/alumni/', avatarSrc, avatarAlt } = Astro.props
+const labels = await getUiLabels()
 const initials = name
   .split(' ')
   .map((part) => part[0])
@@ -26,7 +29,7 @@ const initials = name
         <img
           class='testimonial-card__avatar'
           src={avatarSrc}
-          alt={avatarAlt ?? name}
+          alt={avatarAlt ?? name}
           width='60'
           height='60'
           loading='lazy'
@@ -47,7 +50,7 @@ const initials = name
     <a
       class='testimonial-card__link'
       href={href}
-      >Lire l'article complet</a
+      >{labels.readArticle}</a
     >
   </footer>
 </article>

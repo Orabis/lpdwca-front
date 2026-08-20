@@ -3,16 +3,33 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import PageHeader from '@/components/ui/PageHeader.astro'
 import FormationTypeCard from '@/components/cards/FormationTypeCard.astro'
 import InfoCard from '@/components/cards/InfoCard.astro'
-import { formationTypes, infoCards } from '@/data/formation'
+import CtaBand from '@/components/ui/CtaBand.astro'
+import { getPageContent } from '@/services/pages'
+
+const c = (await getPageContent<any>('formation-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[cta]': true,
+  'populate[types]': true,
+  'populate[continuingCards][populate][items]': true,
+  'populate[apprenticeshipCards][populate][items]': true,
+})) as any
+
+const formationTypes = c.types ?? []
+const toCards = (cards: any[]) =>
+  (cards ?? []).map((k: any) => ({ ...k, items: (k.items ?? []).map((i: any) => i.text) }))
+const infoCards = toCards(c.continuingCards)
+const apprenticeshipCards = toCards(c.apprenticeshipCards)
 ---
 
 <BaseLayout
-  title='Formation — LPDWCA'
+  title={c.seo?.metaTitle ?? 'Formation'}
+  description={c.seo?.metaDescription}
   pageClass='page--formation'
 >
   <PageHeader
-    title='Formation'
-    description='La Licence Professionnelle Développement Web est une formation 100% à distance. Deux manières différentes sont proposées pour réaliser la formation.'
+    title={c.header.title}
+    description={c.header.description}
     variant='formation'
     headingId='formation-title'
   />
@@ -44,9 +61,9 @@ import { formationTypes, infoCards } from '@/data/formation'
         class='formation-section__title'
         id='formation-continue-title'
       >
-        Formation continue
+        {c.continuingTitle}
       </h2>
-      <p class='formation-section__description'> Organisez votre travail en fonction de votre emploi du temps. </p>
+      <p class='formation-section__description'>{c.continuingDescription}</p>
     </div>
 
     <div class='info-cards-grid'>
@@ -62,4 +79,46 @@ import { formationTypes, infoCards } from '@/data/formation'
       }
     </div>
   </section>
+  <section
+    class='formation-section'
+    id='formation-initiale'
+    aria-labelledby='formation-initiale-title'
+  >
+    <div class='formation-section__header'>
+      <h2
+        class='formation-section__title'
+        id='formation-initiale-title'
+      >
+        {c.apprenticeshipTitle}
+      </h2>
+      <p class='formation-section__description'>{c.apprenticeshipDescription}</p>
+    </div>
+
+    <div class='info-cards-grid'>
+      {
+        apprenticeshipCards.map((item: any) => (
+          <InfoCard
+            title={item.title}
+            icon={item.icon}
+            items={item.items}
+            ordered={item.ordered}
+          />
+        ))
+      }
+    </div>
+
+    <p class='candidature-section__note'>
+      <strong>{c.companyBoxTitle}</strong> {c.companyBoxText} <a href={c.companyBoxCtaHref}>{c.companyBoxCtaLabel}</a>
+    </p>
+  </section>
+
+  <CtaBand
+    title={c.cta.title}
+    text={c.cta.text}
+    primaryLabel={c.cta.primaryLabel}
+    primaryHref={c.cta.primaryHref}
+    secondaryLabel={c.cta.secondaryLabel}
+    secondaryHref={c.cta.secondaryHref}
+    headingId='formation-cta-title'
+  />
 </BaseLayout>

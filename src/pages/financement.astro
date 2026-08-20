@@ -2,16 +2,31 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import PageHeader from '@/components/ui/PageHeader.astro'
 import FundingCard from '@/components/cards/FundingCard.astro'
-import { fundingColumns, extraOptions } from '@/data/financement'
+import { getPageContent } from '@/services/pages'
+
+const c = (await getPageContent<any>('financement-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[fundingColumns][populate][items]': true,
+  'populate[extraOptions]': true,
+  'populate[apprenticeshipColumns][populate][items]': true,
+})) as any
+
+const fundingColumns = (c.fundingColumns ?? []).map((col: any) => ({
+  title: col.title,
+  items: (col.items ?? []).map((i: any) => i.label),
+}))
+const extraOptions = (c.extraOptions ?? []).map((i: any) => i.label)
 ---
 
 <BaseLayout
-  title='Financement — LPDWCA'
+  title={c.seo?.metaTitle ?? 'Financement'}
+  description={c.seo?.metaDescription}
   pageClass='page--financement'
 >
   <PageHeader
-    title='Financement'
-    description="Le financement varie en fonction du type de formation suivie, qu'il s'agisse de formation initiale ou continue. Référez-vous à la section qui vous concerne."
+    title={c.header.title}
+    description={c.header.description}
     variant='split'
     headingId='financement-title'
   />
@@ -22,21 +37,21 @@ import { fundingColumns, extraOptions } from '@/data/financement'
   >
     <div
       class='financement-switch'
-      aria-label='Type de formation'
+      aria-label={c.switchAriaLabel}
     >
       <button
         class='financement-switch__button financement-switch__button--active'
         type='button'
         aria-pressed='true'
       >
-        Formation continue
+        {c.switchContinuingLabel}
       </button>
       <button
         class='financement-switch__button'
         type='button'
         aria-pressed='false'
       >
-        Formation initiale
+        {c.switchApprenticeshipLabel}
       </button>
     </div>
 
@@ -44,9 +59,7 @@ import { fundingColumns, extraOptions } from '@/data/financement'
       class='financement-section__intro'
       id='financement-options-title'
     >
-      Le coût de la formation est de 5610 €. Il peut être pris en charge : explorez toutes les pistes de financement
-      avant d'opter pour un financement personnel. Nous vous conseillons de commencer les démarches le plus tôt
-      possible.
+      {c.continuingIntro}
     </p>
 
     <div class='financement-panel financement-panel--primary'>
@@ -64,7 +77,7 @@ import { fundingColumns, extraOptions } from '@/data/financement'
 
     <div class='financement-panel financement-panel--secondary'>
       <FundingCard
-        title='Autres options'
+        title={c.extraTitle}
         items={extraOptions}
         wide
       />

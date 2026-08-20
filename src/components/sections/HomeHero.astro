@@ -1,8 +1,11 @@
 ---
 import Button from '@/components/ui/Button.astro'
+import { getHomeContent } from '@/services/home'
 import heroImage from '@/assets/images/woman-programming-3597101.jpg'
 import heroLogosDesktop from '@/assets/images/home/logos/hero-logos-desktop.png'
 import heroLogosMobile from '@/assets/images/home/logos/hero-logos-mobile.png'
+
+const { hero, partnersTitle } = await getHomeContent()
 ---
 
 <section
@@ -14,37 +17,37 @@ import heroLogosMobile from '@/assets/images/home/logos/hero-logos-mobile.png'
       class='home-hero__title'
       id='home-hero-title'
     >
-      <span class='home-hero__title-accent'>Boostez</span> Votre carrière avec une formation universitaire
+      <span class='home-hero__title-accent'>{hero.accentWord}</span> {hero.title}
     </h1>
-    <p class='home-hero__text'> en développement web et communication numérique 100% en distanciel. </p>
-    <p class='home-hero__subtext'> Apprenez auprès d'experts du secteur et améliorez vos compétences. </p>
+    <p class='home-hero__text'>{hero.text}</p>
+    <p class='home-hero__subtext'>{hero.subtext}</p>
 
     <div class='home-hero__actions'>
-      <Button href='/formation/'>Découvrez la formation</Button>
+      <Button href={hero.ctaPrimaryHref}>{hero.ctaPrimaryLabel}</Button>
       <Button
-        href='/licence/'
+        href={hero.ctaSecondaryHref}
         variant='outline'
-        >Programme</Button
+        >{hero.ctaSecondaryLabel}</Button
       >
     </div>
 
     <div
       class='home-hero__logos'
-      aria-label='Logos de partenaires et outils'
+      aria-label={partnersTitle ?? 'Logos de partenaires'}
     >
       <img
         class='home-hero__logos-image home-hero__logos-image--desktop'
         src={heroLogosDesktop.src}
         width='2580'
         height='270'
-        alt='Zapier, Spotify, Zoom, Amazon, Adobe, Notion et Netflix'
+        alt={hero.logosAlt}
       />
       <img
         class='home-hero__logos-image home-hero__logos-image--mobile'
         src={heroLogosMobile.src}
         width='1130'
         height='450'
-        alt='Zapier, Spotify et Zoom'
+        alt={hero.logosAlt}
       />
     </div>
 

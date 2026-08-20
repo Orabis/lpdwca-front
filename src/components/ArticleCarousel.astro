@@ -15,7 +15,7 @@ const articles = (await getArticles()).slice(0, limit)
         <div class='carousel__track'>
           {articles.map((article, index) => {
             const cover = article.cover
-            const coverUrl = cover ? getImageUrl(cover.formats?.medium?.url ?? cover.url) : null
+            const coverUrl = cover ? getImageUrl(cover.formats?.medium?.url ?? cover.url) : null
             return (
               <div
                 class='carousel__slide'

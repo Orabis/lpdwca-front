@@ -17,19 +17,22 @@ export interface ContactField {
   full?: boolean
 }
 
+// Coordonnées du Service Formation Continue, vérifiées sur sfc.unistra.fr
+// et sur la fiche officielle du diplôme (catalogue Unistra 2026-2027).
 export const infoCards: ContactInfoCard[] = [
   {
     icon: 'mail',
-    label: 'support@lpdwca.fr',
-    href: 'mailto:support@lpdwca.fr',
+    label: 'sfc-contact@unistra.fr',
+    href: 'mailto:sfc-contact@unistra.fr',
   },
   {
     icon: 'phone',
-    label: '+33 00 00 00 00 00',
+    label: '+33 (0)3 68 85 49 20',
+    href: 'tel:+33368854920',
   },
   {
     icon: 'location',
-    label: 'Quelque part en alsace',
+    label: 'Service Formation Continue — 21 rue du Maréchal Lefebvre, 67100 Strasbourg',
   },
 ]
 

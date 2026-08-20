@@ -1,0 +1,72 @@
+---
+interface Props {
+  name: string
+  context: string
+  track: string
+  trackKey: string
+  background: string
+  quote: string[]
+  anchorId: string
+  photoSrc?: string
+  photoAlt?: string
+}
+
+const { name, context, track, trackKey, background, quote, anchorId, photoSrc, photoAlt } = Astro.props
+
+// Aucun portrait réel n'est disponible : on retombe sur les initiales, jamais sur
+// une photo de banque d'images (cahier des charges § 4.1, imagerie authentique).
+const initials = name
+  .split(' ')
+  .map((part) => part[0])
+  .join('')
+  .slice(0, 2)
+  .toUpperCase()
+---
+
+<article
+  class='alumni-card'
+  id={anchorId}
+  data-track={trackKey}
+>
+  <header class='alumni-card__header'>
+    {
+      photoSrc ? (
+        <img
+          class='alumni-card__photo'
+          src={photoSrc}
+          alt={photoAlt ?? `Portrait de ${name}`}
+          width='72'
+          height='72'
+          loading='lazy'
+        />
+      ) : (
+        <span
+          class='alumni-card__photo-placeholder'
+          aria-hidden='true'
+        >
+          {initials}
+        </span>
+      )
+    }
+
+    <div class='alumni-card__identity'>
+      <h3 class='alumni-card__name'>{name}</h3>
+      <p class='alumni-card__context'>{context}</p>
+    </div>
+  </header>
+
+  <ul class='alumni-card__meta'>
+    <li class='alumni-card__meta-item'>
+      <span class='alumni-card__meta-label'>Parcours</span>
+      <span class='alumni-card__meta-value'>{track}</span>
+    </li>
+    <li class='alumni-card__meta-item'>
+      <span class='alumni-card__meta-label'>Formation d'origine</span>
+      <span class='alumni-card__meta-value'>{background}</span>
+    </li>
+  </ul>
+
+  <blockquote class='alumni-card__quote'>
+    {quote.map((paragraph) => <p class='alumni-card__text'>{paragraph}</p>)}
+  </blockquote>
+</article>

@@ -1,0 +1,195 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import InfoCard from '@/components/cards/InfoCard.astro'
+import ScheduleTable from '@/components/ui/ScheduleTable.astro'
+import CtaBand from '@/components/ui/CtaBand.astro'
+import { getPageContent } from '@/services/pages'
+
+const c = (await getPageContent<any>('elearning-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[cta]': true,
+  'populate[facts][populate][items]': true,
+  'populate[platforms][populate][items]': true,
+  'populate[toolsCard][populate][items]': true,
+  'populate[scheduleColumns]': true,
+  'populate[scheduleRows][populate][values]': true,
+  'populate[equipmentCard][populate][items]': true,
+})) as any
+
+const li = (arr: any[]) => (arr ?? []).map((i: any) => i.text)
+const card = (k: any) => ({ ...k, items: li(k?.items) })
+const distanceFacts = (c.facts ?? []).map((f: any) => ({ title: f.title, icon: f.icon, description: f.intro }))
+const platforms = (c.platforms ?? []).map(card)
+const dailyTools = li(c.toolsCard?.items)
+const equipment = li(c.equipmentCard?.items)
+const scheduleColumns = li(c.scheduleColumns)
+const scheduleRows = (c.scheduleRows ?? []).map((r: any) => ({ day: r.day, values: li(r.values) }))
+---
+
+<BaseLayout
+  title={c.seo?.metaTitle ?? 'Se former à distance'}
+  description={c.seo?.metaDescription}
+  pageClass='page--elearning'
+>
+  <PageHeader
+    title={c.header.title}
+    description={c.header.description}
+    variant='split'
+    headingId='elearning-title'
+  />
+
+  <section
+    class='elearning-section'
+    aria-labelledby='elearning-facts-title'
+  >
+    <div class='elearning-section__header'>
+      <h2
+        class='elearning-section__title'
+        id='elearning-facts-title'
+      >
+        {c.factsTitle}
+      </h2>
+      <p class='elearning-section__description'>
+        {c.factsIntro}
+      </p>
+    </div>
+
+    <div class='info-cards-grid'>
+      {
+        distanceFacts.map((fact) => (
+          <InfoCard
+            title={fact.title}
+            icon={fact.icon}
+            intro={fact.description}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class='elearning-section'
+    aria-labelledby='elearning-platforms-title'
+  >
+    <div class='elearning-section__header'>
+      <h2
+        class='elearning-section__title'
+        id='elearning-platforms-title'
+      >
+        {c.platformsTitle}
+      </h2>
+      <p class='elearning-section__description'>
+        {c.platformsIntro}
+      </p>
+    </div>
+
+    {/* TODO — captures d'écran de DigitalUni et Classilio à produire, voir src/data/elearning.ts */}
+
+    <div class='info-cards-grid'>
+      {
+        platforms.map((platform) => (
+          <InfoCard
+            title={platform.title}
+            icon={platform.icon}
+            intro={platform.intro}
+            items={platform.items}
+          />
+        ))
+      }
+    </div>
+  </section>
+
+  <section
+    class='elearning-section'
+    aria-labelledby='elearning-tools-title'
+  >
+    <div class='elearning-section__header'>
+      <h2
+        class='elearning-section__title'
+        id='elearning-tools-title'
+      >
+        {c.toolsTitle}
+      </h2>
+      <p class='elearning-section__description'>
+        {c.toolsIntro}
+      </p>
+    </div>
+
+    <div class='info-cards-grid info-cards-grid--single'>
+      <InfoCard
+        title={c.toolsCard?.title}
+        icon={c.toolsCard?.icon}
+        items={dailyTools}
+      />
+    </div>
+
+    <p class='elearning-section__note'>
+      {c.toolsNote}
+    </p>
+  </section>
+
+  <section
+    class='elearning-section'
+    aria-labelledby='elearning-schedule-title'
+  >
+    <div class='elearning-section__header'>
+      <h2
+        class='elearning-section__title'
+        id='elearning-schedule-title'
+      >
+        {c.scheduleTitle}
+      </h2>
+      <p class='elearning-section__description'>
+        {c.scheduleIntro}
+      </p>
+    </div>
+
+    <ScheduleTable
+      caption={c.scheduleCaption}
+      columns={scheduleColumns}
+      rows={scheduleRows}
+    />
+
+    <p class='elearning-section__note'>
+      {c.scheduleNote}
+    </p>
+  </section>
+
+  <section
+    class='elearning-section'
+    aria-labelledby='elearning-equipment-title'
+  >
+    <div class='elearning-section__header'>
+      <h2
+        class='elearning-section__title'
+        id='elearning-equipment-title'
+      >
+        {c.equipmentTitle}
+      </h2>
+    </div>
+
+    <div class='info-cards-grid info-cards-grid--single'>
+      <InfoCard
+        title={c.equipmentCard?.title}
+        icon={c.equipmentCard?.icon}
+        items={equipment}
+      />
+    </div>
+
+    <p class='elearning-section__note'>
+      {c.equipmentNote}
+    </p>
+  </section>
+
+  <CtaBand
+    title={c.cta.title}
+    text={c.cta.text}
+    primaryLabel={c.cta.primaryLabel}
+    primaryHref={c.cta.primaryHref}
+    secondaryLabel={c.cta.secondaryLabel}
+    secondaryHref={c.cta.secondaryHref}
+    headingId='elearning-cta-title'
+  />
+</BaseLayout>

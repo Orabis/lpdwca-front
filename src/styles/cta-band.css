@@ -1,0 +1,65 @@
+/* --------------------------------------------------------------------------
+   Bande d'appel à l'action de fin de page (CtaBand.astro)
+   -------------------------------------------------------------------------- */
+
+.cta-band {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: 0 var(--layout-gutter) var(--space-10xl);
+}
+
+.cta-band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  padding: 36px 28px;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-absolute-white);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.cta-band__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-heading);
+}
+
+.cta-band__text {
+  max-width: 60ch;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.cta-band__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-xs);
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+  .cta-band__inner {
+    padding: 48px 40px;
+  }
+
+  .cta-band__actions {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .cta-band__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}

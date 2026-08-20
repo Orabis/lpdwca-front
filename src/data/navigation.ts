@@ -3,6 +3,7 @@
 export interface NavLink {
   href: string
   label: string
+  external?: boolean
 }
 
 export interface FooterNavSection {
@@ -35,17 +36,31 @@ export const footerNavSections: FooterNavSection[] = [
     ],
   },
   {
-    title: 'À propos de nous',
+    title: 'La formation',
     links: [
-      { href: '#', label: 'INSPE de Strasbourg' },
-      { href: '#', label: 'Diplôme obtenu' },
-      { href: '#', label: 'Volume horaire' },
+      { href: '/alumni/', label: 'Alumni' },
+      { href: '/e-learning/', label: 'Se former à distance' },
+      { href: '/candidature/', label: 'Candidater' },
+      {
+        href: 'https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html',
+        label: 'Fiche officielle Unistra',
+        external: true,
+      },
     ],
   },
 ]
 
+// TODO — URLs réelles des comptes à fournir. Le cahier des charges § 4.3 fait de
+// LinkedIn et Instagram les canaux prioritaires ; Instagram est absent du site
+// et Twitter / X n'est retenu dans aucun plan de communication.
 export const socialLinks: SocialLink[] = [
   { icon: 'facebook', label: 'Facebook', href: '#' },
   { icon: 'twitter', label: 'Twitter / X', href: '#' },
   { icon: 'linkedin', label: 'LinkedIn', href: '#' },
+]
+
+export const legalLinks: NavLink[] = [
+  { href: '/mentions-legales/', label: 'Mentions légales' },
+  { href: '/mentions-legales/#donnees', label: 'Données personnelles' },
+  { href: '/mentions-legales/#accessibilite', label: 'Accessibilité' },
 ]

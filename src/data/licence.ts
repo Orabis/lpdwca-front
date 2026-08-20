@@ -21,7 +21,8 @@ export interface ScientificLead {
   role: string;
   imageSrc: ImageMetadata;
   imageAlt: string;
-  align: "left" | "right";
+  // Sans valeur, la carte reste centrée — cas d'un responsable unique.
+  align?: "left" | "right";
 }
 
 export interface InsertionStats {
@@ -61,17 +62,20 @@ export const programDomains: ProgramDomain[] = [
     title: "Développement Web",
     description:
       "Front-End : HTML/CSS, Javascript, ReactJS et Back-End : PHP/MySQL",
+    href: "#curriculum",
   },
   {
     icon: "chat-duo",
     title: "Communication",
     description:
       "Gestion de projet web, Digital marketing, Réseaux sociaux, Droit du multimédia",
+    href: "#curriculum",
   },
   {
     icon: "book-open",
     title: "Apprentissages",
     description: "E-learning, jeux sérieux et mondes virtuels Blender, Unity",
+    href: "#curriculum",
   },
 ];
 
@@ -205,7 +209,7 @@ export const scientificLeads: ScientificLead[] = [
   },
   {
     name: "Marc Trestini",
-    role: "Professeur des universités en sciences de l\u2019information et de la communication, INSPÉ, Université de Strasbourg.",
+    role: "Professeur des universités en sciences de l’information et de la communication, INSPÉ, Université de Strasbourg.",
     imageSrc: marcTrestiniPhoto,
     imageAlt: "Portrait de Marc Trestini",
     align: "right",
@@ -301,6 +305,6 @@ export const insertionStats: InsertionStats = {
     "Délai moyen d'obtention du premier emploi : 3,6 mois",
     "Rémunération : Le salaire net mensuel médian s'élève à 1550 € à 18 mois et progresse à 1942 € à 30 mois post-diplôme",
   ],
-  href: "#",
-  linkLabel: "Consulter les données",
+  href: "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html",
+  linkLabel: "Consulter la fiche officielle du diplôme",
 };

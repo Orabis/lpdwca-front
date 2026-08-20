@@ -2,19 +2,15 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import ArticleCarousel from '@/components/ArticleCarousel.astro'
 import HomeHero from '@/components/sections/HomeHero.astro'
-import FaqSection from '@/components/sections/FaqSection.astro'
+import FaqAccordion from '@/components/sections/FaqAccordion.astro'
 import SectionBase from '@/components/ui/SectionBase.astro'
 import AdvantageCard from '@/components/cards/AdvantageCard.astro'
 import CourseCard from '@/components/cards/CourseCard.astro'
 import TestimonialCard from '@/components/cards/TestimonialCard.astro'
-import { advantages, courses, testimonials } from '@/data/home'
-import { hasStrapiConfig } from '@/services/articles'
+import { getHomeContent } from '@/services/home'
+import { hasStrapiConfig } from '@/services/strapi'
 
-const sectionIntro =
-  'Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.'
-
-const articlesIntro =
-  'Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus.'
+const c = await getHomeContent()
 ---
 
 <BaseLayout
@@ -26,14 +22,14 @@ const articlesIntro =
   <SectionBase
     id='avantages'
     sectionClass='section--advantages'
-    title='Avantages'
-    intro={sectionIntro}
-    actionLabel='Tout afficher'
-    actionHref='/licence/'
+    title={c.advantagesHeader.title}
+    intro={c.advantagesHeader.intro}
+    actionLabel={c.advantagesHeader.actionLabel}
+    actionHref={c.advantagesHeader.actionHref}
   >
     <div class='advantages__grid'>
       {
-        advantages.map((item) => (
+        c.advantages.map((item) => (
           <AdvantageCard
             number={item.number}
             title={item.title}
@@ -43,31 +39,33 @@ const articlesIntro =
       }
     </div>
   </SectionBase>
+
   {
     hasStrapiConfig && (
       <SectionBase
         id='carousel'
         sectionClass='section--carousel'
-        title='Les Dernières Nouvelles'
-        actionLabel='Voir les articles'
-        actionHref='/articles/'
-        intro={articlesIntro}
+        title={c.articlesHeader.title}
+        intro={c.articlesHeader.intro}
+        actionLabel={c.articlesHeader.actionLabel}
+        actionHref={c.articlesHeader.actionHref}
       >
         <ArticleCarousel limit={3} />
       </SectionBase>
     )
   }
+
   <SectionBase
     id='programme'
     sectionClass='section--courses'
-    title="Le programme en un coup d'oeil"
-    intro={sectionIntro}
-    actionLabel='Tout afficher'
-    actionHref='/formation/'
+    title={c.coursesHeader.title}
+    intro={c.coursesHeader.intro}
+    actionLabel={c.coursesHeader.actionLabel}
+    actionHref={c.coursesHeader.actionHref}
   >
     <div class='courses__grid'>
       {
-        courses.map((item) => (
+        c.courses.map((item) => (
           <CourseCard
             title={item.title}
             description={item.description}
@@ -83,14 +81,14 @@ const articlesIntro =
   <SectionBase
     id='temoignages'
     sectionClass='section--testimonials'
-    title='Témoignages alumni'
-    intro={sectionIntro}
-    actionLabel='Tout afficher'
-    actionHref='/licence/'
+    title={c.testimonialsHeader.title}
+    intro={c.testimonialsHeader.intro}
+    actionLabel={c.testimonialsHeader.actionLabel}
+    actionHref={c.testimonialsHeader.actionHref}
   >
     <div class='testimonials__grid'>
       {
-        testimonials.map((item) => (
+        c.testimonials.map((item) => (
           <TestimonialCard
             name={item.name}
             quote={item.quote}
@@ -103,5 +101,12 @@ const articlesIntro =
     </div>
   </SectionBase>
 
-  <FaqSection />
+  <FaqAccordion
+    id='faq'
+    title={c.faqHeader.title}
+    intro={c.faqHeader.intro}
+    actionLabel={c.faqHeader.actionLabel}
+    actionHref={c.faqHeader.actionHref}
+    items={c.faqItems}
+  />
 </BaseLayout>

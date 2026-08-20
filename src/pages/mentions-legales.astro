@@ -1,0 +1,136 @@
+---
+// Contenu servi par Strapi : single type « Page Mentions légales » pour les
+// sections, single type « Références de la formation » pour le bloc destiné
+// aux financeurs. Repli : src/data/strapi-snapshot.json.
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import { getProgramReference } from '@/services/program-reference'
+import { getPageContent } from '@/services/pages'
+
+const page = (await getPageContent<any>('legal-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[sections][populate]': '*',
+})) as any
+
+const strapiSections = (page.sections ?? []).map((s: any) => ({
+  id: s.sectionId,
+  title: s.title,
+  paragraphs: (s.paragraphs ?? []).map((x: any) => x.text),
+  definitions: s.definitions ?? [],
+  items: (s.items ?? []).map((x: any) => x.text),
+  links: s.links ?? [],
+}))
+
+const reference = await getProgramReference()
+const referenceSection = reference
+  ? {
+      id: 'references',
+      title: reference.title,
+      paragraphs: reference.intro ? [reference.intro] : [],
+      definitions: reference.entries ?? [],
+      items: [] as string[],
+      links: reference.links ?? [],
+    }
+  : null
+
+const sections = referenceSection ? [referenceSection, ...strapiSections] : strapiSections
+---
+
+<BaseLayout
+  title={page.seo?.metaTitle ?? 'Mentions légales'}
+  description={page.seo?.metaDescription}
+  pageClass='page--legal'
+>
+  <PageHeader
+    title={page.header.title}
+    description={page.header.description}
+    variant='split'
+    headingId='legal-title'
+  />
+
+  <div class='legal'>
+    <nav
+      class='legal__summary'
+      aria-label='Sommaire des mentions légales'
+    >
+      <p class='legal__summary-title'>{page.summaryTitle}</p>
+      <ul class='legal__summary-list'>
+        {
+          sections.map((section) => (
+            <li>
+              <a
+                class='legal__summary-link'
+                href={`#${section.id}`}
+              >
+                {section.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class='legal__content'>
+      {
+        sections.map((section) => (
+          <section
+            class='legal-section'
+            id={section.id}
+            aria-labelledby={`${section.id}-title`}
+          >
+            <h2
+              class='legal-section__title'
+              id={`${section.id}-title`}
+            >
+              {section.title}
+            </h2>
+
+            {section.definitions && (
+              <dl class='legal-section__definitions'>
+                {section.definitions.map((definition) => (
+                  <div class='legal-section__definition'>
+                    <dt class='legal-section__term'>{definition.term}</dt>
+                    <dd class='legal-section__value'>{definition.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+
+            {section.paragraphs?.map((paragraph) => (
+              <p class='legal-section__text'>{paragraph}</p>
+            ))}
+
+            {section.items && (
+              <ul class='legal-section__list'>
+                {section.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+
+            {section.links && (
+              <ul class='legal-section__links'>
+                {section.links.map((link) => (
+                  <li>
+                    <a
+                      class='legal-section__link'
+                      href={link.href}
+                      target={link.external ? '_blank' : undefined}
+                      rel={link.external ? 'noopener noreferrer' : undefined}
+                    >
+                      {link.label}
+                      {link.external && <span class='sr-only'> (nouvel onglet)</span>}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))
+      }
+
+      {/* TODO — sections « Hébergement » et « Nos résultats » à ajouter, voir src/data/legal.ts */}
+    </div>
+  </div>
+</BaseLayout>

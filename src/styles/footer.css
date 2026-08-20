@@ -113,13 +113,40 @@
   border-top: 1px solid var(--color-border-hero);
 }
 
-.site-footer__copyright {
+.site-footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
   max-width: var(--layout-max);
   margin: var(--space-8xl) auto 0;
+  padding-inline: var(--layout-gutter-footer);
+}
+
+.site-footer__copyright {
   font-size: var(--font-size-md);
   line-height: var(--line-height-base);
   color: var(--color-text-footer);
   text-align: center;
+}
+
+.site-footer__legal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md) var(--space-3xl);
+}
+
+.site-footer__legal-link {
+  display: inline-block;
+  padding: var(--space-2xs) 0;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-footer-link);
+}
+
+.site-footer__legal-link:hover {
+  color: var(--color-primary);
 }
 
 /* Desktop — ligne */
@@ -133,5 +160,22 @@
   .site-footer__links {
     max-width: 807px;
     width: auto;
+  }
+  .site-footer__bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-8xl);
+  }
+
+  /* Sans cela, la colonne de droite se fait comprimer par le copyright et les
+     trois liens passent à la ligne. */
+  .site-footer__legal {
+    flex-shrink: 0;
+  }
+
+  .site-footer__legal-list {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 }
