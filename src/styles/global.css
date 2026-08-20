@@ -18,9 +18,15 @@
 @import './sections.css';
 @import './page-header.css';
 @import './cards.css';
+@import './faq.css';
+@import './cta-band.css';
 
 /* Pages */
 @import './home.css';
 @import './licence.css';
 @import './formation.css';
 @import './contact-financement.css';
+@import './alumni.css';
+@import './candidature.css';
+@import './elearning.css';
+@import './legal.css';

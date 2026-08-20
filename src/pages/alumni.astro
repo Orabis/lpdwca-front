@@ -1,0 +1,112 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import AlumniCard from '@/components/cards/AlumniCard.astro'
+import CtaBand from '@/components/ui/CtaBand.astro'
+import { getPageContent } from '@/services/pages'
+import { fetchCollection } from '@/services/strapi'
+import snapshot from '@/data/strapi-snapshot.json'
+
+const c = (await getPageContent<any>('alumni-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[cta]': true,
+  'populate[filters]': true,
+})) as any
+
+const alumniFilters = c.filters ?? []
+const rawAlumni =
+  (await fetchCollection<any>('/alumni', { sort: 'order:asc', populate: '*' })) ??
+  (snapshot.alumniAll as any[])
+const alumni = (rawAlumni ?? []).map((a: any) => ({
+  anchorId: a.anchorId,
+  name: a.name,
+  context: a.context,
+  track: a.track === 'apprentissage' ? 'Formation initiale en apprentissage' : 'Formation continue — reconversion',
+  trackKey: a.track,
+  background: a.background,
+  quote: (a.quote ?? '').split(/\n\n+/).filter(Boolean),
+}))
+---
+
+<BaseLayout
+  title={c.seo?.metaTitle ?? 'Alumni'}
+  description={c.seo?.metaDescription}
+  pageClass='page--alumni'
+>
+  <PageHeader
+    title={c.header.title}
+    description={c.header.description}
+    variant='split'
+    headingId='alumni-title'
+  />
+
+  <section
+    class='alumni-list'
+    aria-labelledby='alumni-list-title'
+  >
+    <h2
+      class='sr-only'
+      id='alumni-list-title'
+      >{c.listTitle}</h2
+    >
+
+    <div
+      class='alumni-filter'
+      role='group'
+      aria-label='Filtrer par parcours'
+    >
+      {
+        alumniFilters.map((filter, index) => (
+          <button
+            class:list={['alumni-filter__button', index === 0 && 'alumni-filter__button--active']}
+            type='button'
+            data-filter={filter.key}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            {filter.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class='alumni-list__grid'>
+      {
+        alumni.map((person) => (
+          <AlumniCard
+            anchorId={person.anchorId}
+            name={person.name}
+            context={person.context}
+            track={person.track}
+            trackKey={person.trackKey}
+            background={person.background}
+            quote={person.quote}
+          />
+        ))
+      }
+    </div>
+
+    <p
+      class='alumni-list__empty'
+      hidden
+    >
+      {c.emptyMessage}
+    </p>
+  </section>
+
+  {/* TODO — bloc « Que sont-ils devenus » : chiffres d'insertion non arbitrés, voir src/data/alumni.ts */}
+  {/* TODO — trois témoignages restent à recueillir, voir src/data/alumni.ts */}
+
+  <CtaBand
+    title={c.cta.title}
+    text={c.cta.text}
+    primaryLabel={c.cta.primaryLabel}
+    primaryHref={c.cta.primaryHref}
+    headingId='alumni-cta-title'
+  />
+</BaseLayout>
+
+<script>
+  import { initAlumniFilter } from '../scripts/alumni-filter'
+  initAlumniFilter()
+</script>

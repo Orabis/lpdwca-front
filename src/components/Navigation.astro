@@ -1,6 +1,7 @@
 ---
-import { mainNavLinks } from '@/data/navigation'
+import { getNavigation } from '@/services/navigation'
 
+const { mainLinks } = await getNavigation()
 const currentPath = Astro.url.pathname
 ---
 
@@ -9,7 +10,7 @@ const currentPath = Astro.url.pathname
   id='nav-menu'
 >
   {
-    mainNavLinks.map(({ href, label }) => (
+    mainLinks.map(({ href, label }) => (
       <li class='nav__item'>
         <a
           href={href}

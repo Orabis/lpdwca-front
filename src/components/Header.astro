@@ -1,21 +1,18 @@
 ---
+// Le bandeau et la barre de navigation viennent du single type « Navigation »
+// de Strapi. BaseLayout n'a plus à les passer en props.
 import NavBar from './NavBar.astro'
 import TopBanner from './TopBanner.astro'
+import { getNavigation } from '@/services/navigation'
 
-interface Props {
-  title: string
-  text: string
-  href: string
-}
-
-const { title, text, href } = Astro.props
+const nav = await getNavigation()
 ---
 
 <header class='site-header'>
   <TopBanner
-    title={title}
-    text={text}
-    href={href}
+    title={nav.bannerText}
+    text={nav.bannerLinkLabel}
+    href={nav.bannerLinkHref}
   />
   <NavBar />
 </header>

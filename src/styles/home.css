@@ -77,11 +77,17 @@
   background: var(--color-bg-media);
 }
 
+/* height: 100% ne se résout pas contre un parent qui n'a qu'un min-height :
+   l'image retombait sur ses 360px et laissait une bande noire de 100px sous
+   elle en desktop. Sortie du flux, sa hauteur se résout sur le conteneur
+   positionné : elle remplit le cadre et se recadre au centre. */
 .home-hero__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: 360px;
   object-fit: cover;
+  object-position: center;
 }
 
 .home-hero__play {
@@ -122,137 +128,5 @@
 
   .home-hero__logos {
     margin-top: 32px;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Accueil — FAQ
-   -------------------------------------------------------------------------- */
-
-.home-faq {
-  padding-top: 84px;
-  padding-bottom: 120px;
-}
-
-.home-faq__layout {
-  display: grid;
-  gap: 28px;
-}
-
-.home-faq__title {
-  max-width: 320px;
-  font-size: 56px;
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.05;
-  color: var(--color-text-heading);
-}
-
-.home-faq__text {
-  max-width: 420px;
-  margin-top: 20px;
-  font-size: var(--font-size-xs);
-  line-height: 1.6;
-  color: var(--color-text-quote);
-}
-
-.home-faq__link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 34px;
-  min-height: 72px;
-  padding: 0 28px;
-  border: 1px solid var(--color-border-soft);
-  border-radius: 12px;
-  background: var(--color-absolute-white);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-sm);
-  color: var(--color-text-heading);
-}
-
-.home-faq__items {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.home-faq__item {
-  overflow: hidden;
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-xl);
-  background: var(--color-absolute-white);
-}
-
-.home-faq__item--featured[open] .home-faq__summary {
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--color-border-soft);
-}
-
-.home-faq__summary {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 28px 30px;
-  list-style: none;
-  cursor: pointer;
-}
-
-.home-faq__summary::-webkit-details-marker {
-  display: none;
-}
-
-.home-faq__question {
-  font-size: 17px;
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
-  color: var(--color-text-heading);
-}
-
-.home-faq__toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--color-bg-accent-warm);
-  flex-shrink: 0;
-  color: var(--color-text-heading);
-}
-
-.home-faq__toggle::before {
-  content: '+';
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1;
-}
-
-.home-faq__item[open] .home-faq__toggle::before {
-  content: '×';
-  font-size: 36px;
-}
-
-.home-faq__panel {
-  display: none;
-}
-
-.home-faq__item[open] .home-faq__panel {
-  display: block;
-  padding: 28px 30px 34px;
-}
-
-.home-faq__answer {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-text-quote);
-}
-
-@media (min-width: 768px) {
-  .home-faq__layout {
-    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
-    align-items: start;
-    gap: 36px;
   }
 }

@@ -9,11 +9,11 @@ interface Props {
   align?: "left" | "right";
 }
 
-const { name, role, imageSrc, imageAlt, align = "left" } = Astro.props;
+const { name, role, imageSrc, imageAlt, align } = Astro.props;
 ---
 
 <article
-  class:list={["lead-card", `lead-card--align-${align}`]}
+  class:list={["lead-card", align && `lead-card--align-${align}`]}
 >
   <img
     class="lead-card__photo"

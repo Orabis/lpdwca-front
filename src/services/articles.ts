@@ -1,4 +1,5 @@
-import axios, { type AxiosInstance } from 'axios'
+import axios from 'axios'
+import { strapiClient, hasStrapiConfig, STRAPI_URL, getImageUrl, type ApiResponse, type Pagination } from './strapi'
 
 export type Category = {
   id: number
@@ -66,51 +67,13 @@ export type Article = {
   blocks?: any[]
 }
 
-export type Pagination = {
-  page: number
-  pageSize: number
-  pageCount: number
-  total: number
-}
+// Re-exports : les pages importent encore ces symboles depuis articles.ts.
+export { hasStrapiConfig, STRAPI_URL, getImageUrl, strapiClient }
+export type { ApiResponse, Pagination }
 
-export type ApiResponse<data> = {
-  data: data
-  meta?: {
-    pagination?: Pagination
-  }
-}
-
-const baseApiUrl = import.meta.env.BASE_URL_API?.trim() ?? ''
-const apiToken = import.meta.env.TOKEN_API?.trim() ?? ''
-
-export const STRAPI_URL = baseApiUrl ? baseApiUrl.replace(/\/api\/?$/, '') : ''
-export const hasStrapiConfig = Boolean(baseApiUrl && apiToken)
-let hasWarnedMissingStrapiConfig = false
-
-const api: AxiosInstance | null = hasStrapiConfig
-  ? axios.create({
-      baseURL: baseApiUrl,
-      timeout: 10000,
-      headers: { Authorization: `Bearer ${apiToken}` },
-    })
-  : null
-
-export function getImageUrl(url?: string): string {
-  if (!url) return ''
-  if (url.startsWith('http://') || url.startsWith('https://')) return url
-  return `${STRAPI_URL}${url}`
-}
-
-// Strapi pagine par défaut (25 éléments) : on parcourt toutes les pages
-// pour ne perdre aucun article dans le build statique.
 export async function getArticles(): Promise<Article[]> {
-  if (!api) {
-    if (!hasWarnedMissingStrapiConfig) {
-      console.warn(
-        "Les variables d'environnement BASE_URL_API et TOKEN_API sont absentes ou incomplètes : le front continue sans articles."
-      )
-      hasWarnedMissingStrapiConfig = true
-    }
+  if (!strapiClient) {
+    // L'avertissement est émis une seule fois par le client partagé.
     return []
   }
 
@@ -120,7 +83,7 @@ export async function getArticles(): Promise<Article[]> {
     let pageCount = 1
 
     do {
-      const response = await api.get<ApiResponse<Article[]>>('/articles', {
+      const response = await strapiClient.get<ApiResponse<Article[]>>('/articles', {
         params: {
           populate: '*',
           sort: 'publishedAt:desc',
@@ -139,3 +102,4 @@ export async function getArticles(): Promise<Article[]> {
     return []
   }
 }
+

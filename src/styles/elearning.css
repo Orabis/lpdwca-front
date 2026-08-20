@@ -1,0 +1,205 @@
+/* --------------------------------------------------------------------------
+   Se former à distance (e-learning)
+   -------------------------------------------------------------------------- */
+
+.elearning-section {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: var(--space-8xl) var(--layout-gutter) 0;
+}
+
+.elearning-section:first-of-type {
+  padding-top: var(--space-9xl);
+}
+
+.elearning-section:last-of-type {
+  padding-bottom: var(--space-8xl);
+}
+
+.elearning-section__header {
+  margin-bottom: var(--space-6xl);
+}
+
+.elearning-section__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-heading);
+}
+
+.elearning-section__description {
+  margin-top: var(--space-sm);
+  max-width: 70ch;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.elearning-section__note {
+  margin-top: var(--space-3xl);
+  max-width: 70ch;
+  padding: var(--space-2xl);
+  border-left: 3px solid var(--color-accent-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-bg);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+/* Variantes de grille réutilisées depuis formation.css */
+.info-cards-grid--single {
+  grid-template-columns: 1fr;
+}
+
+/* --------------------------------------------------------------------------
+   Semaine type (ScheduleTable.astro)
+   Mobile : chaque ligne devient une carte empilée, l'en-tête de colonne est
+   restitué par le pseudo-élément ::before à partir de data-label.
+   -------------------------------------------------------------------------- */
+
+.schedule {
+  /* En dessous de 768 px le tableau n'est plus un tableau : display block, sans
+     quoi les lignes passées en block ne s'étirent pas sur toute la largeur. */
+  display: block;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule__head {
+  display: none;
+}
+
+.schedule__row {
+  display: block;
+  margin-bottom: var(--space-2xl);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  background-color: var(--color-absolute-white);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.schedule__day {
+  display: block;
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-md);
+  color: var(--color-text-heading);
+  text-align: left;
+}
+
+.schedule__cell {
+  display: block;
+  padding-top: var(--space-md);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.schedule__cell + .schedule__cell {
+  margin-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.schedule__cell::before {
+  content: attr(data-label);
+  display: block;
+  margin-bottom: var(--space-2xs);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Tablette et au-delà — bascule en vrai tableau */
+@media (min-width: 768px) {
+  .schedule {
+    display: table;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background-color: var(--color-absolute-white);
+    box-shadow: var(--shadow-card-soft);
+  }
+
+  .schedule tbody {
+    display: table-row-group;
+  }
+
+  .schedule__head {
+    display: table-header-group;
+  }
+
+  .schedule__head th {
+    padding: var(--space-2xl);
+    background-color: var(--color-bg-soft);
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: left;
+  }
+
+  .schedule__row {
+    display: table-row;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .schedule__row:not(:last-child) .schedule__day,
+  .schedule__row:not(:last-child) .schedule__cell {
+    border-bottom: 1px solid var(--color-border-soft);
+  }
+
+  .schedule__day {
+    display: table-cell;
+    margin: 0;
+    padding: var(--space-2xl);
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .schedule__cell {
+    display: table-cell;
+    padding: var(--space-2xl);
+    vertical-align: top;
+  }
+
+  .schedule__cell + .schedule__cell {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .schedule__cell::before {
+    display: none;
+  }
+
+  .info-cards-grid--three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-cards-grid--three .info-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .elearning-section__title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .info-cards-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .info-cards-grid--three .info-card:last-child {
+    grid-column: auto;
+  }
+}

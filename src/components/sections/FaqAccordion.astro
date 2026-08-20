@@ -1,0 +1,91 @@
+---
+export interface FaqEntry {
+  question: string
+  answer: string
+}
+
+interface Props {
+  items: FaqEntry[]
+  id?: string
+  title?: string
+  intro?: string
+  actionLabel?: string
+  actionHref?: string
+  layout?: 'split' | 'stacked'
+  headingLevel?: 2 | 3
+  openFirst?: boolean
+  labelledById?: string
+}
+
+const {
+  items,
+  id,
+  title,
+  intro,
+  actionLabel,
+  actionHref,
+  layout = 'split',
+  headingLevel = 2,
+  openFirst = true,
+  labelledById,
+} = Astro.props
+
+const Heading = headingLevel === 3 ? 'h3' : 'h2'
+const headingId = labelledById ?? (id ? `${id}-title` : undefined)
+const hasIntro = Boolean(title || intro || (actionLabel && actionHref))
+---
+
+<section
+  class:list={['faq', `faq--${layout}`, layout === 'split' && 'section']}
+  id={id}
+  aria-labelledby={title ? headingId : undefined}
+  aria-label={title ? undefined : 'Questions fréquentes'}
+>
+  <div class='faq__layout'>
+    {
+      hasIntro && (
+        <div class='faq__intro'>
+          {title && (
+            <Heading
+              class='faq__title'
+              id={headingId}
+            >
+              {title}
+            </Heading>
+          )}
+          {intro && <p class='faq__text'>{intro}</p>}
+          {actionLabel && actionHref && (
+            <a
+              class='faq__link'
+              href={actionHref}
+            >
+              {actionLabel}
+            </a>
+          )}
+        </div>
+      )
+    }
+
+    <div class='faq__items'>
+      {
+        items.map((item, index) => (
+          <details
+            class:list={['faq__item', openFirst && index === 0 && 'faq__item--featured']}
+            open={openFirst && index === 0}
+          >
+            <summary class='faq__summary'>
+              <span class='faq__question'>{item.question}</span>
+              <span
+                class='faq__toggle'
+                aria-hidden='true'
+              />
+            </summary>
+            <div class='faq__panel'>
+              <p class='faq__answer'>{item.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

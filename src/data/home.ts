@@ -141,8 +141,8 @@ export const testimonials: Testimonial[] = [
     id: 1,
     name: 'Sarah L',
     quote:
-      "Le cours de conception web m'a permis d'acquérir des bases solides. Les formateurs étaient compétents et encourageants, et l'environnement d'apprentissage interactif était stimulant. Je le recommande vivement !",
-    href: '/licence/',
+      "Le cours de conception web m'a permis d'acquérir des bases solides. Les formateurs étaient compétents et encourageants, et l'environnement d'apprentissage interactif était stimulant. Je le recommande vivement !",
+    href: '/alumni/',
     avatarSrc: sarahAvatar.src,
     avatarAlt: 'Portrait de Sarah L',
   },
@@ -150,8 +150,8 @@ export const testimonials: Testimonial[] = [
     id: 2,
     name: 'Jason M',
     quote:
-      "Le cours de conception UI/UX a dépassé mes attentes. L'expertise du formateur et les exercices pratiques m'ont aidé à améliorer mes compétences en conception. Je me sens désormais plus confiant dans ma carrière. Merci !",
-    href: '/licence/',
+      "Le cours de conception UI/UX a dépassé mes attentes. L'expertise du formateur et les exercices pratiques m'ont aidé à améliorer mes compétences en conception. Je me sens désormais plus confiant dans ma carrière. Merci !",
+    href: '/alumni/',
     avatarSrc: jasonAvatar.src,
     avatarAlt: 'Portrait de Jason M',
   },
@@ -159,8 +159,8 @@ export const testimonials: Testimonial[] = [
     id: 3,
     name: 'Emily R',
     quote:
-      "Le cours sur le développement d'applications mobiles était fantastique ! Les unités d'enseignement étape par étape et les projets pratiques m'ont aidé à comprendre facilement les concepts. Je suis maintenant en train de créer ma propre application. Excellent cours !",
-    href: '/licence/',
+      "Le cours sur le développement d'applications mobiles était fantastique ! Les unités d'enseignement étape par étape et les projets pratiques m'ont aidé à comprendre facilement les concepts. Je suis maintenant en train de créer ma propre application. Excellent cours !",
+    href: '/alumni/',
     avatarSrc: emilyAvatar.src,
     avatarAlt: "Portrait d'Emily R",
   },
@@ -168,8 +168,8 @@ export const testimonials: Testimonial[] = [
     id: 4,
     name: 'Michael K',
     quote:
-      "J'ai assisté au cours de conception graphique sur Figma en tant que débutant, et cela a été un excellent point de départ. Les conseils et les commentaires du professeur m'ont permis d'améliorer considérablement mes compétences en conception. Je suis très reconnaissant d'avoir suivi ces cours !",
-    href: '/licence/',
+      "J'ai assisté au cours de conception graphique sur Figma en tant que débutant, et cela a été un excellent point de départ. Les conseils et les commentaires du professeur m'ont permis d'améliorer considérablement mes compétences en conception. Je suis très reconnaissant d'avoir suivi ces cours !",
+    href: '/alumni/',
     avatarSrc: michaelAvatar.src,
     avatarAlt: 'Portrait de Michael K',
   },
@@ -177,31 +177,31 @@ export const testimonials: Testimonial[] = [
 
 export const faqItems: FaqItem[] = [
   {
-    question: "Puis-je m'inscrire au milieu de l'année ?",
+    question: "Puis-je m'inscrire au milieu de l'année ?",
     answer: "Vous ne pouvez vous inscrire en milieu de l'année, la formation débute en septembre.",
   },
   {
-    question: "Quel sont les conditions d'admission ?",
+    question: "Quel sont les conditions d'admission ?",
     answer:
       "Les conditions exactes dépendent de votre situation. Le dossier de candidature, le niveau d'études et le projet professionnel sont examinés avant admission.",
   },
   {
-    question: 'Quel type de soutien puis-je attendre des instructeurs ?',
+    question: 'Quel type de soutien puis-je attendre des instructeurs ?',
     answer:
       'Les intervenants assurent un suivi pédagogique, des retours réguliers sur les travaux et un accompagnement tout au long de la formation.',
   },
   {
-    question: 'Les cours sont-ils à suivre à son propre rythme ou ont-ils des dates de début et de fin spécifiques ?',
+    question: 'Les cours sont-ils à suivre à son propre rythme ou ont-ils des dates de début et de fin spécifiques ?',
     answer:
       "Le rythme combine des temps synchrones et du travail personnel. Certaines activités s'inscrivent dans un calendrier précis pendant l'année universitaire.",
   },
   {
-    question: "Quels sont les prérogatives d'inscription en lpdwca ?",
+    question: "Quels sont les prérogatives d'inscription en lpdwca ?",
     answer:
       "L'inscription dépend de l'adéquation entre votre parcours, les attendus de la licence et votre projet professionnel.",
   },
   {
-    question: 'Puis-je télécharger les supports de cours pour y accéder hors ligne ?',
+    question: 'Puis-je télécharger les supports de cours pour y accéder hors ligne ?',
     answer:
       'Cela dépend des ressources mises à disposition par les intervenants. Une partie des supports peut être consultée ou téléchargée selon les modules.',
   },

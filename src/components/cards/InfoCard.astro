@@ -2,11 +2,12 @@
 interface Props {
   title: string
   icon: string
-  items: string[]
+  intro?: string
+  items?: string[]
   ordered?: boolean
 }
 
-const { title, icon, items, ordered = false } = Astro.props
+const { title, icon, intro, items = [], ordered = false } = Astro.props
 const ListTag = ordered ? 'ol' : 'ul'
 ---
 
@@ -18,7 +19,14 @@ const ListTag = ordered ? 'ol' : 'ul'
     <span class:list={['icon', `icon--${icon}`, 'info-card__icon']}></span>
   </span>
   <h3 class='info-card__title'>{title}</h3>
-  <ListTag class:list={['info-card__list', { 'info-card__list--ordered': ordered }]}>
-    {items.map((item) => <li>{item}</li>)}
-  </ListTag>
+  {intro && <p class='info-card__intro'>{intro}</p>}
+  {
+    items.length > 0 && (
+      <ListTag class:list={['info-card__list', { 'info-card__list--ordered': ordered }]}>
+        {items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ListTag>
+    )
+  }
 </article>

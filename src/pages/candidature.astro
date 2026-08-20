@@ -1,0 +1,211 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import PageHeader from '@/components/ui/PageHeader.astro'
+import InfoCard from '@/components/cards/InfoCard.astro'
+import StepList from '@/components/ui/StepList.astro'
+import FaqAccordion from '@/components/sections/FaqAccordion.astro'
+import CtaBand from '@/components/ui/CtaBand.astro'
+import { getPageContent } from '@/services/pages'
+import { fetchCollection } from '@/services/strapi'
+import snapshot from '@/data/strapi-snapshot.json'
+
+const c = (await getPageContent<any>('candidature-page', {
+  'populate[header]': true,
+  'populate[seo]': true,
+  'populate[cta]': true,
+  'populate[eligibilityPanels]': true,
+  'populate[eligibilityNotes]': true,
+  'populate[steps]': true,
+  'populate[documents]': true,
+})) as any
+
+const eligibilityPanels = c.eligibilityPanels ?? []
+const eligibilityNotes = c.eligibilityNotes ?? []
+const steps = c.steps ?? []
+const documents = (c.documents ?? []).map((d: any) => d.text)
+
+// FAQ : collection partagée avec la page d'accueil, groupée par thème.
+const rawThemes =
+  (await fetchCollection<any>('/faq-themes', {
+    sort: 'order:asc',
+    'populate[faq_items]': true,
+  })) ?? (snapshot.faqThemes as any[])
+const faqThemes = (rawThemes ?? []).map((t: any) => ({
+  id: 'faq-' + (t.slug ?? t.id),
+  title: t.name,
+  items: [...(t.faq_items ?? [])]
+    .sort((a: any, b: any) => (a.order ?? 0) - (b.order ?? 0))
+    .map(({ question, answer }: any) => ({ question, answer })),
+}))
+---
+
+<BaseLayout
+  title={c.seo?.metaTitle ?? 'Candidater'}
+  description={c.seo?.metaDescription}
+  pageClass='page--candidature'
+>
+  <PageHeader
+    title={c.header.title}
+    description={c.header.description}
+    variant='split'
+    headingId='candidature-title'
+  />
+
+  <section
+    class='candidature-section'
+    aria-labelledby='candidature-eligibility-title'
+  >
+    <div class='candidature-section__header'>
+      <h2
+        class='candidature-section__title'
+        id='candidature-eligibility-title'
+      >
+        {c.eligibilityTitle}
+      </h2>
+    </div>
+
+    <div class='candidature-panels'>
+      {
+        eligibilityPanels.map((panel) => (
+          <article class='candidature-panel'>
+            <h3 class='candidature-panel__title'>{panel.title}</h3>
+            <p class='candidature-panel__text'>{panel.text}</p>
+          </article>
+        ))
+      }
+    </div>
+
+    <ul class='candidature-notes'>
+      {
+        eligibilityNotes.map((note) => (
+          <li class='candidature-notes__item'>
+            <span class='candidature-notes__label'>{note.title}</span>
+            <span class='candidature-notes__text'>{note.text}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class='candidature-section__note'>
+      {c.eligibilityNote} <a href={c.cta.secondaryHref}>{c.cta.secondaryLabel}</a>
+    </p>
+  </section>
+
+  <section
+    class='candidature-section'
+    aria-labelledby='candidature-steps-title'
+  >
+    <div class='candidature-section__header'>
+      <h2
+        class='candidature-section__title'
+        id='candidature-steps-title'
+      >
+        {c.stepsTitle}
+      </h2>
+    </div>
+
+    <StepList steps={steps} />
+  </section>
+
+  <section
+    class='candidature-section'
+    aria-labelledby='candidature-documents-title'
+  >
+    <div class='candidature-section__header'>
+      <h2
+        class='candidature-section__title'
+        id='candidature-documents-title'
+      >
+        {c.documentsTitle}
+      </h2>
+      <p class='candidature-section__description'>
+        {c.documentsIntro}
+      </p>
+    </div>
+
+    {/* TODO — liste des pièces à faire valider par la scolarité, voir src/data/candidature.ts */}
+
+    <div class='info-cards-grid info-cards-grid--single'>
+      <InfoCard
+        title='Pièces à fournir'
+        icon='pencil-square'
+        items={documents}
+      />
+    </div>
+
+    <p class='candidature-section__note'>{c.documentsNote}</p>
+
+    <p class='candidature-section__note'>
+      <a
+        href={c.pdfHref}
+        download
+        >{c.pdfLabel}</a
+      >
+    </p>
+  </section>
+
+  {/* TODO — bloc « Le calendrier » non intégré : aucune date confirmée, voir src/data/candidature.ts */}
+  {/* TODO — bloc « Recevoir la brochure » non intégré : la plaquette PDF n'existe pas encore */}
+
+  <section
+    class='candidature-section'
+    aria-labelledby='candidature-sessions-title'
+    id='reunions'
+  >
+    <div class='candidature-section__header'>
+      <h2
+        class='candidature-section__title'
+        id='candidature-sessions-title'
+      >
+        {c.sessionsTitle}
+      </h2>
+      <p class='candidature-section__description'>{c.sessionsIntro}</p>
+    </div>
+
+    {/* TODO — liste des sessions à alimenter dès que le calendrier est arrêté */}
+    <p class='candidature-empty'>
+      {c.sessionsEmpty} <a href={c.cta.secondaryHref}>{c.cta.secondaryLabel}</a>
+    </p>
+  </section>
+
+  <section
+    class='candidature-section candidature-section--faq'
+    aria-labelledby='candidature-faq-title'
+    id='faq'
+  >
+    <div class='candidature-section__header'>
+      <h2
+        class='candidature-section__title'
+        id='candidature-faq-title'
+      >
+        {c.faqTitle}
+      </h2>
+      <p class='candidature-section__description'>
+        {c.faqIntro}
+      </p>
+    </div>
+
+    {
+      faqThemes.map((theme) => (
+        <FaqAccordion
+          id={theme.id}
+          title={theme.title}
+          items={theme.items}
+          layout='stacked'
+          headingLevel={3}
+          openFirst={false}
+        />
+      ))
+    }
+  </section>
+
+  <CtaBand
+    title={c.cta.title}
+    text={c.cta.text}
+    primaryLabel={c.cta.primaryLabel}
+    primaryHref={c.cta.primaryHref}
+    secondaryLabel={c.cta.secondaryLabel}
+    secondaryHref={c.cta.secondaryHref}
+    headingId='candidature-cta-title'
+  />
+</BaseLayout>

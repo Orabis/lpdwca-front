@@ -1,0 +1,186 @@
+/* --------------------------------------------------------------------------
+   FAQ — accordéon réutilisable (FaqAccordion.astro)
+   Extrait de home.css pour être partagé entre la page d'accueil (variante
+   « split ») et la page Candidature (variante « stacked », un bloc par thème).
+   -------------------------------------------------------------------------- */
+
+.faq {
+  padding-top: 84px;
+  padding-bottom: 120px;
+}
+
+.faq__layout {
+  display: grid;
+  gap: 28px;
+}
+
+.faq__title {
+  max-width: 320px;
+  font-size: 40px;
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.1;
+  color: var(--color-text-heading);
+}
+
+.faq__text {
+  max-width: 420px;
+  margin-top: 20px;
+  font-size: var(--font-size-xs);
+  line-height: 1.6;
+  color: var(--color-text-quote);
+}
+
+.faq__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 34px;
+  min-height: 56px;
+  padding: 0 28px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 12px;
+  background: var(--color-absolute-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-heading);
+}
+
+.faq__items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.faq__item {
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  background: var(--color-absolute-white);
+}
+
+.faq__item--featured[open] .faq__summary {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.faq__summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 88px;
+  padding: 24px 22px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5;
+  color: var(--color-text-heading);
+}
+
+.faq__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--color-bg-accent-warm);
+  flex-shrink: 0;
+  color: var(--color-text-heading);
+}
+
+.faq__toggle::before {
+  content: '+';
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.faq__item[open] .faq__toggle::before {
+  content: '×';
+  font-size: 34px;
+}
+
+.faq__panel {
+  display: none;
+}
+
+.faq__item[open] .faq__panel {
+  display: block;
+  padding: 22px 22px 28px;
+}
+
+.faq__answer {
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  color: var(--color-text-quote);
+}
+
+/* Variante « stacked » — titre au-dessus des questions (page Candidature) */
+.faq--stacked {
+  padding-top: 0;
+  padding-bottom: var(--space-9xl);
+}
+
+.faq--stacked .faq__title {
+  max-width: none;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-lg);
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+  .faq__summary {
+    padding: 28px 30px;
+  }
+
+  .faq__item[open] .faq__panel {
+    padding: 28px 30px 34px;
+  }
+
+  .faq__toggle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .faq--split .faq__layout {
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+    align-items: start;
+    gap: 36px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .faq__title {
+    font-size: 56px;
+    line-height: 1.05;
+  }
+
+  .faq--stacked .faq__title {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-lg);
+  }
+
+  .faq__link {
+    min-height: 72px;
+  }
+
+  .faq__question {
+    font-size: 17px;
+  }
+
+  .faq__answer {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}

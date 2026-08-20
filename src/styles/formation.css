@@ -154,6 +154,12 @@
   color: var(--color-text-heading);
 }
 
+.info-card__intro {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
 .info-card__list {
   display: flex;
   flex-direction: column;
@@ -186,7 +192,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .info-card:last-child {
+  /* Portée limitée à la page Formation : ailleurs, la dernière carte reste
+     dans sa colonne (voir elearning.css et candidature.css). */
+  .page--formation .info-card:last-child {
     grid-column: 1 / -1;
   }
 }

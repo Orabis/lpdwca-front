@@ -1,0 +1,33 @@
+---
+export interface Step {
+  title: string
+  text: string
+  duration?: string
+}
+
+interface Props {
+  steps: Step[]
+}
+
+const { steps } = Astro.props
+---
+
+<ol class='step-list'>
+  {
+    steps.map((step, index) => (
+      <li class='step-list__item'>
+        <span
+          class='step-list__number'
+          aria-hidden='true'
+        >
+          {String(index + 1).padStart(2, '0')}
+        </span>
+        <div class='step-list__body'>
+          <h3 class='step-list__title'>{step.title}</h3>
+          <p class='step-list__text'>{step.text}</p>
+          {step.duration && <p class='step-list__duration'>{step.duration}</p>}
+        </div>
+      </li>
+    ))
+  }
+</ol>

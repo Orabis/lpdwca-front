@@ -1,0 +1,45 @@
+---
+import Button from './Button.astro'
+
+interface Props {
+  title: string
+  text?: string
+  primaryLabel?: string
+  primaryHref?: string
+  secondaryLabel?: string
+  secondaryHref?: string
+  headingId: string
+}
+
+const { title, text, primaryLabel, primaryHref, secondaryLabel, secondaryHref, headingId } = Astro.props
+---
+
+<section
+  class='cta-band'
+  aria-labelledby={headingId}
+>
+  <div class='cta-band__inner'>
+    <h2
+      class='cta-band__title'
+      id={headingId}
+      >{title}</h2
+    >
+    {text && <p class='cta-band__text'>{text}</p>}
+
+    {
+      (primaryLabel || secondaryLabel) && (
+        <div class='cta-band__actions'>
+          {primaryLabel && primaryHref && <Button href={primaryHref}>{primaryLabel}</Button>}
+          {secondaryLabel && secondaryHref && (
+            <Button
+              href={secondaryHref}
+              variant='outline'
+            >
+              {secondaryLabel}
+            </Button>
+          )}
+        </div>
+      )
+    }
+  </div>
+</section>

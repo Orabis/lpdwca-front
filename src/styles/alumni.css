@@ -1,0 +1,202 @@
+/* --------------------------------------------------------------------------
+   Alumni
+   -------------------------------------------------------------------------- */
+
+.alumni-list {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: var(--space-8xl) var(--layout-gutter) var(--space-10xl);
+}
+
+/* Filtres par parcours — défilement horizontal sur mobile plutôt que retour
+   à la ligne, pour garder les trois options sur une seule bande. */
+.alumni-filter {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-9xl);
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.alumni-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.alumni-filter__button {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: var(--space-md) var(--space-2xl);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  background-color: var(--color-absolute-white);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.alumni-filter__button:hover {
+  background-color: var(--color-bg-page);
+}
+
+.alumni-filter__button--active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-absolute-white);
+}
+
+.alumni-list__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+}
+
+.alumni-list__empty {
+  margin-top: var(--space-3xl);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+/* Carte alumni */
+/* Sans cette règle, l'attribut hidden posé par le filtre est écrasé par le
+   display: flex ci-dessous et les cartes restent visibles. */
+.alumni-card[hidden] {
+  display: none;
+}
+
+.alumni-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding: 28px 24px;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-absolute-white);
+  box-shadow: var(--shadow-card-soft);
+  scroll-margin-top: var(--space-10xl);
+}
+
+.alumni-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.alumni-card__photo,
+.alumni-card__photo-placeholder {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.alumni-card__photo-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-chip);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.alumni-card__name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-heading);
+}
+
+.alumni-card__context {
+  margin-top: var(--space-2xs);
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-soft);
+}
+
+.alumni-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-soft);
+}
+
+.alumni-card__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.alumni-card__meta-label {
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.alumni-card__meta-value {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.alumni-card__quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0;
+}
+
+.alumni-card__text {
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  color: var(--color-text-quote);
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+  .alumni-card {
+    padding: 36px 32px;
+  }
+
+  .alumni-card__photo,
+  .alumni-card__photo-placeholder {
+    width: 72px;
+    height: 72px;
+  }
+
+  .alumni-card__meta {
+    flex-direction: row;
+    gap: var(--space-8xl);
+  }
+
+  .alumni-card__meta-item {
+    flex: 1;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .alumni-list__grid {
+    gap: var(--space-6xl);
+  }
+
+  .alumni-card {
+    padding: 44px 40px;
+  }
+
+  .alumni-card__text {
+    font-size: 15px;
+  }
+}

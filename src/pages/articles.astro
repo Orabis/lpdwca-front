@@ -3,16 +3,22 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getArticles, getImageUrl } from '@/services/articles.ts'
 import { formatDate } from '@/utils/format-date.ts'
 
+import { getPageContent } from '@/services/pages'
+
+const c = (await getPageContent<any>('articles-page', { 'populate[seo]': true })) as any
 const articles = await getArticles()
 ---
 
-<BaseLayout title='LPDWCA | Articles'>
+<BaseLayout
+  title={c.seo?.metaTitle ?? 'Articles'}
+  description={c.seo?.metaDescription}
+>
   <div class='articles-page'>
     <header class='articles-header'>
-      <span class='articles-header__subtitle'>Notre Blog</span>
-      <h1 class='articles-header__title'>Actualités & Veille Technologique</h1>
+      <span class='articles-header__subtitle'>{c.surtitle}</span>
+      <h1 class='articles-header__title'>{c.title}</h1>
       <p class='articles-header__desc'
-        >Retrouvez les derniers articles, guides et retours d'expérience rédigés par nos étudiants et formateurs.</p
+        >{c.intro}</p
       >
     </header>
 
@@ -21,7 +27,7 @@ const articles = await getArticles()
         <div class='articles-grid'>
           {articles.map((article) => {
             const cover = article.cover
-            const coverUrl = cover ? getImageUrl(cover.formats?.small?.url ?? cover.formats?.medium?.url ?? cover.url) : null
+            const coverUrl = cover ? getImageUrl(cover.formats?.small?.url ?? cover.formats?.medium?.url ?? cover.url) : null
             return (
               <article class='article-card'>
                 <a
@@ -70,7 +76,7 @@ const articles = await getArticles()
         </div>
       ) : (
         <div class='articles-empty'>
-          <p>Aucun article n'a été trouvé pour le moment. Revenez plus tard !</p>
+          <p>{c.emptyMessage}</p>
         </div>
       )
     }

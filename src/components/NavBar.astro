@@ -2,6 +2,9 @@
 import Navigation from './Navigation.astro'
 import BurgerButton from './BurgerButton.astro'
 import Logo from './Logo.astro'
+import { getNavigation } from '@/services/navigation'
+
+const nav = await getNavigation()
 ---
 
 <nav class='nav'>
@@ -11,9 +14,9 @@ import Logo from './Logo.astro'
     <Navigation />
 
     <a
-      href='/contact'
+      href={nav.ctaHref}
       class='nav__cta'
-      >Candidature</a
+      >{nav.ctaLabel}</a
     >
 
     <BurgerButton

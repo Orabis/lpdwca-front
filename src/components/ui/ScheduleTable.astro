@@ -1,0 +1,50 @@
+---
+export interface ScheduleRow {
+  day: string
+  values: string[]
+}
+
+interface Props {
+  caption: string
+  columns: string[]
+  rows: ScheduleRow[]
+}
+
+const { caption, columns, rows } = Astro.props
+---
+
+{
+  /* Un seul tableau dans le DOM : en dessous de 768 px, chaque ligne devient une
+carte empilée via CSS (les libellés de colonne sont repris en data-label). */
+}
+<table class='schedule'>
+  <caption class='sr-only'>{caption}</caption>
+  <thead class='schedule__head'>
+    <tr>
+      <th scope='col'>Jour</th>
+      {columns.map((column) => <th scope='col'>{column}</th>)}
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((row) => (
+        <tr class='schedule__row'>
+          <th
+            class='schedule__day'
+            scope='row'
+          >
+            {row.day}
+          </th>
+          {row.values.map((value, index) => (
+            <td
+              class='schedule__cell'
+              data-label={columns[index]}
+            >
+              {value}
+            </td>
+          ))}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

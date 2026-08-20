@@ -5,39 +5,88 @@ import CurriculumCard from "@/components/cards/CurriculumCard.astro";
 import ScientificLeadCard from "@/components/cards/ScientificLeadCard.astro";
 import LicencePanel from "@/components/cards/LicencePanel.astro";
 import InsertionStatsCard from "@/components/cards/InsertionStatsCard.astro";
-import {
-  programDomains,
-  semesters,
-  scientificLeads,
-  organisationPanels,
-  afterGraduationPanels,
-  insertionStats,
-} from "@/data/licence";
 import PageHeader from "@/components/ui/PageHeader.astro";
+import { getPageContent } from "@/services/pages";
+import { getUiLabels } from "@/services/ui-labels";
+import type { LicencePanelBlock } from "@/data/licence";
+import ericPhoto from "@/assets/images/Eric.png";
+import marcTrestiniPhoto from "@/assets/images/Marc_Trestini.jpg";
+
+const c = (await getPageContent<any>("licence-page", {
+  "populate[header]": true,
+  "populate[seo]": true,
+  "populate[programDomains]": true,
+  "populate[semesters][populate][ues][populate][lines]": true,
+  "populate[leads][populate]": "photo",
+  "populate[organisationPanels][populate][blocks][populate]": "*",
+  "populate[afterPanels][populate][blocks][populate]": "*",
+  "populate[insertion][populate][stats]": true,
+})) as any
+
+const labels = await getUiLabels();;
+
+// Reconstitution des formes attendues par le gabarit existant.
+const programDomains = c.programDomains ?? [];
+const semesters = (c.semesters ?? []).map((s: any) => ({
+  ...s,
+  ues: (s.ues ?? []).map((u: any) => ({
+    ...u,
+    ue: u.code,
+    lines: (u.lines ?? []).map((l: any) => l.text),
+  })),
+}));
+const toPanel = (p: any) => ({
+  blocks: (p.blocks ?? []).map((b: any): LicencePanelBlock => ({
+    title: b.title,
+    mobileTitle: b.mobileTitle ?? undefined,
+    paragraphs: (b.paragraphs ?? []).map((x: any) => x.text),
+    items: (b.items ?? []).map((x: any) => x.text),
+  })),
+});
+const organisationPanels = (c.organisationPanels ?? []).map(toPanel);
+const afterGraduationPanels = (c.afterPanels ?? []).map(toPanel);
+const insertionStats = {
+  title: c.insertion?.cardTitle ?? c.insertionTitle,
+  intro: c.insertion?.intro ?? "",
+  stats: (c.insertion?.stats ?? []).map((x: any) => x.text),
+  href: c.insertion?.href,
+  linkLabel: c.insertion?.linkLabel,
+};
+// Photos des responsables : encore servies par le depot front tant qu'elles
+// ne sont pas televersees dans Strapi.
+const LEAD_PHOTOS: Record<string, any> = {
+  "Éric Christoffel": ericPhoto,
+  "Marc Trestini": marcTrestiniPhoto,
+};
+const scientificLeads = (c.leads ?? []).map((l: any) => ({
+  name: l.name,
+  role: l.role,
+  imageSrc: LEAD_PHOTOS[l.name] ?? ericPhoto,
+  imageAlt: l.photoAlt,
+  align: l.align ?? undefined,
+}));
 ---
 
 <BaseLayout
-  title="Licence Professionnelle Développement Web Communication et Apprentissages"
+  title={c.seo?.metaTitle ?? "Licence"}
+  description={c.seo?.metaDescription}
   pageClass="page--licence"
 >
   <PageHeader
-    title='Licence'
-    description="100% à distance alliant développement web, communication digitale et apprentissages numériques.Axée sur la pratique, elle prépare les étudiants aux métiers du multimédia en pleine expansion.Accessible en apprentissage, en formation initiale ou continue "
+    title={c.header.title}
+    description={c.header.description}
     variant='split'
     headingId='licence-title'
   />
 
 
-  <section class="program" aria-labelledby="program-title">
+  <section class="program" id="programme" aria-labelledby="program-title">
     <div class="program__inner">
       <header class="program__header">
         <h2 class="program__title" id="program-title">
-          Le programme en un coup d'oeil
+          {c.programTitle}
         </h2>
-        <p class="program__intro">
-          Le programme de la licence est déclinée en 10 unités d'enseignement
-          qui couvrent trois domaines principaux.
-        </p>
+        <p class="program__intro">{c.programIntro}</p>
       </header>
       <div class="program__cards">
         {
@@ -51,8 +100,8 @@ import PageHeader from "@/components/ui/PageHeader.astro";
           ))
         }
       </div>
-      <a class="program__cta" href="#">
-        <span class="program__cta-text">En savoir plus</span>
+      <a class="program__cta" href={c.programCtaHref}>
+        <span class="program__cta-text">{c.programCtaLabel}</span>
         <span
           class="icon icon--arrow-right program__cta-icon"
           aria-hidden="true"></span>
@@ -62,30 +111,14 @@ import PageHeader from "@/components/ui/PageHeader.astro";
 
   <section class="objectives" aria-labelledby="objectives-title">
     <div class="objectives__inner">
-      <h2 class="objectives__title" id="objectives-title">Objectifs</h2>
-      <p class="objectives__text">
-        La <strong>Licence Professionnelle DWCA</strong> forme des
-        professionnels polyvalents pour le secteur numérique. Notre programme
-        vise à maîtriser le développement web front-end et back-end, tout en
-        acquérant des compétences en <strong>communication digitale</strong> et
-        <strong>gestion de projet</strong>. Les étudiants approfondissent leur
-        compréhension des enjeux liés aux <strong
-          >apprentissages numériques</strong
-        > et au <strong>e-learning</strong>, développent une expertise en <strong
-          >conception graphique</strong
-        > et <strong>expérience utilisateur</strong>, et se préparent à
-        s'adapter aux évolutions rapides du secteur. Cette formation pratique
-        et complète permet aux diplômés d'intégrer efficacement le marché du
-        travail ou d'évoluer dans leur carrière actuelle.
-      </p>
+      <h2 class="objectives__title" id="objectives-title">{c.objectivesTitle}</h2>
+      <p class="objectives__text" set:html={c.objectivesText} />
     </div>
   </section>
 
-  <section class="curriculum" aria-labelledby="curriculum-title">
+  <section class="curriculum" id="curriculum" aria-labelledby="curriculum-title">
     <div class="curriculum__inner">
-      <h2 class="curriculum__title" id="curriculum-title">
-        Les enseignements en détail
-      </h2>
+      <h2 class="curriculum__title" id="curriculum-title">{c.curriculumTitle}</h2>
 
       {
         semesters.map((semester) => (
@@ -113,12 +146,30 @@ import PageHeader from "@/components/ui/PageHeader.astro";
           </div>
         ))
       }
+
+      <p class="curriculum__links">
+        <a
+          class="curriculum__link"
+          href={c.curriculumCtaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          >{c.curriculumCtaLabel} <span class="sr-only">{labels.externalLinkSuffix}</span></a
+        >
+        <a
+          class="curriculum__link"
+          href={c.pdfHref}
+          download
+          >{c.pdfLabel}</a
+        >
+      </p>
     </div>
   </section>
 
   <section class="leads" aria-labelledby="leads-title">
     <div class="leads__inner">
-      <h2 class="leads__title" id="leads-title">Les responsables scientifiques</h2>
+      <h2 class="leads__title" id="leads-title">
+        {c.leadsTitle}
+      </h2>
       <div class="leads__grid">
         {
           scientificLeads.map((lead) => (
@@ -135,9 +186,9 @@ import PageHeader from "@/components/ui/PageHeader.astro";
     </div>
   </section>
 
-  <section class="organisation" aria-labelledby="organisation-title">
+  <section class="organisation" id="organisation" aria-labelledby="organisation-title">
     <div class="organisation__inner">
-      <h2 class="organisation__title" id="organisation-title">Organisation</h2>
+      <h2 class="organisation__title" id="organisation-title">{c.organisationTitle}</h2>
       <div class="licence-panels-grid">
         {
           organisationPanels.map((panel) => (
@@ -150,9 +201,7 @@ import PageHeader from "@/components/ui/PageHeader.astro";
 
   <section class="after-graduation" aria-labelledby="after-graduation-title">
     <div class="after-graduation__inner">
-      <h2 class="after-graduation__title" id="after-graduation-title">
-        Et après ?
-      </h2>
+      <h2 class="after-graduation__title" id="after-graduation-title">{c.afterTitle}</h2>
       <div class="licence-panels-grid">
         {
           afterGraduationPanels.map((panel) => (
@@ -163,11 +212,9 @@ import PageHeader from "@/components/ui/PageHeader.astro";
     </div>
   </section>
 
-  <section class="insertion" aria-labelledby="insertion-title">
+  <section class="insertion" id="insertion" aria-labelledby="insertion-title">
     <div class="insertion__inner">
-      <h2 class="insertion__title" id="insertion-title">
-        {insertionStats.title}
-      </h2>
+      <h2 class="insertion__title" id="insertion-title">{c.insertionTitle}</h2>
       <InsertionStatsCard
         title={insertionStats.title}
         intro={insertionStats.intro}

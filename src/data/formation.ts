@@ -19,13 +19,13 @@ export const formationTypes: FormationType[] = [
   {
     title: 'Formation initiale',
     description: "Dans le cadre d'un contrat d'apprentissage ou de professionnalisation.",
-    question: 'Vous avez moins de 30 ans, vous souhaitez continuer vos études ou vous réorienter ?',
+    question: 'Vous avez moins de 30 ans, vous souhaitez continuer vos études ou vous réorienter ?',
     icon: 'formation-initiale',
   },
   {
     title: 'Formation continue',
     description: "Organisation libre de l'emploi du temps. Stage ou projet personnel au 2nd semestre.",
-    question: 'Vous souhaitez vous reconvertir et développer de nouvelles compétences ?',
+    question: 'Vous souhaitez vous reconvertir et développer de nouvelles compétences ?',
     icon: 'formation-continue',
   },
 ]
@@ -55,8 +55,8 @@ export const infoCards: FormationInfoCard[] = [
     title: 'Financement',
     icon: 'pencil-square',
     items: [
-      'Coût de la formation : 5610 € (tarif 2024–2025)',
-      'Possibilités de financement : entreprise, OPCO, Pôle Emploi, CPF, financement personnel',
+      'Coût de la formation : 5 720 € (tarif 2026-2027)',
+      'Possibilités de financement : entreprise, OPCO, France Travail, Transition Pro, financement personnel',
       "Paiement échelonné possible sur l'année de formation",
     ],
   },

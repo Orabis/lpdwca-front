@@ -1,0 +1,236 @@
+/* --------------------------------------------------------------------------
+   Candidature
+   -------------------------------------------------------------------------- */
+
+.candidature-section {
+  width: 100%;
+  max-width: var(--layout-content);
+  margin-inline: auto;
+  padding: var(--space-8xl) var(--layout-gutter) 0;
+  scroll-margin-top: var(--space-8xl);
+}
+
+.candidature-section:first-of-type {
+  padding-top: var(--space-9xl);
+}
+
+.candidature-section:last-of-type {
+  padding-bottom: var(--space-8xl);
+}
+
+.candidature-section__header {
+  margin-bottom: var(--space-6xl);
+}
+
+.candidature-section__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-heading);
+}
+
+.candidature-section__description {
+  margin-top: var(--space-sm);
+  max-width: 70ch;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.candidature-section__note {
+  margin-top: var(--space-3xl);
+  max-width: 70ch;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.candidature-section__note a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+
+/* Panneaux « Suis-je concerné ? » */
+.candidature-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3xl);
+}
+
+.candidature-panel {
+  padding: 28px 24px;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-absolute-white);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.candidature-panel__title {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-lg);
+  color: var(--color-text-heading);
+}
+
+.candidature-panel__text {
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+/* Encadrés formation continue / apprentissage */
+.candidature-notes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-3xl);
+}
+
+.candidature-notes__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding: var(--space-2xl);
+  border-left: 3px solid var(--color-accent-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent-bg);
+}
+
+.candidature-notes__label {
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.candidature-notes__text {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.candidature-empty {
+  padding: var(--space-3xl);
+  border: 1px dashed var(--color-border-hero);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-sm);
+  color: var(--color-text-body);
+}
+
+.candidature-empty a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+
+/* La section FAQ empile plusieurs accordéons thématiques */
+.candidature-section--faq .faq {
+  padding-inline: 0;
+  max-width: none;
+}
+
+/* --------------------------------------------------------------------------
+   Étapes numérotées (StepList.astro)
+   -------------------------------------------------------------------------- */
+
+.step-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  counter-reset: step;
+}
+
+.step-list__item {
+  display: flex;
+  gap: var(--space-xl);
+  padding: 24px 20px;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-absolute-white);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.step-list__number {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-accent-warm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.step-list__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.step-list__title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-md);
+  color: var(--color-text-heading);
+}
+
+.step-list__text {
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+.step-list__duration {
+  align-self: flex-start;
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-chip);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  color: var(--color-text-soft);
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+  .candidature-panels {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candidature-notes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candidature-panel {
+    padding: 36px 32px;
+  }
+
+  .step-list__item {
+    padding: 32px 28px;
+  }
+
+  .step-list__number {
+    width: 48px;
+    height: 48px;
+    font-size: var(--font-size-md);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .candidature-section__title {
+    font-size: 36px;
+    line-height: 46px;
+  }
+
+  .step-list__text,
+  .candidature-panel__text {
+    font-size: 15px;
+  }
+}
