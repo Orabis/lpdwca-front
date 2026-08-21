@@ -124,10 +124,27 @@ const serialise = JSON.stringify(snapshot, null, 2) + '\n'
 
 if (check) {
   const actuel = await fs.readFile(OUT, 'utf8').catch(() => '')
-  // La copie de travail peut être en CRLF (core.autocrlf sous Windows) :
-  // seule une différence de contenu doit faire échouer le contrôle.
-  const sansFinsDeLigne = (texte) => texte.replace(/\r\n/g, '\n')
-  if (sansFinsDeLigne(actuel) !== sansFinsDeLigne(serialise)) {
+  // Le contrôle ne doit réagir qu'au contenu. La copie de travail peut être en
+  // CRLF (core.autocrlf sous Windows), et une simple republication dans Strapi
+  // renumérote les entrées et déplace les horodatages sans rien changer.
+  const VOLATILES = new Set(['id', 'documentId', 'createdAt', 'updatedAt', 'publishedAt'])
+  const sansVolatiles = (valeur) => {
+    if (Array.isArray(valeur)) return valeur.map(sansVolatiles)
+    if (!valeur || typeof valeur !== 'object') return valeur
+    return Object.fromEntries(
+      Object.entries(valeur)
+        .filter(([cle]) => !VOLATILES.has(cle))
+        .map(([cle, v]) => [cle, sansVolatiles(v)]),
+    )
+  }
+  const comparable = (texte) => {
+    try {
+      return JSON.stringify(sansVolatiles(JSON.parse(texte)))
+    } catch {
+      return texte.replace(/\r\n/g, '\n')
+    }
+  }
+  if (comparable(actuel) !== comparable(serialise)) {
     console.error(`\n✗ ${OUT} a divergé de Strapi. Lancez « node scripts/sync-fallback.mjs » et commitez.`)
     process.exit(1)
   }
