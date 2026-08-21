@@ -1,0 +1,4 @@
+# Le repli statique est comparé octet à octet par scripts/sync-fallback.mjs.
+# Sans cela, core.autocrlf le convertit en CRLF au checkout et le contrôle de
+# dérive échoue alors que le contenu est identique.
+src/data/strapi-snapshot.json text eol=lf

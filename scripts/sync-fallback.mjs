@@ -124,7 +124,10 @@ const serialise = JSON.stringify(snapshot, null, 2) + '\n'
 
 if (check) {
   const actuel = await fs.readFile(OUT, 'utf8').catch(() => '')
-  if (actuel !== serialise) {
+  // La copie de travail peut être en CRLF (core.autocrlf sous Windows) :
+  // seule une différence de contenu doit faire échouer le contrôle.
+  const sansFinsDeLigne = (texte) => texte.replace(/\r\n/g, '\n')
+  if (sansFinsDeLigne(actuel) !== sansFinsDeLigne(serialise)) {
     console.error(`\n✗ ${OUT} a divergé de Strapi. Lancez « node scripts/sync-fallback.mjs » et commitez.`)
     process.exit(1)
   }
