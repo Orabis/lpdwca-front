@@ -2,10 +2,24 @@
 import Button from '@/components/ui/Button.astro'
 import { getHomeContent } from '@/services/home'
 import heroImage from '@/assets/images/woman-programming-3597101.jpg'
-import heroLogosDesktop from '@/assets/images/home/logos/hero-logos-desktop.png'
-import heroLogosMobile from '@/assets/images/home/logos/hero-logos-mobile.png'
+import logoUnistra from '@/assets/images/home/logos/unistra.svg'
+import logoSolutyo from '@/assets/images/home/logos/solutyo.png'
+import logoTokTokDoc from '@/assets/images/home/logos/toktokdoc.svg'
+import logoAdvisa from '@/assets/images/home/logos/advisa.svg'
+import logoAlsaceDigitale from '@/assets/images/home/logos/alsace-digitale.png'
 
 const { hero, partnersTitle } = await getHomeContent()
+
+// Structures d'accueil des alternants et stagiaires. Les visuels restent servis
+// par le depot, comme les portraits des responsables, tant qu'ils ne sont pas
+// televerses dans Strapi.
+const partenaires = [
+  { nom: 'Université de Strasbourg', logo: logoUnistra },
+  { nom: 'Solutyo', logo: logoSolutyo },
+  { nom: 'TokTokDoc', logo: logoTokTokDoc },
+  { nom: 'Advisa', logo: logoAdvisa },
+  { nom: 'Alsace Digitale', logo: logoAlsaceDigitale },
+]
 ---
 
 <section
@@ -33,22 +47,22 @@ const { hero, partnersTitle } = await getHomeContent()
 
     <div
       class='home-hero__logos'
-      aria-label={partnersTitle ?? 'Logos de partenaires'}
+      aria-label={partnersTitle ?? 'Structures d’accueil'}
     >
-      <img
-        class='home-hero__logos-image home-hero__logos-image--desktop'
-        src={heroLogosDesktop.src}
-        width='2580'
-        height='270'
-        alt={hero.logosAlt}
-      />
-      <img
-        class='home-hero__logos-image home-hero__logos-image--mobile'
-        src={heroLogosMobile.src}
-        width='1130'
-        height='450'
-        alt={hero.logosAlt}
-      />
+      <ul class='home-hero__logos-list'>
+        {
+          partenaires.map((partenaire) => (
+            <li class='home-hero__logos-item'>
+              <img
+                class='home-hero__logo'
+                src={partenaire.logo.src}
+                alt={partenaire.nom}
+                loading='lazy'
+              />
+            </li>
+          ))
+        }
+      </ul>
     </div>
 
     <div

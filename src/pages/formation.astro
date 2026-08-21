@@ -5,6 +5,21 @@ import FormationTypeCard from '@/components/cards/FormationTypeCard.astro'
 import InfoCard from '@/components/cards/InfoCard.astro'
 import CtaBand from '@/components/ui/CtaBand.astro'
 import { getPageContent } from '@/services/pages'
+import iconeHtml from '@/assets/images/tech/html5.svg'
+import iconeCss from '@/assets/images/tech/css.svg'
+import iconeJs from '@/assets/images/tech/javascript.svg'
+import iconeReact from '@/assets/images/tech/react.svg'
+import iconeNode from '@/assets/images/tech/nodedotjs.svg'
+import iconePhp from '@/assets/images/tech/php.svg'
+import iconeMysql from '@/assets/images/tech/mysql.svg'
+import iconeWordpress from '@/assets/images/tech/wordpress.svg'
+import iconeGit from '@/assets/images/tech/git.svg'
+import iconeThree from '@/assets/images/tech/threedotjs.svg'
+import iconeBlender from '@/assets/images/tech/blender.svg'
+import iconePhotoshop from '@/assets/images/tech/adobephotoshop.svg'
+import iconeIllustrator from '@/assets/images/tech/adobeillustrator.svg'
+import iconeDiscord from '@/assets/images/tech/discord.svg'
+import iconeDropbox from '@/assets/images/tech/dropbox.svg'
 
 const c = (await getPageContent<any>('formation-page', {
   'populate[header]': true,
@@ -19,6 +34,27 @@ const formationTypes = c.types ?? []
 const toCards = (cards: any[]) =>
   (cards ?? []).map((k: any) => ({ ...k, items: (k.items ?? []).map((i: any) => i.text) }))
 const infoCards = toCards(c.continuingCards)
+
+// Technologies et logiciels travailles en cours et en projet, tires du contenu
+// des UE. Les icones restent servies par le depot ; les libelles gagneraient a
+// passer dans Strapi le jour ou le schema accueillera une liste d'outils.
+const technologies = [
+  { nom: 'HTML', icone: iconeHtml },
+  { nom: 'CSS', icone: iconeCss },
+  { nom: 'JavaScript', icone: iconeJs },
+  { nom: 'React', icone: iconeReact },
+  { nom: 'Node.js', icone: iconeNode },
+  { nom: 'PHP', icone: iconePhp },
+  { nom: 'MySQL', icone: iconeMysql },
+  { nom: 'WordPress', icone: iconeWordpress },
+  { nom: 'Git', icone: iconeGit },
+  { nom: 'Three.js', icone: iconeThree },
+  { nom: 'Blender', icone: iconeBlender },
+  { nom: 'Photoshop', icone: iconePhotoshop },
+  { nom: 'Illustrator', icone: iconeIllustrator },
+  { nom: 'Discord', icone: iconeDiscord },
+  { nom: 'Dropbox', icone: iconeDropbox },
+]
 const apprenticeshipCards = toCards(c.apprenticeshipCards)
 ---
 
@@ -110,6 +146,43 @@ const apprenticeshipCards = toCards(c.apprenticeshipCards)
     <p class='candidature-section__note'>
       <strong>{c.companyBoxTitle}</strong> {c.companyBoxText} <a href={c.companyBoxCtaHref}>{c.companyBoxCtaLabel}</a>
     </p>
+  </section>
+
+  <section
+    class='formation-section'
+    aria-labelledby='technologies-title'
+  >
+    <div class='formation-section__header'>
+      <h2
+        class='formation-section__title'
+        id='technologies-title'
+      >
+        Technologies et logiciels
+      </h2>
+      <p class='formation-section__description'>
+        Les outils travaillés en cours et en projet tout au long de l’année, du front-end au
+        back-end, de la création graphique à la 3D.
+      </p>
+    </div>
+
+    <ul class='tech-stack__grid'>
+      {
+        technologies.map((techno) => (
+          <li class='tech-stack__item'>
+            <img
+              class='tech-stack__icon'
+              src={techno.icone.src}
+              alt=''
+              aria-hidden='true'
+              width='32'
+              height='32'
+              loading='lazy'
+            />
+            <span class='tech-stack__label'>{techno.nom}</span>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 
   <CtaBand
