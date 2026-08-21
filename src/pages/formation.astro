@@ -20,6 +20,16 @@ import iconePhotoshop from '@/assets/images/tech/adobephotoshop.svg'
 import iconeIllustrator from '@/assets/images/tech/adobeillustrator.svg'
 import iconeDiscord from '@/assets/images/tech/discord.svg'
 import iconeDropbox from '@/assets/images/tech/dropbox.svg'
+import iconePwa from '@/assets/images/tech/pwa.svg'
+import iconeUnity from '@/assets/images/tech/unity.svg'
+import iconeFigma from '@/assets/images/tech/figma.svg'
+import iconeAffinity from '@/assets/images/tech/affinity.svg'
+import iconeOffice from '@/assets/images/tech/microsoftoffice.svg'
+import iconePowerpoint from '@/assets/images/tech/microsoftpowerpoint.svg'
+import iconeFilezilla from '@/assets/images/tech/filezilla.svg'
+import iconeAlwaysdata from '@/assets/images/tech/alwaysdata.svg'
+import iconeAstro from '@/assets/images/tech/astro.svg'
+import iconeStrapi from '@/assets/images/tech/strapi.svg'
 
 const c = (await getPageContent<any>('formation-page', {
   'populate[header]': true,
@@ -39,21 +49,37 @@ const infoCards = toCards(c.continuingCards)
 // des UE. Les icones restent servies par le depot ; les libelles gagneraient a
 // passer dans Strapi le jour ou le schema accueillera une liste d'outils.
 const technologies = [
+  // Front-end
   { nom: 'HTML', icone: iconeHtml },
   { nom: 'CSS', icone: iconeCss },
   { nom: 'JavaScript', icone: iconeJs },
   { nom: 'React', icone: iconeReact },
   { nom: 'Node.js', icone: iconeNode },
+  { nom: 'PWA', icone: iconePwa },
+  { nom: 'Astro', icone: iconeAstro },
+  // Back-end et donnees
   { nom: 'PHP', icone: iconePhp },
   { nom: 'MySQL', icone: iconeMysql },
   { nom: 'WordPress', icone: iconeWordpress },
-  { nom: 'Git', icone: iconeGit },
+  { nom: 'Strapi', icone: iconeStrapi },
+  // 3D et temps reel
   { nom: 'Three.js', icone: iconeThree },
   { nom: 'Blender', icone: iconeBlender },
+  { nom: 'Unity', icone: iconeUnity },
+  // Creation graphique
+  { nom: 'Figma', icone: iconeFigma },
   { nom: 'Photoshop', icone: iconePhotoshop },
   { nom: 'Illustrator', icone: iconeIllustrator },
+  { nom: 'Affinity', icone: iconeAffinity },
+  // Bureautique et collaboration
+  { nom: 'Microsoft 365', icone: iconeOffice },
+  { nom: 'PowerPoint', icone: iconePowerpoint },
   { nom: 'Discord', icone: iconeDiscord },
   { nom: 'Dropbox', icone: iconeDropbox },
+  // Versionnage et mise en ligne
+  { nom: 'Git', icone: iconeGit },
+  { nom: 'FileZilla', icone: iconeFilezilla },
+  { nom: 'Alwaysdata', icone: iconeAlwaysdata },
 ]
 const apprenticeshipCards = toCards(c.apprenticeshipCards)
 ---
