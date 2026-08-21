@@ -544,7 +544,7 @@
     ]
   },
   "licencePage": {
-    "id": 4,
+    "id": 5,
     "documentId": "p5mqb5lvqtzezx6kcem5bk4m",
     "levelNote": null,
     "programTitle": "Le programme en un coup d’oeil",
@@ -564,35 +564,35 @@
     "pdfLabel": "Télécharger le résumé du parcours (PDF)",
     "pdfHref": "/documents/resume-parcours-lp-dwca.pdf",
     "createdAt": "2026-08-21T08:26:18.630Z",
-    "updatedAt": "2026-08-21T10:20:27.900Z",
-    "publishedAt": "2026-08-21T10:20:27.984Z",
+    "updatedAt": "2026-08-21T11:30:04.893Z",
+    "publishedAt": "2026-08-21T11:30:04.982Z",
     "header": {
-      "id": 18,
+      "id": 19,
       "title": "Licence",
       "description": "100% à distance alliant développement web, communication digitale et apprentissages numériques.Axée sur la pratique, elle prépare les étudiants aux métiers du multimédia en pleine expansion.Accessible en apprentissage, en formation initiale ou continue "
     },
     "seo": {
-      "id": 26,
+      "id": 27,
       "metaTitle": "Programme et enseignements | LP DWCA",
       "metaDescription": "Le programme de la licence pro DWCA : 408 heures réparties en deux semestres, projet tuteuré, stage ou apprentissage, et les débouchés après le diplôme."
     },
     "programDomains": [
       {
-        "id": 10,
+        "id": 13,
         "icon": "command-line",
         "title": "Développement Web",
         "description": "Front-End : HTML/CSS, Javascript, ReactJS et Back-End : PHP/MySQL",
         "href": "#curriculum"
       },
       {
-        "id": 11,
+        "id": 14,
         "icon": "chat-duo",
         "title": "Communication",
         "description": "Gestion de projet web, Digital marketing, Réseaux sociaux, Droit du multimédia",
         "href": "#curriculum"
       },
       {
-        "id": 12,
+        "id": 15,
         "icon": "book-open",
         "title": "Apprentissages",
         "description": "E-learning, jeux sérieux et mondes virtuels Blender, Unity",
@@ -601,13 +601,13 @@
     ],
     "semesters": [
       {
-        "id": 7,
+        "id": 9,
         "label": "Semestre 1 (210 heures)",
         "ariaLabel": "Unités d’enseignement du semestre 1",
         "gridModifier": "semester-1",
         "ues": [
           {
-            "id": 34,
+            "id": 45,
             "code": "51",
             "icon": "paint-brush",
             "title": "UE 5.1 Conception et réalisation graphiques pour le web et Technologie Web",
@@ -616,29 +616,29 @@
             "offset": null,
             "lines": [
               {
-                "id": 291,
+                "id": 335,
                 "text": "Création graphique"
               },
               {
-                "id": 292,
+                "id": 336,
                 "text": "Relation client/commanditaire"
               },
               {
-                "id": 293,
+                "id": 337,
                 "text": "Ergonomie et UX design"
               },
               {
-                "id": 294,
+                "id": 338,
                 "text": "Design web"
               },
               {
-                "id": 295,
+                "id": 339,
                 "text": "Droit du multimédia (58h)"
               }
             ]
           },
           {
-            "id": 35,
+            "id": 46,
             "code": "52",
             "icon": "command-line",
             "title": "UE 5.2 Développement Front-End : fondamentaux de la programmation",
@@ -647,25 +647,25 @@
             "offset": "top",
             "lines": [
               {
-                "id": 296,
+                "id": 340,
                 "text": "HTML et CSS"
               },
               {
-                "id": 297,
+                "id": 341,
                 "text": "Javascript, API et framework"
               },
               {
-                "id": 298,
+                "id": 342,
                 "text": "Intégration web"
               },
               {
-                "id": 299,
+                "id": 343,
                 "text": "Référencement (38h)"
               }
             ]
           },
           {
-            "id": 36,
+            "id": 47,
             "code": "53",
             "icon": "chat-duo",
             "title": "UE 5.3 Gestion de projet multimédia et commercialisation",
@@ -674,29 +674,29 @@
             "offset": null,
             "lines": [
               {
-                "id": 300,
+                "id": 344,
                 "text": "Cahier des charges"
               },
               {
-                "id": 301,
+                "id": 345,
                 "text": "Gestion de projet"
               },
               {
-                "id": 302,
+                "id": 346,
                 "text": "Marketing digital"
               },
               {
-                "id": 303,
+                "id": 347,
                 "text": "Communication publicitaire"
               },
               {
-                "id": 304,
+                "id": 348,
                 "text": "Community Management (48h)"
               }
             ]
           },
           {
-            "id": 37,
+            "id": 48,
             "code": "54",
             "icon": "chat",
             "title": "UE 5.4 Langues",
@@ -705,17 +705,17 @@
             "offset": null,
             "lines": [
               {
-                "id": 305,
+                "id": 349,
                 "text": "Anglais : Expression écrite et orale"
               },
               {
-                "id": 306,
+                "id": 350,
                 "text": "Anglais : Culture des entreprises (16h)"
               }
             ]
           },
           {
-            "id": 38,
+            "id": 49,
             "code": "55",
             "icon": "sparkle",
             "title": "UE 5.5 Projet Tuteuré, Étape 1",
@@ -724,7 +724,7 @@
             "offset": null,
             "lines": [
               {
-                "id": 307,
+                "id": 351,
                 "text": "Préparation et Analyse du projet (50h)"
               }
             ]
@@ -732,13 +732,13 @@
         ]
       },
       {
-        "id": 8,
+        "id": 10,
         "label": "Semestre 2 (198 heures)",
         "ariaLabel": "Unités d’enseignement du semestre 2",
         "gridModifier": "semester-2",
         "ues": [
           {
-            "id": 39,
+            "id": 50,
             "code": "61",
             "icon": "command-line",
             "title": "UE 6.1 Développement Back-End",
@@ -747,21 +747,21 @@
             "offset": null,
             "lines": [
               {
-                "id": 308,
+                "id": 352,
                 "text": "PHP & Base de données"
               },
               {
-                "id": 309,
+                "id": 353,
                 "text": "CMS"
               },
               {
-                "id": 310,
+                "id": 354,
                 "text": "Sécurité des SI et web (36h)"
               }
             ]
           },
           {
-            "id": 40,
+            "id": 51,
             "code": "62",
             "icon": "paint-brush",
             "title": "UE 6.2 Design et application 3D immersives",
@@ -770,21 +770,21 @@
             "offset": "top",
             "lines": [
               {
-                "id": 311,
+                "id": 355,
                 "text": "Design 3D"
               },
               {
-                "id": 312,
+                "id": 356,
                 "text": "Développement 3D"
               },
               {
-                "id": 313,
+                "id": 357,
                 "text": "Réalité virtuelle (VR) 30h"
               }
             ]
           },
           {
-            "id": 41,
+            "id": 52,
             "code": "63",
             "icon": "command-line",
             "title": "UE 6.3 Développement Web : approfondissement",
@@ -793,21 +793,21 @@
             "offset": null,
             "lines": [
               {
-                "id": 314,
+                "id": 358,
                 "text": "ReactJS, NodeJS"
               },
               {
-                "id": 315,
+                "id": 359,
                 "text": "Progressive Web App"
               },
               {
-                "id": 316,
+                "id": 360,
                 "text": "Architecture MVC et frameworks (30h)"
               }
             ]
           },
           {
-            "id": 42,
+            "id": 53,
             "code": "64",
             "icon": "book-open",
             "title": "UE 6.4 Interactivité numérique et apprentissage tout au long de la vie",
@@ -816,25 +816,25 @@
             "offset": null,
             "lines": [
               {
-                "id": 317,
+                "id": 361,
                 "text": "TICE et Apprentissages"
               },
               {
-                "id": 318,
+                "id": 362,
                 "text": "Ingénierie des EIAH"
               },
               {
-                "id": 319,
+                "id": 363,
                 "text": "Scénarii pédagogiques"
               },
               {
-                "id": 320,
+                "id": 364,
                 "text": "Dispositifs de formation pour la FTLV 32h"
               }
             ]
           },
           {
-            "id": 43,
+            "id": 54,
             "code": "65",
             "icon": "pencil",
             "title": "UE 6.5 Projet Tuteuré, Étape 2",
@@ -843,13 +843,13 @@
             "offset": "bottom",
             "lines": [
               {
-                "id": 321,
+                "id": 365,
                 "text": "Conception du projet (70h)"
               }
             ]
           },
           {
-            "id": 44,
+            "id": 55,
             "code": "66",
             "icon": "book-open",
             "title": "UE 6.6 Stage ou Apprentissage",
@@ -858,7 +858,7 @@
             "offset": null,
             "lines": [
               {
-                "id": 322,
+                "id": 366,
                 "text": "Projet personnel ou professionnel (420h)"
               }
             ]
@@ -868,7 +868,7 @@
     ],
     "leads": [
       {
-        "id": 9,
+        "id": 12,
         "name": "Éric Christoffel",
         "role": "Maître de conférences, laboratoire LISEC, UFR de Physique et ingénierie, Université de Strasbourg",
         "photoAlt": "Portrait d'Éric Christoffel",
@@ -876,53 +876,61 @@
         "photo": null
       },
       {
-        "id": 10,
+        "id": 13,
         "name": "Marc Trestini",
         "role": "Professeur des universités en sciences de l’information et de la communication, INSPÉ, Université de Strasbourg.",
         "photoAlt": "Portrait de Marc Trestini",
         "align": "right",
         "photo": null
+      },
+      {
+        "id": 14,
+        "name": "Maëlle Juif",
+        "role": "Référente apprentissage",
+        "photoAlt": null,
+        "align": "left",
+        "photo": null
       }
     ],
     "organisationPanels": [
       {
-        "id": 13,
+        "id": 17,
         "blocks": [
           {
-            "id": 19,
+            "id": 25,
             "title": "Durée et Calendrier",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 67,
+                "id": 81,
                 "text": "Notre programme de formation s'étend sur une année complète, d’octobre à septembre."
               },
               {
-                "id": 68,
+                "id": 82,
                 "text": "La prochaine session est prévue du 20 septembre 2024 au 29 août 2025."
               }
             ],
             "items": []
           },
           {
-            "id": 20,
+            "id": 26,
             "title": "Structure et Rythme",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 69,
+                "id": 83,
                 "text": "Cours synchrones : Les jeudis et vendredis soirs, de 18h à 22h, en interaction directe avec les formateurs."
               },
               {
-                "id": 70,
+                "id": 84,
                 "text": "Apprentissage autonome : Travail personnel et collaboratif sur notre plateforme dédiée DigitalUni."
               },
               {
-                "id": 71,
+                "id": 85,
                 "text": "Pour les apprentis : Immersion professionnelle de 3 jours en entreprise (lundi, mardi, mercredi), complétée par 2 jours de formation (jeudi, vendredi)."
               },
               {
-                "id": 72,
+                "id": 86,
                 "text": "Investissement hebdomadaire : Prévoyez 20 à 25 heures de travail personnel en complément des cours synchrones pour une progression optimale."
               }
             ],
@@ -931,43 +939,43 @@
         ]
       },
       {
-        "id": 14,
+        "id": 18,
         "blocks": [
           {
-            "id": 21,
+            "id": 27,
             "title": "Environnement d’apprentissage",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 73,
+                "id": 87,
                 "text": "DigitalUni / Classilio : Notre plateforme centrale pour les cours en ligne, les forums interactifs et la soumission des travaux."
               },
               {
-                "id": 74,
+                "id": 88,
                 "text": "Outils collaboratifs : Utilisation de Dropbox pour le partage de fichiers et Discord pour la communication en temps réel."
               }
             ],
             "items": []
           },
           {
-            "id": 22,
+            "id": 28,
             "title": "Équipement recommandé",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 75,
+                "id": 89,
                 "text": "Matériel informatique : Un ordinateur performant capable de gérer les logiciels de création."
               },
               {
-                "id": 76,
+                "id": 90,
                 "text": "Connectivité : Une connexion internet haut débit et stable pour une participation optimale aux cours en ligne."
               },
               {
-                "id": 77,
+                "id": 91,
                 "text": "Audio : Un microphone de qualité pour des interactions claires lors des classes virtuelles."
               },
               {
-                "id": 78,
+                "id": 92,
                 "text": "Logiciels : La suite Adobe (ou équivalent), avec accès à des tarifs préférentiels pour étudiants."
               }
             ],
@@ -978,25 +986,25 @@
     ],
     "afterPanels": [
       {
-        "id": 15,
+        "id": 19,
         "blocks": [
           {
-            "id": 23,
+            "id": 29,
             "title": "Poursuite d'études",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 79,
+                "id": 93,
                 "text": "Les diplômés ont la possibilité de poursuivre leur cursus académique en Master, notamment :"
               }
             ],
             "items": [
               {
-                "id": 323,
+                "id": 367,
                 "text": "Master SYNVA (Université de Strasbourg) : Formation en ingénierie des systèmes numériques virtuels pour l’apprentissage. Ce programme se concentre sur la conception de solutions éducatives innovantes utilisant les technologies numériques."
               },
               {
-                "id": 324,
+                "id": 368,
                 "text": "Master VCiel (Université de Lyon, enseignement à distance) : Cursus approfondi en développement, graphisme et gestion de projet. Cette formation offre une flexibilité adaptée aux professionnels en activité."
               }
             ]
@@ -1004,45 +1012,45 @@
         ]
       },
       {
-        "id": 16,
+        "id": 20,
         "blocks": [
           {
-            "id": 24,
+            "id": 30,
             "title": "Débouchés",
             "mobileTitle": "Insertion professionnelle",
             "paragraphs": [
               {
-                "id": 80,
+                "id": 94,
                 "text": "Cette formation universitaire prépare les étudiants à diverses carrières dans le domaine du numérique et des technologies de l’information :"
               }
             ],
             "items": [
               {
-                "id": 325,
+                "id": 369,
                 "text": "Développeur web (Front-End, Back-End, Full-Stack) : Conception et réalisation d’applications web"
               },
               {
-                "id": 326,
+                "id": 370,
                 "text": "Intégrateur web : Mise en œuvre technique de l’interface utilisateur"
               },
               {
-                "id": 327,
+                "id": 371,
                 "text": "Webmaster : Gestion et maintenance de sites web"
               },
               {
-                "id": 328,
+                "id": 372,
                 "text": "Web designer / UX Designer : Conception d’interfaces et d’expériences utilisateur"
               },
               {
-                "id": 329,
+                "id": 373,
                 "text": "Chef de projet digital : Coordination et gestion de projets numériques"
               },
               {
-                "id": 330,
+                "id": 374,
                 "text": "Community Manager : Gestion de la présence en ligne et de la communication digitale"
               },
               {
-                "id": 331,
+                "id": 375,
                 "text": "Concepteur e-learning : Élaboration de dispositifs de formation en ligne"
               }
             ]
@@ -1051,7 +1059,7 @@
       }
     ],
     "insertion": {
-      "id": 4,
+      "id": 5,
       "title": "Que deviennent les diplômés ?",
       "cardTitle": "Données statistiques sur l’insertion professionnelle",
       "intro": "Les enquêtes menées auprès de nos anciens étudiants par l’ORESIPE révèlent les indicateurs suivants :",
@@ -1059,15 +1067,15 @@
       "href": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html",
       "stats": [
         {
-          "id": 332,
+          "id": 376,
           "text": "Taux d’insertion professionnelle : 67 % à 18 mois post-diplôme, atteignant 100 % à 30 mois"
         },
         {
-          "id": 333,
+          "id": 377,
           "text": "Délai moyen d’obtention du premier emploi : 3,6 mois"
         },
         {
-          "id": 334,
+          "id": 378,
           "text": "Rémunération : Le salaire net mensuel médian s'élève à 1550 € à 18 mois et progresse à 1942 € à 30 mois post-diplôme"
         }
       ]
