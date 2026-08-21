@@ -38,6 +38,7 @@
 
 .elearning-section__note {
   margin-top: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
   max-width: 70ch;
   padding: var(--space-2xl);
   border-left: 3px solid var(--color-accent-border);

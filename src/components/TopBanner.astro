@@ -1,21 +1,32 @@
 ---
+import { isSamePath } from '@/utils/links'
+
 interface Props {
   title: string
   href: string
   text: string
 }
 const { title, href, text } = Astro.props
+
+// Sur la page que le bandeau annonce, le lien ne mène nulle part d'utile :
+// on ne garde que le message.
+const showLink = Boolean(href) && !isSamePath(Astro.url.pathname, href)
 ---
 
 <section class='site-header__banner'>
   <div class='banner'>
     <p class='banner__text'>{title}</p>
-    <a
-      class='banner__link'
-      href={href}
-      aria-label="Plus d'infos"
-      >{text}
-      <span class='banner__icon'></span>
-    </a>
+    {
+      showLink && (
+        <a
+          class='banner__link'
+          href={href}
+          aria-label="Plus d'infos"
+        >
+          {text}
+          <span class='banner__icon' />
+        </a>
+      )
+    }
   </div>
 </section>
