@@ -1,48 +1,48 @@
 {
   "navigation": {
-    "id": 2,
-    "documentId": "bd0kt3d4ugr1ws33j4j9oz1x",
+    "id": 3,
+    "documentId": "plo1hkf2fbbsx7s5j252m0i6",
     "bannerText": "Licence professionnelle Développement web, Communication et Apprentissages — 100 % à distance.",
     "bannerLinkLabel": "Découvrir la licence",
     "bannerLinkHref": "/licence/",
     "logoAlt": "LP DWCA — Licence professionnelle Développement web, Communication et Apprentissages, Université de Strasbourg",
     "ctaLabel": "Candidature",
-    "ctaHref": "/candidature/",
+    "ctaHref": "https://www.unistra.fr/fr/formation/admission/les-admissions-luniversite-strasbourg",
     "socialTitle": "Profils sociaux",
     "contactEmail": "sfc-contact@unistra.fr",
     "contactPhone": "+33 (0)3 68 85 49 20",
     "contactAddress": "Service Formation Continue — 21 rue du Maréchal Lefebvre, 67100 Strasbourg",
     "copyright": "Tous droits réservés.",
-    "createdAt": "2026-08-20T14:53:28.151Z",
-    "updatedAt": "2026-08-20T14:53:28.151Z",
-    "publishedAt": "2026-08-20T14:53:28.172Z",
+    "createdAt": "2026-08-21T08:26:21.675Z",
+    "updatedAt": "2026-08-21T10:08:11.832Z",
+    "publishedAt": "2026-08-21T10:08:11.854Z",
     "mainLinks": [
       {
-        "id": 23,
+        "id": 55,
         "label": "Accueil",
         "href": "/",
         "external": false
       },
       {
-        "id": 24,
+        "id": 56,
         "label": "Licence",
         "href": "/licence/",
         "external": false
       },
       {
-        "id": 25,
+        "id": 57,
         "label": "Formation",
         "href": "/formation/",
         "external": false
       },
       {
-        "id": 26,
+        "id": 58,
         "label": "Financement",
         "href": "/financement/",
         "external": false
       },
       {
-        "id": 27,
+        "id": 59,
         "label": "Contact",
         "href": "/contact/",
         "external": false
@@ -50,19 +50,19 @@
     ],
     "legalLinks": [
       {
-        "id": 36,
+        "id": 68,
         "label": "Mentions légales",
         "href": "/mentions-legales/",
         "external": false
       },
       {
-        "id": 37,
+        "id": 69,
         "label": "Données personnelles",
         "href": "/mentions-legales/#donnees",
         "external": false
       },
       {
-        "id": 38,
+        "id": 70,
         "label": "Accessibilité",
         "href": "/mentions-legales/#accessibilite",
         "external": false
@@ -70,19 +70,19 @@
     ],
     "socialLinks": [
       {
-        "id": 4,
+        "id": 10,
         "icon": "facebook",
         "label": "Facebook",
         "href": "https://www.facebook.com/LPATC.Universite.Strasbourg"
       },
       {
-        "id": 5,
+        "id": 11,
         "icon": "twitter",
         "label": "X (Université de Strasbourg)",
         "href": "https://x.com/unistra"
       },
       {
-        "id": 6,
+        "id": 12,
         "icon": "linkedin",
         "label": "LinkedIn (Université de Strasbourg)",
         "href": "https://www.linkedin.com/school/universite-de-strasbourg/"
@@ -90,29 +90,29 @@
     ],
     "footerSections": [
       {
-        "id": 3,
+        "id": 7,
         "title": "Accueil",
         "links": [
           {
-            "id": 28,
+            "id": 60,
             "label": "Avantages",
             "href": "/#avantages",
             "external": false
           },
           {
-            "id": 29,
+            "id": 61,
             "label": "Nos formations",
             "href": "/formation/",
             "external": false
           },
           {
-            "id": 30,
+            "id": 62,
             "label": "Témoignages alumni",
             "href": "/#temoignages",
             "external": false
           },
           {
-            "id": 31,
+            "id": 63,
             "label": "Notre FAQ",
             "href": "/#faq",
             "external": false
@@ -120,29 +120,29 @@
         ]
       },
       {
-        "id": 4,
+        "id": 8,
         "title": "La formation",
         "links": [
           {
-            "id": 32,
+            "id": 64,
             "label": "Alumni",
             "href": "/alumni/",
             "external": false
           },
           {
-            "id": 33,
+            "id": 65,
             "label": "Se former à distance",
             "href": "/e-learning/",
             "external": false
           },
           {
-            "id": 34,
+            "id": 66,
             "label": "Candidater",
             "href": "/candidature/",
             "external": false
           },
           {
-            "id": 35,
+            "id": 67,
             "label": "Fiche officielle Unistra",
             "href": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html",
             "external": true
@@ -153,7 +153,7 @@
   },
   "uiLabels": {
     "id": 2,
-    "documentId": "z0ibeyebz8p7q99phpkhcl8c",
+    "documentId": "cbemv00er7gvx8t8q84ua7k4",
     "viewAll": "Tout afficher",
     "learnMore": "En savoir plus",
     "viewProgram": "Voir le programme",
@@ -167,19 +167,19 @@
     "menuOpen": "Ouvrir le menu",
     "menuClose": "Fermer le menu",
     "externalLinkSuffix": "(nouvel onglet)",
-    "createdAt": "2026-08-20T14:53:28.232Z",
-    "updatedAt": "2026-08-20T14:53:28.232Z",
-    "publishedAt": "2026-08-20T14:53:28.240Z"
+    "createdAt": "2026-08-21T08:26:22.002Z",
+    "updatedAt": "2026-08-21T08:26:22.120Z",
+    "publishedAt": "2026-08-21T08:26:22.124Z"
   },
   "homePage": {
-    "id": 2,
-    "documentId": "lc4mtlvv8dxt59vnsx2pihp1",
+    "id": 4,
+    "documentId": "xx8pzhhemoph5ar7990frjpt",
     "partnersTitle": "Ils accueillent nos alternants et nos stagiaires",
-    "createdAt": "2026-08-20T14:53:28.865Z",
-    "updatedAt": "2026-08-20T14:53:28.865Z",
-    "publishedAt": "2026-08-20T14:53:28.892Z",
+    "createdAt": "2026-08-21T08:25:51.951Z",
+    "updatedAt": "2026-08-21T08:32:06.437Z",
+    "publishedAt": "2026-08-21T08:32:06.470Z",
     "hero": {
-      "id": 2,
+      "id": 5,
       "accentWord": "Devenez",
       "title": "développeur full stack et chef de projet",
       "text": "En un an, 100 % à distance, avec un diplôme d’État de l’Université de Strasbourg.",
@@ -193,7 +193,7 @@
       "image": null
     },
     "advantagesHeader": {
-      "id": 6,
+      "id": 21,
       "title": "Avantages",
       "intro": "Une licence universitaire pensée pour des adultes qui ont déjà une vie : un emploi, une entreprise d’accueil, une famille. Voici ce qui change concrètement quand on se forme chez nous.",
       "actionLabel": "Tout afficher",
@@ -201,51 +201,51 @@
     },
     "advantages": [
       {
-        "id": 7,
+        "id": 25,
         "number": "01",
         "title": "Un rythme compatible avec un emploi",
         "description": "Les cours en direct ont lieu les jeudi et vendredi, de 18 h à 22 h. Tout le reste du travail s’organise quand vous le pouvez."
       },
       {
-        "id": 8,
+        "id": 26,
         "number": "02",
         "title": "Des intervenants qui exercent le métier",
         "description": "Développeurs, designers, juristes, chefs de projet : la moitié de l’équipe pédagogique enseigne ce qu’elle pratique en entreprise."
       },
       {
-        "id": 9,
+        "id": 27,
         "number": "03",
         "title": "La triple compétence",
         "description": "Développement web, communication digitale et ingénierie pédagogique dans un seul diplôme. Un profil rare, que les PME recherchent."
       },
       {
-        "id": 10,
+        "id": 28,
         "number": "04",
         "title": "Un programme réactualisé chaque année",
         "description": "React, Node.js, progressive web apps, sécurité applicative, 3D temps réel : le contenu suit les technologies réellement utilisées."
       },
       {
-        "id": 11,
+        "id": 29,
         "number": "05",
         "title": "Un portfolio, pas seulement un diplôme",
         "description": "Contrôle continu intégral, projet tuteuré de 120 heures, stage ou apprentissage : vous sortez avec des réalisations à montrer."
       },
       {
-        "id": 12,
+        "id": 30,
         "number": "06",
         "title": "Une promotion à taille humaine",
         "description": "Quinze apprenants par promotion et des travaux en équipes de trois à cinq. On ne se forme pas seul devant un écran."
       }
     ],
     "articlesHeader": {
-      "id": 7,
+      "id": 22,
       "title": "Actualités de la formation",
       "intro": "Portraits d’anciens, projets d’étudiants et veille technologique : de quoi découvrir la formation de l’intérieur, entre deux rentrées.",
       "actionLabel": "Voir les articles",
       "actionHref": "/articles/"
     },
     "coursesHeader": {
-      "id": 8,
+      "id": 23,
       "title": "Le programme en un coup d’œil",
       "intro": "Dix unités d’enseignement et 408 heures de cours réparties sur deux semestres. Voici les six domaines qui structurent l’année, du design d’interface au développement back-end.",
       "actionLabel": "Tout afficher",
@@ -253,7 +253,7 @@
     },
     "courses": [
       {
-        "id": 7,
+        "id": 25,
         "title": "Principes fondamentaux de la conception Web",
         "description": "HTML, CSS, responsive design et intégration web : les fondations pour construire des interfaces qui tiennent sur tous les écrans.",
         "imageAlt": "Conception d’interfaces sur tableau et maquettes papier",
@@ -261,7 +261,7 @@
         "image": null
       },
       {
-        "id": 8,
+        "id": 26,
         "title": "Conception UI/UX",
         "description": "Ergonomie, biais cognitifs, entretiens utilisateurs, zoning et maquettes : concevoir des interfaces que les gens savent utiliser sans mode d’emploi.",
         "imageAlt": "Poste de travail dédié à la conception UI/UX",
@@ -269,7 +269,7 @@
         "image": null
       },
       {
-        "id": 9,
+        "id": 27,
         "title": "Développement d’applications mobiles",
         "description": "Stratégie mobile, responsive et adaptive design, progressive web apps : penser le produit d’abord pour le téléphone, puis l’étendre.",
         "imageAlt": "Téléphone et carnet de notes pour la conception mobile",
@@ -277,7 +277,7 @@
         "image": null
       },
       {
-        "id": 10,
+        "id": 28,
         "title": "Conception graphique sur Affinity et Adobe",
         "description": "Typographie, théorie des couleurs, mise en page et retouche d’images sur Photoshop, Illustrator et la suite Affinity, jusqu’à la charte graphique.",
         "imageAlt": "Palette de couleurs et matériel de conception graphique",
@@ -285,7 +285,7 @@
         "image": null
       },
       {
-        "id": 11,
+        "id": 29,
         "title": "Développement web front-end",
         "description": "JavaScript, ReactJS, Node.js et consommation d’API : construire des applications réactives, du composant isolé à l’architecture complète.",
         "imageAlt": "Développement front-end sur ordinateur portable",
@@ -293,7 +293,7 @@
         "image": null
       },
       {
-        "id": 12,
+        "id": 30,
         "title": "JavaScript avancé",
         "description": "Programmation asynchrone, fonctionnalités ES6, architecture MVC et frameworks : passer du script qui fonctionne au code que l’on peut maintenir.",
         "imageAlt": "Apprentissage avancé du JavaScript",
@@ -302,14 +302,14 @@
       }
     ],
     "testimonialsHeader": {
-      "id": 9,
+      "id": 24,
       "title": "Témoignages alumni",
       "intro": "Ils étaient étudiants en BTS, salariés en reconversion ou développeurs autodidactes. Ils racontent l’année telle qu’ils l’ont vécue, et ce qu’elle a changé pour eux ensuite.",
       "actionLabel": "Tous les témoignages",
       "actionHref": "/alumni/"
     },
     "faqHeader": {
-      "id": 10,
+      "id": 25,
       "title": "Questions fréquentes",
       "intro": "Vous avez encore une question ? Écrivez à l’équipe pédagogique, on répond sous 48 heures ouvrées.",
       "actionLabel": "Voir toutes les questions",
@@ -319,7 +319,7 @@
   "alumniHome": [
     {
       "id": 2,
-      "documentId": "gah19jd4kzyut52c17znr62w",
+      "documentId": "z8ar10wj39i6woiip0hw2jnq",
       "name": "Arthur Daigremont",
       "anchorId": "daigremont",
       "context": "21 ans à l’époque · promotion 2021-2022",
@@ -330,14 +330,14 @@
       "photoAlt": "Portrait d’Arthur Daigremont, diplômé de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 1,
-      "createdAt": "2026-08-20T14:53:28.253Z",
-      "updatedAt": "2026-08-20T14:53:28.253Z",
-      "publishedAt": "2026-08-20T14:53:28.262Z",
+      "createdAt": "2026-08-21T08:28:06.288Z",
+      "updatedAt": "2026-08-21T08:28:06.415Z",
+      "publishedAt": "2026-08-21T08:28:06.422Z",
       "photo": null
     },
     {
       "id": 4,
-      "documentId": "i4x5bmltalvdnug2kr1vm7m1",
+      "documentId": "awfbqr5o8s5cm3ng5mlmu6rx",
       "name": "Laura Kauffmann",
       "anchorId": "kauffmann",
       "context": "27 ans à l’époque · promotion 2021-2022",
@@ -348,14 +348,14 @@
       "photoAlt": "Portrait de Laura Kauffmann, diplômée de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 2,
-      "createdAt": "2026-08-20T14:53:28.277Z",
-      "updatedAt": "2026-08-20T14:53:28.277Z",
-      "publishedAt": "2026-08-20T14:53:28.285Z",
+      "createdAt": "2026-08-21T08:28:06.562Z",
+      "updatedAt": "2026-08-21T08:28:06.687Z",
+      "publishedAt": "2026-08-21T08:28:06.693Z",
       "photo": null
     },
     {
       "id": 6,
-      "documentId": "igksas0wtrj65hn81g7x9tp0",
+      "documentId": "jijuo2ng6l1go5eq6d4k66sw",
       "name": "Audrey Stoessel",
       "anchorId": "stoessel",
       "context": "40 ans à l’époque · promotion 2021-2022",
@@ -366,177 +366,177 @@
       "photoAlt": "Portrait d’Audrey Stoessel, diplômée de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 3,
-      "createdAt": "2026-08-20T14:53:28.298Z",
-      "updatedAt": "2026-08-20T14:53:28.298Z",
-      "publishedAt": "2026-08-20T14:53:28.304Z",
+      "createdAt": "2026-08-21T08:28:06.854Z",
+      "updatedAt": "2026-08-21T08:28:06.974Z",
+      "publishedAt": "2026-08-21T08:28:06.981Z",
       "photo": null
     }
   ],
   "faqHome": [
     {
       "id": 2,
-      "documentId": "iqtpk6kjmzkvx332qnljiudp",
+      "documentId": "gkydnitjpbwphfcefxlkkh2t",
       "question": "Puis-je m’inscrire au milieu de l’année ?",
       "answer": "Non. La promotion démarre à la rentrée universitaire et suit un calendrier unique jusqu’à l’été suivant. Les candidatures s’ouvrent au printemps précédent, sur eCandidat.",
       "showOnHome": true,
       "order": 1,
-      "createdAt": "2026-08-20T14:53:28.414Z",
-      "updatedAt": "2026-08-20T14:53:28.414Z",
-      "publishedAt": "2026-08-20T14:53:28.424Z"
+      "createdAt": "2026-08-21T08:27:40.763Z",
+      "updatedAt": "2026-08-21T08:27:40.889Z",
+      "publishedAt": "2026-08-21T08:27:40.895Z"
     },
     {
       "id": 4,
-      "documentId": "g04rjko104sz6kb1dhvq8uy7",
+      "documentId": "sl9dz42yad0khqkskfrwtzgn",
       "question": "Quelles sont les conditions d’admission ?",
       "answer": "La licence s’adresse aux titulaires d’un Bac+2. Les profils informatiques, graphiques ou artistiques sont les plus à l’aise, mais les candidatures venues d’autres filières sont examinées sur la base des compétences acquises, personnellement ou professionnellement.",
       "showOnHome": true,
       "order": 2,
-      "createdAt": "2026-08-20T14:53:28.444Z",
-      "updatedAt": "2026-08-20T14:53:28.444Z",
-      "publishedAt": "2026-08-20T14:53:28.453Z"
+      "createdAt": "2026-08-21T08:27:59.028Z",
+      "updatedAt": "2026-08-21T08:27:59.143Z",
+      "publishedAt": "2026-08-21T08:27:59.149Z"
     },
     {
       "id": 12,
-      "documentId": "rdn5d1jqzz1wd6kf8v4zgj8n",
+      "documentId": "bv50rej20qmgkmepre7nq70z",
       "question": "Quel accompagnement puis-je attendre des enseignants ?",
       "answer": "Les cours en direct se font en petit groupe. Entre deux séances, le suivi passe par DigitalUni et Discord. Chaque projet tuteuré est encadré par un enseignant tuteur.",
       "showOnHome": true,
       "order": 6,
-      "createdAt": "2026-08-20T14:53:28.545Z",
-      "updatedAt": "2026-08-20T14:53:28.545Z",
-      "publishedAt": "2026-08-20T14:53:28.552Z"
+      "createdAt": "2026-08-21T08:28:00.238Z",
+      "updatedAt": "2026-08-21T08:28:00.391Z",
+      "publishedAt": "2026-08-21T08:28:00.397Z"
     },
     {
       "id": 14,
-      "documentId": "fpmnzp8y3w54y30gpivrtdsg",
+      "documentId": "v9x5tpy1hdnz6numy3gr515z",
       "question": "Les cours se suivent-ils à son propre rythme, ou à dates fixes ?",
       "answer": "Les deux. Les classes virtuelles sont synchrones, les jeudi et vendredi de 18 h à 22 h : votre présence y est attendue. Le travail personnel s’organise librement.",
       "showOnHome": true,
       "order": 7,
-      "createdAt": "2026-08-20T14:53:28.572Z",
-      "updatedAt": "2026-08-20T14:53:28.572Z",
-      "publishedAt": "2026-08-20T14:53:28.579Z"
+      "createdAt": "2026-08-21T08:28:00.510Z",
+      "updatedAt": "2026-08-21T08:28:00.656Z",
+      "publishedAt": "2026-08-21T08:28:00.661Z"
     },
     {
       "id": 18,
-      "documentId": "a7g9yf6hxylf0h70egwc0olw",
+      "documentId": "ur740debafw36b55kqewfgdk",
       "question": "Puis-je télécharger les supports de cours ?",
       "answer": "Pour l’essentiel, oui. Les cours, vidéo-cours et exercices déposés sur DigitalUni restent accessibles toute l’année, et les classes virtuelles sont enregistrées.",
       "showOnHome": true,
       "order": 9,
-      "createdAt": "2026-08-20T14:53:28.619Z",
-      "updatedAt": "2026-08-20T14:53:28.619Z",
-      "publishedAt": "2026-08-20T14:53:28.626Z"
+      "createdAt": "2026-08-21T08:28:01.044Z",
+      "updatedAt": "2026-08-21T08:28:01.173Z",
+      "publishedAt": "2026-08-21T08:28:01.178Z"
     },
     {
       "id": 22,
-      "documentId": "c5nqknuv8rrew92fyqlezcc5",
+      "documentId": "w4iv0465jtclr8xl474ed1fm",
       "question": "Combien coûte la formation ?",
       "answer": "La formation continue est facturée 5 720 € pour l’année 2026-2027. En apprentissage, elle ne vous coûte rien : elle est prise en charge par l’opérateur de compétences de l’entreprise, via le CFAU.",
       "showOnHome": true,
       "order": 11,
-      "createdAt": "2026-08-20T14:53:28.666Z",
-      "updatedAt": "2026-08-20T14:53:28.666Z",
-      "publishedAt": "2026-08-20T14:53:28.673Z"
+      "createdAt": "2026-08-21T08:28:01.584Z",
+      "updatedAt": "2026-08-21T08:28:01.686Z",
+      "publishedAt": "2026-08-21T08:28:01.690Z"
     }
   ],
   "programReference": {
     "id": 2,
-    "documentId": "rq9mxrk50rxn0d02235tklwq",
+    "documentId": "ttzplmowk0aauazi6l7y56an",
     "title": "Références de la formation",
     "intro": "Les informations ci-dessous proviennent du catalogue officiel des formations de l’Université de Strasbourg, édition 2026-2027, et de la fiche France Compétences correspondante. Elles sont destinées aux conseillers en évolution professionnelle, aux financeurs et aux organismes de contrôle.",
     "catalogYear": "2026-2027",
     "lastCheckedAt": "2026-08-20",
-    "createdAt": "2026-08-20T14:53:28.050Z",
-    "updatedAt": "2026-08-20T14:53:28.050Z",
-    "publishedAt": "2026-08-20T14:53:28.062Z",
+    "createdAt": "2026-08-21T08:26:22.244Z",
+    "updatedAt": "2026-08-21T08:26:22.366Z",
+    "publishedAt": "2026-08-21T08:26:22.372Z",
     "entries": [
       {
-        "id": 15,
+        "id": 21,
         "term": "Intitulé officiel",
         "value": "Licence professionnelle Métiers de l’informatique : conception, développement et test de logiciels — parcours Développement web, communication et apprentissages (EAD)"
       },
       {
-        "id": 16,
+        "id": 22,
         "term": "Code RNCP",
         "value": "RNCP40319 — niveau 6 (Bac+3)"
       },
       {
-        "id": 17,
+        "id": 23,
         "term": "Enregistrement au RNCP",
         "value": "Jusqu’au 31 décembre 2029"
       },
       {
-        "id": 18,
+        "id": 24,
         "term": "Crédits ECTS",
         "value": "60 crédits"
       },
       {
-        "id": 19,
+        "id": 25,
         "term": "Volume horaire",
         "value": "408 heures, sur une année universitaire"
       },
       {
-        "id": 20,
+        "id": 26,
         "term": "Numéro de diplôme",
         "value": "20180879"
       },
       {
-        "id": 21,
+        "id": 27,
         "term": "Niveau d’entrée",
         "value": "Bac+2, ou validation des acquis personnels et professionnels (VAPP)"
       },
       {
-        "id": 22,
+        "id": 28,
         "term": "Modalité",
         "value": "Entièrement à distance (EAD)"
       },
       {
-        "id": 23,
+        "id": 29,
         "term": "Régimes d’études",
         "value": "Contrat d’apprentissage · Contrat de professionnalisation · Formation initiale · Formation continue"
       },
       {
-        "id": 24,
+        "id": 30,
         "term": "Composante",
         "value": "Institut national supérieur du professorat et de l’éducation (INSPÉ)"
       },
       {
-        "id": 25,
+        "id": 31,
         "term": "Établissement partenaire",
         "value": "Service Formation Continue de l’Université de Strasbourg (SFC)"
       },
       {
-        "id": 26,
+        "id": 32,
         "term": "CFA partenaire",
         "value": "CFAU — Centre de Formation des Apprentis Universitaires"
       },
       {
-        "id": 27,
+        "id": 33,
         "term": "Coût en formation continue",
         "value": "5 720 € pour l’année universitaire 2026-2027"
       },
       {
-        "id": 28,
+        "id": 34,
         "term": "Éligibilité CPF",
         "value": "Formation éligible au compte personnel de formation"
       }
     ],
     "links": [
       {
-        "id": 4,
+        "id": 36,
         "label": "Fiche officielle du diplôme — catalogue Unistra 2026-2027",
         "href": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html",
         "external": true
       },
       {
-        "id": 5,
+        "id": 37,
         "label": "Fiche RNCP40319 — France Compétences",
         "href": "https://www.francecompetences.fr/recherche/rncp/40319/",
         "external": true
       },
       {
-        "id": 6,
+        "id": 38,
         "label": "Page de la formation — Service Formation Continue",
         "href": "https://sfc.unistra.fr/developpement-web-communication-et-apprentissages2/",
         "external": true
@@ -544,8 +544,8 @@
     ]
   },
   "licencePage": {
-    "id": 2,
-    "documentId": "q0wnaa21a5cw110fbrz0cd5k",
+    "id": 4,
+    "documentId": "p5mqb5lvqtzezx6kcem5bk4m",
     "levelNote": null,
     "programTitle": "Le programme en un coup d’oeil",
     "programIntro": "Le programme de la licence est déclinée en 10 unités d’enseignement qui couvrent trois domaines principaux.",
@@ -554,7 +554,7 @@
     "objectivesTitle": "Objectifs",
     "objectivesText": "La <strong>Licence Professionnelle DWCA</strong> forme des professionnels polyvalents pour le secteur numérique. Notre programme vise à maîtriser le développement web front-end et back-end, tout en acquérant des compétences en <strong>communication digitale</strong> et <strong>gestion de projet</strong>. Les étudiants approfondissent leur compréhension des enjeux liés aux <strong>apprentissages numériques</strong> et au <strong>e-learning</strong>, développent une expertise en <strong>conception graphique</strong> et <strong>expérience utilisateur</strong>, et se préparent à s’adapter aux évolutions rapides du secteur. Cette formation pratique et complète permet aux diplômés d’intégrer efficacement le marché du travail ou d’évoluer dans leur carrière actuelle.",
     "curriculumTitle": "Les enseignements en détail",
-    "leadsTitle": "Les responsables scientifiques",
+    "leadsTitle": "Les responsables de la formation",
     "leadsIntro": null,
     "organisationTitle": "Organisation",
     "afterTitle": "Et après ?",
@@ -563,36 +563,36 @@
     "curriculumCtaHref": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html?tab=program",
     "pdfLabel": "Télécharger le résumé du parcours (PDF)",
     "pdfHref": "/documents/resume-parcours-lp-dwca.pdf",
-    "createdAt": "2026-08-20T14:53:29.114Z",
-    "updatedAt": "2026-08-20T14:53:29.114Z",
-    "publishedAt": "2026-08-20T14:53:29.154Z",
+    "createdAt": "2026-08-21T08:26:18.630Z",
+    "updatedAt": "2026-08-21T10:20:27.900Z",
+    "publishedAt": "2026-08-21T10:20:27.984Z",
     "header": {
-      "id": 2,
+      "id": 18,
       "title": "Licence",
       "description": "100% à distance alliant développement web, communication digitale et apprentissages numériques.Axée sur la pratique, elle prépare les étudiants aux métiers du multimédia en pleine expansion.Accessible en apprentissage, en formation initiale ou continue "
     },
     "seo": {
-      "id": 5,
+      "id": 26,
       "metaTitle": "Programme et enseignements | LP DWCA",
       "metaDescription": "Le programme de la licence pro DWCA : 408 heures réparties en deux semestres, projet tuteuré, stage ou apprentissage, et les débouchés après le diplôme."
     },
     "programDomains": [
       {
-        "id": 4,
+        "id": 10,
         "icon": "command-line",
         "title": "Développement Web",
         "description": "Front-End : HTML/CSS, Javascript, ReactJS et Back-End : PHP/MySQL",
         "href": "#curriculum"
       },
       {
-        "id": 5,
+        "id": 11,
         "icon": "chat-duo",
         "title": "Communication",
         "description": "Gestion de projet web, Digital marketing, Réseaux sociaux, Droit du multimédia",
         "href": "#curriculum"
       },
       {
-        "id": 6,
+        "id": 12,
         "icon": "book-open",
         "title": "Apprentissages",
         "description": "E-learning, jeux sérieux et mondes virtuels Blender, Unity",
@@ -601,13 +601,13 @@
     ],
     "semesters": [
       {
-        "id": 3,
+        "id": 7,
         "label": "Semestre 1 (210 heures)",
         "ariaLabel": "Unités d’enseignement du semestre 1",
         "gridModifier": "semester-1",
         "ues": [
           {
-            "id": 12,
+            "id": 34,
             "code": "51",
             "icon": "paint-brush",
             "title": "UE 5.1 Conception et réalisation graphiques pour le web et Technologie Web",
@@ -616,29 +616,29 @@
             "offset": null,
             "lines": [
               {
-                "id": 45,
+                "id": 291,
                 "text": "Création graphique"
               },
               {
-                "id": 46,
+                "id": 292,
                 "text": "Relation client/commanditaire"
               },
               {
-                "id": 47,
+                "id": 293,
                 "text": "Ergonomie et UX design"
               },
               {
-                "id": 48,
+                "id": 294,
                 "text": "Design web"
               },
               {
-                "id": 49,
+                "id": 295,
                 "text": "Droit du multimédia (58h)"
               }
             ]
           },
           {
-            "id": 13,
+            "id": 35,
             "code": "52",
             "icon": "command-line",
             "title": "UE 5.2 Développement Front-End : fondamentaux de la programmation",
@@ -647,25 +647,25 @@
             "offset": "top",
             "lines": [
               {
-                "id": 50,
+                "id": 296,
                 "text": "HTML et CSS"
               },
               {
-                "id": 51,
+                "id": 297,
                 "text": "Javascript, API et framework"
               },
               {
-                "id": 52,
+                "id": 298,
                 "text": "Intégration web"
               },
               {
-                "id": 53,
+                "id": 299,
                 "text": "Référencement (38h)"
               }
             ]
           },
           {
-            "id": 14,
+            "id": 36,
             "code": "53",
             "icon": "chat-duo",
             "title": "UE 5.3 Gestion de projet multimédia et commercialisation",
@@ -674,29 +674,29 @@
             "offset": null,
             "lines": [
               {
-                "id": 54,
+                "id": 300,
                 "text": "Cahier des charges"
               },
               {
-                "id": 55,
+                "id": 301,
                 "text": "Gestion de projet"
               },
               {
-                "id": 56,
+                "id": 302,
                 "text": "Marketing digital"
               },
               {
-                "id": 57,
+                "id": 303,
                 "text": "Communication publicitaire"
               },
               {
-                "id": 58,
+                "id": 304,
                 "text": "Community Management (48h)"
               }
             ]
           },
           {
-            "id": 15,
+            "id": 37,
             "code": "54",
             "icon": "chat",
             "title": "UE 5.4 Langues",
@@ -705,17 +705,17 @@
             "offset": null,
             "lines": [
               {
-                "id": 59,
+                "id": 305,
                 "text": "Anglais : Expression écrite et orale"
               },
               {
-                "id": 60,
+                "id": 306,
                 "text": "Anglais : Culture des entreprises (16h)"
               }
             ]
           },
           {
-            "id": 16,
+            "id": 38,
             "code": "55",
             "icon": "sparkle",
             "title": "UE 5.5 Projet Tuteuré, Étape 1",
@@ -724,7 +724,7 @@
             "offset": null,
             "lines": [
               {
-                "id": 61,
+                "id": 307,
                 "text": "Préparation et Analyse du projet (50h)"
               }
             ]
@@ -732,13 +732,13 @@
         ]
       },
       {
-        "id": 4,
+        "id": 8,
         "label": "Semestre 2 (198 heures)",
         "ariaLabel": "Unités d’enseignement du semestre 2",
         "gridModifier": "semester-2",
         "ues": [
           {
-            "id": 17,
+            "id": 39,
             "code": "61",
             "icon": "command-line",
             "title": "UE 6.1 Développement Back-End",
@@ -747,21 +747,21 @@
             "offset": null,
             "lines": [
               {
-                "id": 62,
+                "id": 308,
                 "text": "PHP & Base de données"
               },
               {
-                "id": 63,
+                "id": 309,
                 "text": "CMS"
               },
               {
-                "id": 64,
+                "id": 310,
                 "text": "Sécurité des SI et web (36h)"
               }
             ]
           },
           {
-            "id": 18,
+            "id": 40,
             "code": "62",
             "icon": "paint-brush",
             "title": "UE 6.2 Design et application 3D immersives",
@@ -770,21 +770,21 @@
             "offset": "top",
             "lines": [
               {
-                "id": 65,
+                "id": 311,
                 "text": "Design 3D"
               },
               {
-                "id": 66,
+                "id": 312,
                 "text": "Développement 3D"
               },
               {
-                "id": 67,
+                "id": 313,
                 "text": "Réalité virtuelle (VR) 30h"
               }
             ]
           },
           {
-            "id": 19,
+            "id": 41,
             "code": "63",
             "icon": "command-line",
             "title": "UE 6.3 Développement Web : approfondissement",
@@ -793,21 +793,21 @@
             "offset": null,
             "lines": [
               {
-                "id": 68,
+                "id": 314,
                 "text": "ReactJS, NodeJS"
               },
               {
-                "id": 69,
+                "id": 315,
                 "text": "Progressive Web App"
               },
               {
-                "id": 70,
+                "id": 316,
                 "text": "Architecture MVC et frameworks (30h)"
               }
             ]
           },
           {
-            "id": 20,
+            "id": 42,
             "code": "64",
             "icon": "book-open",
             "title": "UE 6.4 Interactivité numérique et apprentissage tout au long de la vie",
@@ -816,25 +816,25 @@
             "offset": null,
             "lines": [
               {
-                "id": 71,
+                "id": 317,
                 "text": "TICE et Apprentissages"
               },
               {
-                "id": 72,
+                "id": 318,
                 "text": "Ingénierie des EIAH"
               },
               {
-                "id": 73,
+                "id": 319,
                 "text": "Scénarii pédagogiques"
               },
               {
-                "id": 74,
+                "id": 320,
                 "text": "Dispositifs de formation pour la FTLV 32h"
               }
             ]
           },
           {
-            "id": 21,
+            "id": 43,
             "code": "65",
             "icon": "pencil",
             "title": "UE 6.5 Projet Tuteuré, Étape 2",
@@ -843,13 +843,13 @@
             "offset": "bottom",
             "lines": [
               {
-                "id": 75,
+                "id": 321,
                 "text": "Conception du projet (70h)"
               }
             ]
           },
           {
-            "id": 22,
+            "id": 44,
             "code": "66",
             "icon": "book-open",
             "title": "UE 6.6 Stage ou Apprentissage",
@@ -858,7 +858,7 @@
             "offset": null,
             "lines": [
               {
-                "id": 76,
+                "id": 322,
                 "text": "Projet personnel ou professionnel (420h)"
               }
             ]
@@ -868,7 +868,7 @@
     ],
     "leads": [
       {
-        "id": 3,
+        "id": 9,
         "name": "Éric Christoffel",
         "role": "Maître de conférences, laboratoire LISEC, UFR de Physique et ingénierie, Université de Strasbourg",
         "photoAlt": "Portrait d'Éric Christoffel",
@@ -876,7 +876,7 @@
         "photo": null
       },
       {
-        "id": 4,
+        "id": 10,
         "name": "Marc Trestini",
         "role": "Professeur des universités en sciences de l’information et de la communication, INSPÉ, Université de Strasbourg.",
         "photoAlt": "Portrait de Marc Trestini",
@@ -886,43 +886,43 @@
     ],
     "organisationPanels": [
       {
-        "id": 5,
+        "id": 13,
         "blocks": [
           {
-            "id": 7,
+            "id": 19,
             "title": "Durée et Calendrier",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 15,
+                "id": 67,
                 "text": "Notre programme de formation s'étend sur une année complète, d’octobre à septembre."
               },
               {
-                "id": 16,
+                "id": 68,
                 "text": "La prochaine session est prévue du 20 septembre 2024 au 29 août 2025."
               }
             ],
             "items": []
           },
           {
-            "id": 8,
+            "id": 20,
             "title": "Structure et Rythme",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 17,
+                "id": 69,
                 "text": "Cours synchrones : Les jeudis et vendredis soirs, de 18h à 22h, en interaction directe avec les formateurs."
               },
               {
-                "id": 18,
+                "id": 70,
                 "text": "Apprentissage autonome : Travail personnel et collaboratif sur notre plateforme dédiée DigitalUni."
               },
               {
-                "id": 19,
+                "id": 71,
                 "text": "Pour les apprentis : Immersion professionnelle de 3 jours en entreprise (lundi, mardi, mercredi), complétée par 2 jours de formation (jeudi, vendredi)."
               },
               {
-                "id": 20,
+                "id": 72,
                 "text": "Investissement hebdomadaire : Prévoyez 20 à 25 heures de travail personnel en complément des cours synchrones pour une progression optimale."
               }
             ],
@@ -931,43 +931,43 @@
         ]
       },
       {
-        "id": 6,
+        "id": 14,
         "blocks": [
           {
-            "id": 9,
+            "id": 21,
             "title": "Environnement d’apprentissage",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 21,
+                "id": 73,
                 "text": "DigitalUni / Classilio : Notre plateforme centrale pour les cours en ligne, les forums interactifs et la soumission des travaux."
               },
               {
-                "id": 22,
+                "id": 74,
                 "text": "Outils collaboratifs : Utilisation de Dropbox pour le partage de fichiers et Discord pour la communication en temps réel."
               }
             ],
             "items": []
           },
           {
-            "id": 10,
+            "id": 22,
             "title": "Équipement recommandé",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 23,
+                "id": 75,
                 "text": "Matériel informatique : Un ordinateur performant capable de gérer les logiciels de création."
               },
               {
-                "id": 24,
+                "id": 76,
                 "text": "Connectivité : Une connexion internet haut débit et stable pour une participation optimale aux cours en ligne."
               },
               {
-                "id": 25,
+                "id": 77,
                 "text": "Audio : Un microphone de qualité pour des interactions claires lors des classes virtuelles."
               },
               {
-                "id": 26,
+                "id": 78,
                 "text": "Logiciels : La suite Adobe (ou équivalent), avec accès à des tarifs préférentiels pour étudiants."
               }
             ],
@@ -978,25 +978,25 @@
     ],
     "afterPanels": [
       {
-        "id": 7,
+        "id": 15,
         "blocks": [
           {
-            "id": 11,
+            "id": 23,
             "title": "Poursuite d'études",
             "mobileTitle": null,
             "paragraphs": [
               {
-                "id": 27,
+                "id": 79,
                 "text": "Les diplômés ont la possibilité de poursuivre leur cursus académique en Master, notamment :"
               }
             ],
             "items": [
               {
-                "id": 77,
+                "id": 323,
                 "text": "Master SYNVA (Université de Strasbourg) : Formation en ingénierie des systèmes numériques virtuels pour l’apprentissage. Ce programme se concentre sur la conception de solutions éducatives innovantes utilisant les technologies numériques."
               },
               {
-                "id": 78,
+                "id": 324,
                 "text": "Master VCiel (Université de Lyon, enseignement à distance) : Cursus approfondi en développement, graphisme et gestion de projet. Cette formation offre une flexibilité adaptée aux professionnels en activité."
               }
             ]
@@ -1004,45 +1004,45 @@
         ]
       },
       {
-        "id": 8,
+        "id": 16,
         "blocks": [
           {
-            "id": 12,
+            "id": 24,
             "title": "Débouchés",
             "mobileTitle": "Insertion professionnelle",
             "paragraphs": [
               {
-                "id": 28,
+                "id": 80,
                 "text": "Cette formation universitaire prépare les étudiants à diverses carrières dans le domaine du numérique et des technologies de l’information :"
               }
             ],
             "items": [
               {
-                "id": 79,
+                "id": 325,
                 "text": "Développeur web (Front-End, Back-End, Full-Stack) : Conception et réalisation d’applications web"
               },
               {
-                "id": 80,
+                "id": 326,
                 "text": "Intégrateur web : Mise en œuvre technique de l’interface utilisateur"
               },
               {
-                "id": 81,
+                "id": 327,
                 "text": "Webmaster : Gestion et maintenance de sites web"
               },
               {
-                "id": 82,
+                "id": 328,
                 "text": "Web designer / UX Designer : Conception d’interfaces et d’expériences utilisateur"
               },
               {
-                "id": 83,
+                "id": 329,
                 "text": "Chef de projet digital : Coordination et gestion de projets numériques"
               },
               {
-                "id": 84,
+                "id": 330,
                 "text": "Community Manager : Gestion de la présence en ligne et de la communication digitale"
               },
               {
-                "id": 85,
+                "id": 331,
                 "text": "Concepteur e-learning : Élaboration de dispositifs de formation en ligne"
               }
             ]
@@ -1051,7 +1051,7 @@
       }
     ],
     "insertion": {
-      "id": 2,
+      "id": 4,
       "title": "Que deviennent les diplômés ?",
       "cardTitle": "Données statistiques sur l’insertion professionnelle",
       "intro": "Les enquêtes menées auprès de nos anciens étudiants par l’ORESIPE révèlent les indicateurs suivants :",
@@ -1059,15 +1059,15 @@
       "href": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html",
       "stats": [
         {
-          "id": 86,
+          "id": 332,
           "text": "Taux d’insertion professionnelle : 67 % à 18 mois post-diplôme, atteignant 100 % à 30 mois"
         },
         {
-          "id": 87,
+          "id": 333,
           "text": "Délai moyen d’obtention du premier emploi : 3,6 mois"
         },
         {
-          "id": 88,
+          "id": 334,
           "text": "Rémunération : Le salaire net mensuel médian s'élève à 1550 € à 18 mois et progresse à 1942 € à 30 mois post-diplôme"
         }
       ]
@@ -1075,7 +1075,7 @@
   },
   "formationPage": {
     "id": 2,
-    "documentId": "pghvsuvisrb421pfle41owpw",
+    "documentId": "jkxoqnfmm469gkr0os7h9nfe",
     "continuingTitle": "Formation continue",
     "continuingDescription": "Organisez votre travail en fonction de votre emploi du temps.",
     "apprenticeshipTitle": "Formation initiale en apprentissage",
@@ -1084,16 +1084,16 @@
     "companyBoxText": "Ce n’est pas bloquant. La licence fait profiter ses candidats de son réseau d’entreprises partenaires et diffuse régulièrement les offres qu’elle reçoit. Un délai de deux mois après le début des cours est accordé pour signer un contrat.",
     "companyBoxCtaLabel": "Poser une question",
     "companyBoxCtaHref": "/contact/",
-    "createdAt": "2026-08-20T14:53:29.466Z",
-    "updatedAt": "2026-08-20T14:53:29.466Z",
-    "publishedAt": "2026-08-20T14:53:29.493Z",
+    "createdAt": "2026-08-21T08:26:19.174Z",
+    "updatedAt": "2026-08-21T08:26:19.326Z",
+    "publishedAt": "2026-08-21T08:26:19.346Z",
     "header": {
       "id": 4,
       "title": "Formation",
       "description": "La Licence Professionnelle Développement Web est une formation 100% à distance. Deux manières différentes sont proposées pour réaliser la formation."
     },
     "seo": {
-      "id": 7,
+      "id": 6,
       "metaTitle": "Apprentissage ou formation continue | LP DWCA",
       "metaDescription": "Formation initiale en apprentissage ou formation continue : deux façons de suivre la licence pro DWCA, 100 % à distance, avec des cours en soirée."
     },
@@ -1391,7 +1391,7 @@
   },
   "financementPage": {
     "id": 2,
-    "documentId": "a33xs7mejjrf7056vgye8z9w",
+    "documentId": "tajeecir4xq25k7ur2asjphg",
     "switchContinuingLabel": "Formation continue",
     "switchApprenticeshipLabel": "Formation initiale",
     "switchAriaLabel": "Type de formation",
@@ -1403,16 +1403,16 @@
     "apprenticeshipSummary": "En apprentissage : zéro euro de frais de formation, un salaire mensuel, et douze mois d’expérience sur votre CV.",
     "apprenticeshipCtaLabel": "Voir le parcours en apprentissage",
     "apprenticeshipCtaHref": "/formation/",
-    "createdAt": "2026-08-20T14:53:29.641Z",
-    "updatedAt": "2026-08-20T14:53:29.641Z",
-    "publishedAt": "2026-08-20T14:53:29.663Z",
+    "createdAt": "2026-08-21T08:26:19.555Z",
+    "updatedAt": "2026-08-21T08:26:19.692Z",
+    "publishedAt": "2026-08-21T08:26:19.707Z",
     "header": {
       "id": 6,
       "title": "Financement",
       "description": "Le financement varie en fonction du type de formation suivie, qu’il s’agisse de formation initiale ou continue. Référez-vous à la section qui vous concerne."
     },
     "seo": {
-      "id": 9,
+      "id": 8,
       "metaTitle": "Financer sa formation | LP DWCA",
       "metaDescription": "CFAU, OPCO, CPF, France Travail, Transition Pro ou financement personnel : toutes les pistes pour financer la licence pro DWCA."
     },
@@ -1498,7 +1498,7 @@
   },
   "contactPage": {
     "id": 2,
-    "documentId": "m2msq4or341d4viw0e0rop37",
+    "documentId": "e5ojuwo7xfth9hguude3otpr",
     "formTitle": "Formulaire de contact",
     "submitLabel": "Envoyez votre message",
     "consentText": "J’accepte que les informations saisies dans ce formulaire soient utilisées par l’Université de Strasbourg pour répondre à ma demande. Elles ne sont transmises à aucun tiers.",
@@ -1513,16 +1513,16 @@
     "companyIntro": null,
     "officialContactLabel": "Contacts officiels de la formation — fiche Unistra",
     "officialContactHref": "https://formations.unistra.fr/fr/formations/licence-professionnelle-LIP/licence-professionnelle-metiers-de-l-informatique-conception-developpement-et-test-de-logiciels-ME157/developpement-web-communication-et-apprentissages-ead-sfc-PR828.html?tab=contactsGroup",
-    "createdAt": "2026-08-20T14:53:29.731Z",
-    "updatedAt": "2026-08-20T14:53:29.731Z",
-    "publishedAt": "2026-08-20T14:53:29.751Z",
+    "createdAt": "2026-08-21T08:26:19.885Z",
+    "updatedAt": "2026-08-21T08:26:20.028Z",
+    "publishedAt": "2026-08-21T08:26:20.042Z",
     "header": {
       "id": 8,
       "title": "Contactez-nous",
       "description": "Bienvenue sur la page contact de LPDWCA, où vous pouvez faire une demande de renseignement. Que vous soyez un particulier souhaitant améliorer ses compétences ou une entreprise à la recherche de solutions de développement professionnel, nous avons à cœur de répondre à vos questionnement."
     },
     "seo": {
-      "id": 11,
+      "id": 10,
       "metaTitle": "Contact | LP DWCA",
       "metaDescription": "Une question sur la licence pro DWCA ? Écrivez à l'équipe pédagogique de l’Université de Strasbourg : formulaire, téléphone et prise de rendez-vous."
     },
@@ -1615,7 +1615,7 @@
   },
   "candidaturePage": {
     "id": 2,
-    "documentId": "etb09g3yty1eb2l238odfux8",
+    "documentId": "ywwvaneffkf7xmlnxmhoe9gj",
     "eligibilityTitle": "Suis-je concerné ?",
     "eligibilityNote": "Vous ne savez pas dans quel cas vous êtes ? Écrivez-nous avant de monter le dossier : c’est plus rapide que de deviner.",
     "stepsTitle": "La candidature en cinq étapes",
@@ -1629,16 +1629,16 @@
     "faqIntro": "Classées par thème. Si votre question n’y figure pas, l'équipe pédagogique y répond directement.",
     "pdfLabel": "Télécharger le résumé du parcours (PDF)",
     "pdfHref": "/documents/resume-parcours-lp-dwca.pdf",
-    "createdAt": "2026-08-20T14:53:29.816Z",
-    "updatedAt": "2026-08-20T14:53:29.816Z",
-    "publishedAt": "2026-08-20T14:53:29.839Z",
+    "createdAt": "2026-08-21T08:26:20.192Z",
+    "updatedAt": "2026-08-21T08:26:20.336Z",
+    "publishedAt": "2026-08-21T08:26:20.352Z",
     "header": {
       "id": 10,
       "title": "Candidater",
       "description": "La candidature se dépose en ligne, sur la plateforme eCandidat de l’Université de Strasbourg. Comptez une heure pour constituer le dossier, à condition d’avoir vos pièces sous la main. Voici la marche à suivre, étape par étape."
     },
     "seo": {
-      "id": 13,
+      "id": 12,
       "metaTitle": "Candidater | LP DWCA",
       "metaDescription": "Conditions d’accès, étapes de la candidature, pièces à fournir et questions fréquentes pour rejoindre la licence pro DWCA de l’Université de Strasbourg."
     },
@@ -1736,19 +1736,19 @@
   },
   "alumniPage": {
     "id": 2,
-    "documentId": "f80f87zygtqf91guyykxfw3p",
+    "documentId": "kl9hzsm4uowjnsvxlkjokqea",
     "listTitle": "Témoignages des anciens",
     "emptyMessage": "Aucun témoignage ne correspond à ce parcours pour le moment.",
-    "createdAt": "2026-08-20T14:53:29.902Z",
-    "updatedAt": "2026-08-20T14:53:29.902Z",
-    "publishedAt": "2026-08-20T14:53:29.917Z",
+    "createdAt": "2026-08-21T08:26:20.533Z",
+    "updatedAt": "2026-08-21T08:26:20.682Z",
+    "publishedAt": "2026-08-21T08:26:20.693Z",
     "header": {
       "id": 12,
       "title": "Alumni",
       "description": "Ils avaient 20 ans ou 40, un BTS ou quinze ans de carrière derrière eux. Ils racontent l’année telle qu’ils l’ont vécue, sans filtre institutionnel : ce qui les a décidés, ce qui a été difficile, et ce qu’ils en font aujourd’hui."
     },
     "seo": {
-      "id": 15,
+      "id": 14,
       "metaTitle": "Alumni | LP DWCA",
       "metaDescription": "Les diplômés de la licence pro DWCA racontent leur année : apprentissage, reconversion, insertion professionnelle. Des parcours réels, sans filtre."
     },
@@ -1782,7 +1782,7 @@
   "alumniAll": [
     {
       "id": 2,
-      "documentId": "gah19jd4kzyut52c17znr62w",
+      "documentId": "z8ar10wj39i6woiip0hw2jnq",
       "name": "Arthur Daigremont",
       "anchorId": "daigremont",
       "context": "21 ans à l’époque · promotion 2021-2022",
@@ -1793,14 +1793,14 @@
       "photoAlt": "Portrait d’Arthur Daigremont, diplômé de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 1,
-      "createdAt": "2026-08-20T14:53:28.253Z",
-      "updatedAt": "2026-08-20T14:53:28.253Z",
-      "publishedAt": "2026-08-20T14:53:28.262Z",
+      "createdAt": "2026-08-21T08:28:06.288Z",
+      "updatedAt": "2026-08-21T08:28:06.415Z",
+      "publishedAt": "2026-08-21T08:28:06.422Z",
       "photo": null
     },
     {
       "id": 4,
-      "documentId": "i4x5bmltalvdnug2kr1vm7m1",
+      "documentId": "awfbqr5o8s5cm3ng5mlmu6rx",
       "name": "Laura Kauffmann",
       "anchorId": "kauffmann",
       "context": "27 ans à l’époque · promotion 2021-2022",
@@ -1811,14 +1811,14 @@
       "photoAlt": "Portrait de Laura Kauffmann, diplômée de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 2,
-      "createdAt": "2026-08-20T14:53:28.277Z",
-      "updatedAt": "2026-08-20T14:53:28.277Z",
-      "publishedAt": "2026-08-20T14:53:28.285Z",
+      "createdAt": "2026-08-21T08:28:06.562Z",
+      "updatedAt": "2026-08-21T08:28:06.687Z",
+      "publishedAt": "2026-08-21T08:28:06.693Z",
       "photo": null
     },
     {
       "id": 6,
-      "documentId": "igksas0wtrj65hn81g7x9tp0",
+      "documentId": "jijuo2ng6l1go5eq6d4k66sw",
       "name": "Audrey Stoessel",
       "anchorId": "stoessel",
       "context": "40 ans à l’époque · promotion 2021-2022",
@@ -1829,252 +1829,252 @@
       "photoAlt": "Portrait d’Audrey Stoessel, diplômée de la promotion 2021-2022",
       "featuredOnHome": true,
       "order": 3,
-      "createdAt": "2026-08-20T14:53:28.298Z",
-      "updatedAt": "2026-08-20T14:53:28.298Z",
-      "publishedAt": "2026-08-20T14:53:28.304Z",
+      "createdAt": "2026-08-21T08:28:06.854Z",
+      "updatedAt": "2026-08-21T08:28:06.974Z",
+      "publishedAt": "2026-08-21T08:28:06.981Z",
       "photo": null
     }
   ],
   "faqThemes": [
     {
       "id": 2,
-      "documentId": "dhryguhn2emt7779aif2rcfz",
+      "documentId": "g0igz0hn2h76psebkqg8wug1",
       "name": "Admission et prérequis",
       "slug": "admission-prerequis",
       "order": 1,
-      "createdAt": "2026-08-20T14:53:28.317Z",
-      "updatedAt": "2026-08-20T14:53:28.317Z",
-      "publishedAt": "2026-08-20T14:53:28.326Z",
+      "createdAt": "2026-08-21T08:27:39.770Z",
+      "updatedAt": "2026-08-21T08:27:39.866Z",
+      "publishedAt": "2026-08-21T08:27:39.872Z",
       "faq_items": [
         {
           "id": 2,
-          "documentId": "iqtpk6kjmzkvx332qnljiudp",
+          "documentId": "gkydnitjpbwphfcefxlkkh2t",
           "question": "Puis-je m’inscrire au milieu de l’année ?",
           "answer": "Non. La promotion démarre à la rentrée universitaire et suit un calendrier unique jusqu’à l’été suivant. Les candidatures s’ouvrent au printemps précédent, sur eCandidat.",
           "showOnHome": true,
           "order": 1,
-          "createdAt": "2026-08-20T14:53:28.414Z",
-          "updatedAt": "2026-08-20T14:53:28.414Z",
-          "publishedAt": "2026-08-20T14:53:28.424Z"
+          "createdAt": "2026-08-21T08:27:40.763Z",
+          "updatedAt": "2026-08-21T08:27:40.889Z",
+          "publishedAt": "2026-08-21T08:27:40.895Z"
         },
         {
           "id": 4,
-          "documentId": "g04rjko104sz6kb1dhvq8uy7",
+          "documentId": "sl9dz42yad0khqkskfrwtzgn",
           "question": "Quelles sont les conditions d’admission ?",
           "answer": "La licence s’adresse aux titulaires d’un Bac+2. Les profils informatiques, graphiques ou artistiques sont les plus à l’aise, mais les candidatures venues d’autres filières sont examinées sur la base des compétences acquises, personnellement ou professionnellement.",
           "showOnHome": true,
           "order": 2,
-          "createdAt": "2026-08-20T14:53:28.444Z",
-          "updatedAt": "2026-08-20T14:53:28.444Z",
-          "publishedAt": "2026-08-20T14:53:28.453Z"
+          "createdAt": "2026-08-21T08:27:59.028Z",
+          "updatedAt": "2026-08-21T08:27:59.143Z",
+          "publishedAt": "2026-08-21T08:27:59.149Z"
         },
         {
           "id": 6,
-          "documentId": "mq6v29urdxm4a7ha8yvb2l6p",
+          "documentId": "gff7ezi0ajmv7yyc9utwemtc",
           "question": "Je n’ai pas de Bac+2. Puis-je quand même candidater ?",
           "answer": "Oui, par la validation des acquis professionnels et personnels. Votre expérience et vos réalisations sont alors examinées à la place du diplôme manquant.",
           "showOnHome": false,
           "order": 3,
-          "createdAt": "2026-08-20T14:53:28.471Z",
-          "updatedAt": "2026-08-20T14:53:28.471Z",
-          "publishedAt": "2026-08-20T14:53:28.479Z"
+          "createdAt": "2026-08-21T08:27:59.252Z",
+          "updatedAt": "2026-08-21T08:27:59.406Z",
+          "publishedAt": "2026-08-21T08:27:59.414Z"
         },
         {
           "id": 8,
-          "documentId": "soo3uf6av55hk3u5rjdwsm3k",
+          "documentId": "cagpm4ntps067x6dw9kjpb2a",
           "question": "Quels sont les prérequis techniques ?",
           "answer": "Des bases en informatique ou en création graphique. Vous n’avez pas besoin d’être développeur confirmé : chaque module reprend les fondamentaux avant d’approfondir.",
           "showOnHome": false,
           "order": 4,
-          "createdAt": "2026-08-20T14:53:28.496Z",
-          "updatedAt": "2026-08-20T14:53:28.496Z",
-          "publishedAt": "2026-08-20T14:53:28.503Z"
+          "createdAt": "2026-08-21T08:27:59.531Z",
+          "updatedAt": "2026-08-21T08:27:59.669Z",
+          "publishedAt": "2026-08-21T08:27:59.676Z"
         },
         {
           "id": 10,
-          "documentId": "a3wkj7dx3vpn1aqdtiqgme1f",
+          "documentId": "ps1ds638epfp82vhb0w8kak5",
           "question": "Combien de personnes sont admises chaque année ?",
           "answer": "Une quinzaine, avec un équilibre entre apprentissage et formation continue. Cet effectif réduit est un choix : il permet un suivi individuel et des travaux en petits groupes.",
           "showOnHome": false,
           "order": 5,
-          "createdAt": "2026-08-20T14:53:28.520Z",
-          "updatedAt": "2026-08-20T14:53:28.520Z",
-          "publishedAt": "2026-08-20T14:53:28.528Z"
+          "createdAt": "2026-08-21T08:27:59.809Z",
+          "updatedAt": "2026-08-21T08:27:59.950Z",
+          "publishedAt": "2026-08-21T08:27:59.956Z"
         }
       ]
     },
     {
       "id": 4,
-      "documentId": "mqu286w7wcnktkb5rusnovts",
+      "documentId": "u54dmjyjdfzocifsqo0gndfn",
       "name": "Organisation et rythme",
       "slug": "organisation-rythme",
       "order": 2,
-      "createdAt": "2026-08-20T14:53:28.341Z",
-      "updatedAt": "2026-08-20T14:53:28.341Z",
-      "publishedAt": "2026-08-20T14:53:28.350Z",
+      "createdAt": "2026-08-21T08:27:39.989Z",
+      "updatedAt": "2026-08-21T08:27:40.104Z",
+      "publishedAt": "2026-08-21T08:27:40.110Z",
       "faq_items": [
         {
           "id": 12,
-          "documentId": "rdn5d1jqzz1wd6kf8v4zgj8n",
+          "documentId": "bv50rej20qmgkmepre7nq70z",
           "question": "Quel accompagnement puis-je attendre des enseignants ?",
           "answer": "Les cours en direct se font en petit groupe. Entre deux séances, le suivi passe par DigitalUni et Discord. Chaque projet tuteuré est encadré par un enseignant tuteur.",
           "showOnHome": true,
           "order": 6,
-          "createdAt": "2026-08-20T14:53:28.545Z",
-          "updatedAt": "2026-08-20T14:53:28.545Z",
-          "publishedAt": "2026-08-20T14:53:28.552Z"
+          "createdAt": "2026-08-21T08:28:00.238Z",
+          "updatedAt": "2026-08-21T08:28:00.391Z",
+          "publishedAt": "2026-08-21T08:28:00.397Z"
         },
         {
           "id": 14,
-          "documentId": "fpmnzp8y3w54y30gpivrtdsg",
+          "documentId": "v9x5tpy1hdnz6numy3gr515z",
           "question": "Les cours se suivent-ils à son propre rythme, ou à dates fixes ?",
           "answer": "Les deux. Les classes virtuelles sont synchrones, les jeudi et vendredi de 18 h à 22 h : votre présence y est attendue. Le travail personnel s’organise librement.",
           "showOnHome": true,
           "order": 7,
-          "createdAt": "2026-08-20T14:53:28.572Z",
-          "updatedAt": "2026-08-20T14:53:28.572Z",
-          "publishedAt": "2026-08-20T14:53:28.579Z"
+          "createdAt": "2026-08-21T08:28:00.510Z",
+          "updatedAt": "2026-08-21T08:28:00.656Z",
+          "publishedAt": "2026-08-21T08:28:00.661Z"
         },
         {
           "id": 16,
-          "documentId": "fnvsqp3zypzhpl6ihhd1qsyh",
+          "documentId": "baldc820n8tobjgle4j9383c",
           "question": "Quelle charge de travail faut-il prévoir ?",
           "answer": "20 à 25 heures de travail personnel par semaine en plus des cours. La formation est exigeante, et plusieurs situations problèmes se déroulent souvent en parallèle.",
           "showOnHome": false,
           "order": 8,
-          "createdAt": "2026-08-20T14:53:28.596Z",
-          "updatedAt": "2026-08-20T14:53:28.596Z",
-          "publishedAt": "2026-08-20T14:53:28.603Z"
+          "createdAt": "2026-08-21T08:28:00.792Z",
+          "updatedAt": "2026-08-21T08:28:00.908Z",
+          "publishedAt": "2026-08-21T08:28:00.913Z"
         },
         {
           "id": 18,
-          "documentId": "a7g9yf6hxylf0h70egwc0olw",
+          "documentId": "ur740debafw36b55kqewfgdk",
           "question": "Puis-je télécharger les supports de cours ?",
           "answer": "Pour l’essentiel, oui. Les cours, vidéo-cours et exercices déposés sur DigitalUni restent accessibles toute l’année, et les classes virtuelles sont enregistrées.",
           "showOnHome": true,
           "order": 9,
-          "createdAt": "2026-08-20T14:53:28.619Z",
-          "updatedAt": "2026-08-20T14:53:28.619Z",
-          "publishedAt": "2026-08-20T14:53:28.626Z"
+          "createdAt": "2026-08-21T08:28:01.044Z",
+          "updatedAt": "2026-08-21T08:28:01.173Z",
+          "publishedAt": "2026-08-21T08:28:01.178Z"
         },
         {
           "id": 20,
-          "documentId": "bv73qr6abp8zxi1izyulhr4r",
+          "documentId": "kbziw84a198b8yl36uun6fdf",
           "question": "Y a-t-il un examen final ?",
           "answer": "Non. L’évaluation se fait en contrôle continu intégral, sur des études de cas et des situations professionnelles, individuelles ou en équipe.",
           "showOnHome": false,
           "order": 10,
-          "createdAt": "2026-08-20T14:53:28.643Z",
-          "updatedAt": "2026-08-20T14:53:28.643Z",
-          "publishedAt": "2026-08-20T14:53:28.650Z"
+          "createdAt": "2026-08-21T08:28:01.320Z",
+          "updatedAt": "2026-08-21T08:28:01.454Z",
+          "publishedAt": "2026-08-21T08:28:01.460Z"
         }
       ]
     },
     {
       "id": 6,
-      "documentId": "p8bwn9kfj63q8wi3y85t1exc",
+      "documentId": "pjbojv3xybe255000ntfsuw9",
       "name": "Financement",
       "slug": "financement",
       "order": 3,
-      "createdAt": "2026-08-20T14:53:28.364Z",
-      "updatedAt": "2026-08-20T14:53:28.364Z",
-      "publishedAt": "2026-08-20T14:53:28.371Z",
+      "createdAt": "2026-08-21T08:27:40.246Z",
+      "updatedAt": "2026-08-21T08:27:40.375Z",
+      "publishedAt": "2026-08-21T08:27:40.382Z",
       "faq_items": [
         {
           "id": 22,
-          "documentId": "c5nqknuv8rrew92fyqlezcc5",
+          "documentId": "w4iv0465jtclr8xl474ed1fm",
           "question": "Combien coûte la formation ?",
           "answer": "La formation continue est facturée 5 720 € pour l’année 2026-2027. En apprentissage, elle ne vous coûte rien : elle est prise en charge par l’opérateur de compétences de l’entreprise, via le CFAU.",
           "showOnHome": true,
           "order": 11,
-          "createdAt": "2026-08-20T14:53:28.666Z",
-          "updatedAt": "2026-08-20T14:53:28.666Z",
-          "publishedAt": "2026-08-20T14:53:28.673Z"
+          "createdAt": "2026-08-21T08:28:01.584Z",
+          "updatedAt": "2026-08-21T08:28:01.686Z",
+          "publishedAt": "2026-08-21T08:28:01.690Z"
         },
         {
           "id": 24,
-          "documentId": "wpv4m8qq045wgxs2w2y7fxvm",
+          "documentId": "pjzm9vea6xnnm2tgwcwqv6xp",
           "question": "Quels dispositifs peuvent financer la formation continue ?",
           "answer": "L’entreprise, votre OPCO, France Travail, la région, le CPF ou Transition Pro selon votre situation. Le détail figure sur la page Financement.",
           "showOnHome": false,
           "order": 12,
-          "createdAt": "2026-08-20T14:53:28.690Z",
-          "updatedAt": "2026-08-20T14:53:28.690Z",
-          "publishedAt": "2026-08-20T14:53:28.698Z"
+          "createdAt": "2026-08-21T08:28:01.831Z",
+          "updatedAt": "2026-08-21T08:28:01.971Z",
+          "publishedAt": "2026-08-21T08:28:01.976Z"
         },
         {
           "id": 26,
-          "documentId": "um1q8h8xtg8abbaxddx4jqvg",
+          "documentId": "tgeb029z7ne85msbe644jvie",
           "question": "Le paiement peut-il être échelonné ?",
           "answer": "Oui, sur l’année de formation. Les modalités se conviennent avec le Service Formation Continue au moment de l’inscription.",
           "showOnHome": false,
           "order": 13,
-          "createdAt": "2026-08-20T14:53:28.714Z",
-          "updatedAt": "2026-08-20T14:53:28.714Z",
-          "publishedAt": "2026-08-20T14:53:28.721Z"
+          "createdAt": "2026-08-21T08:28:02.116Z",
+          "updatedAt": "2026-08-21T08:28:02.255Z",
+          "publishedAt": "2026-08-21T08:28:02.261Z"
         }
       ]
     },
     {
       "id": 8,
-      "documentId": "tqbqmwb01w4z5hem5i3ejdvs",
+      "documentId": "hq17125bqav8kcrala52lri5",
       "name": "Apprentissage et entreprise",
       "slug": "apprentissage-entreprise",
       "order": 4,
-      "createdAt": "2026-08-20T14:53:28.384Z",
-      "updatedAt": "2026-08-20T14:53:28.384Z",
-      "publishedAt": "2026-08-20T14:53:28.394Z",
+      "createdAt": "2026-08-21T08:27:40.500Z",
+      "updatedAt": "2026-08-21T08:27:40.627Z",
+      "publishedAt": "2026-08-21T08:27:40.634Z",
       "faq_items": [
         {
           "id": 28,
-          "documentId": "zv4jgr3bo3nr0v2mwc0t29n1",
+          "documentId": "t2hc22uhlswfuwap7fokz9qr",
           "question": "Je n’ai pas encore d’entreprise. Est-ce bloquant ?",
           "answer": "Non. La licence relaie les offres qu’elle reçoit et fait profiter les candidats de son réseau. Un délai de deux mois après le début des cours est accordé pour signer un contrat.",
           "showOnHome": false,
           "order": 14,
-          "createdAt": "2026-08-20T14:53:28.737Z",
-          "updatedAt": "2026-08-20T14:53:28.737Z",
-          "publishedAt": "2026-08-20T14:53:28.745Z"
+          "createdAt": "2026-08-21T08:28:02.422Z",
+          "updatedAt": "2026-08-21T08:28:02.553Z",
+          "publishedAt": "2026-08-21T08:28:02.558Z"
         },
         {
           "id": 30,
-          "documentId": "hnf8lyijqpbb7i86m11d9fv5",
+          "documentId": "addr0islezlymwplxkbtgp5y",
           "question": "L’entreprise doit-elle être à Strasbourg ?",
           "answer": "Non. Elle peut se situer partout en France, ou en zone transfrontalière. Comme les cours sont à distance, l’apprenti ne s’absente jamais pour se déplacer.",
           "showOnHome": false,
           "order": 15,
-          "createdAt": "2026-08-20T14:53:28.761Z",
-          "updatedAt": "2026-08-20T14:53:28.761Z",
-          "publishedAt": "2026-08-20T14:53:28.768Z"
+          "createdAt": "2026-08-21T08:28:02.779Z",
+          "updatedAt": "2026-08-21T08:28:02.928Z",
+          "publishedAt": "2026-08-21T08:28:02.934Z"
         },
         {
           "id": 32,
-          "documentId": "fmk27h9q6ypkvfh8e2pjuth2",
+          "documentId": "nhlcpwd1ywcevobma31uztbq",
           "question": "Quel est le rythme de l’alternance ?",
           "answer": "Trois jours en entreprise du lundi au mercredi, deux jours consacrés à la formation le jeudi et le vendredi. Ce rythme ne change pas d’une semaine à l’autre.",
           "showOnHome": false,
           "order": 16,
-          "createdAt": "2026-08-20T14:53:28.785Z",
-          "updatedAt": "2026-08-20T14:53:28.785Z",
-          "publishedAt": "2026-08-20T14:53:28.792Z"
+          "createdAt": "2026-08-21T08:28:03.108Z",
+          "updatedAt": "2026-08-21T08:28:03.286Z",
+          "publishedAt": "2026-08-21T08:28:03.293Z"
         },
         {
           "id": 34,
-          "documentId": "drjqyuptp20z5w1ygeh2m8xi",
+          "documentId": "jzdwy8t5qovplg7myxl2qdjh",
           "question": "Comment l’apprenti est-il suivi ?",
           "answer": "Un plan de formation est établi en début de contrat par le maître d’apprentissage et validé par l’enseignant tuteur. Deux points formels réunissent ensuite l’apprenti, l’entreprise et le tuteur.",
           "showOnHome": false,
           "order": 17,
-          "createdAt": "2026-08-20T14:53:28.809Z",
-          "updatedAt": "2026-08-20T14:53:28.809Z",
-          "publishedAt": "2026-08-20T14:53:28.816Z"
+          "createdAt": "2026-08-21T08:28:03.439Z",
+          "updatedAt": "2026-08-21T08:28:03.604Z",
+          "publishedAt": "2026-08-21T08:28:03.609Z"
         }
       ]
     }
   ],
   "elearningPage": {
     "id": 2,
-    "documentId": "zqpo8jmsd70vpya2qregqdnu",
+    "documentId": "r84l0sv7sz17a03twzuea46l",
     "factsTitle": "La Distance Augmentée",
     "factsIntro": "C’est ainsi que nous appelons notre façon d’enseigner à distance : quatre garanties qui font la différence avec une plateforme où l’on avance seul.",
     "platformsTitle": "Les plateformes",
@@ -2088,16 +2088,16 @@
     "scheduleNote": "Comptez 20 à 25 heures de travail personnel par semaine en plus des cours. L'évaluation se fait en contrôle continu intégral, sur des études de cas et des situations professionnelles : il n’y a pas d’examen final.",
     "equipmentTitle": "Ce qu’il faut avoir de votre côté",
     "equipmentNote": "Aucune webcam n’est exigée, et aucun logiciel payant n’est nécessaire pour commencer : les alternatives libres sont acceptées dans plusieurs modules.",
-    "createdAt": "2026-08-20T14:53:30.024Z",
-    "updatedAt": "2026-08-20T14:53:30.024Z",
-    "publishedAt": "2026-08-20T14:53:30.057Z",
+    "createdAt": "2026-08-21T08:26:20.882Z",
+    "updatedAt": "2026-08-21T08:26:21.084Z",
+    "publishedAt": "2026-08-21T08:26:21.110Z",
     "header": {
       "id": 14,
       "title": "Se former à distance",
       "description": "« À distance » ne veut pas dire seul devant des vidéos. Ici, cela veut dire des cours en direct deux soirs par semaine, une promotion d’une quinzaine de personnes, des travaux en équipe et une équipe pédagogique joignable. Voici comment cela fonctionne, concrètement."
     },
     "seo": {
-      "id": 17,
+      "id": 16,
       "metaTitle": "Se former à distance | LP DWCA",
       "metaDescription": "DigitalUni, classes virtuelles Classilio, semaine type et équipement : comment se déroule concrètement la licence pro DWCA, 100 % à distance."
     },
@@ -2349,18 +2349,18 @@
   },
   "legalPage": {
     "id": 2,
-    "documentId": "pjuskaokgv9nimj2czm0h8gg",
+    "documentId": "m8i9zuzyr8rj2be5uute7wlc",
     "summaryTitle": "Sur cette page",
-    "createdAt": "2026-08-20T14:53:30.218Z",
-    "updatedAt": "2026-08-20T14:53:30.218Z",
-    "publishedAt": "2026-08-20T14:53:30.238Z",
+    "createdAt": "2026-08-21T08:26:21.347Z",
+    "updatedAt": "2026-08-21T08:26:21.491Z",
+    "publishedAt": "2026-08-21T08:26:21.506Z",
     "header": {
       "id": 16,
       "title": "Mentions légales et transparence",
       "description": "Qui édite ce site, comment vos données sont traitées et où en est notre accessibilité."
     },
     "seo": {
-      "id": 19,
+      "id": 18,
       "metaTitle": "Mentions légales | LP DWCA",
       "metaDescription": "Éditeur du site, propriété intellectuelle, traitement des données personnelles, cookies et accessibilité numérique de la licence pro DWCA."
     },
@@ -2372,17 +2372,17 @@
         "paragraphs": [],
         "definitions": [
           {
-            "id": 32,
+            "id": 4,
             "term": "Raison sociale",
             "value": "Université de Strasbourg — Service Formation Continue"
           },
           {
-            "id": 33,
+            "id": 5,
             "term": "Statut juridique",
             "value": "Établissement public à caractère scientifique, culturel et professionnel"
           },
           {
-            "id": 34,
+            "id": 6,
             "term": "Responsable éditorial",
             "value": "Éric Christoffel, responsable scientifique de la licence professionnelle DWCA"
           }
@@ -2491,17 +2491,17 @@
     ]
   },
   "articlesPage": {
-    "id": 2,
-    "documentId": "qwhjf8x1fr1q5ofg4n1nt2j0",
+    "id": 4,
+    "documentId": "qu3z84nbctyj1ctaqpbsqmbx",
     "surtitle": "Notre Blog",
     "title": "Actualités & Veille Technologique",
     "intro": "Retrouvez les derniers articles, guides et retours d’expérience rédigés par l’équipe pédagogique et les étudiants de la licence.",
     "emptyMessage": "Les premiers articles arrivent bientôt. En attendant, le programme détaillé et les témoignages d’anciens sont déjà en ligne.",
-    "createdAt": "2026-08-20T14:53:30.306Z",
-    "updatedAt": "2026-08-20T14:53:30.306Z",
-    "publishedAt": "2026-08-20T14:53:30.317Z",
+    "createdAt": "2026-08-21T06:47:45.575Z",
+    "updatedAt": "2026-08-21T08:26:22.714Z",
+    "publishedAt": "2026-08-21T08:26:22.724Z",
     "seo": {
-      "id": 21,
+      "id": 20,
       "metaTitle": "Actualités et veille technologique | LP DWCA",
       "metaDescription": "Portraits d’alumni, projets étudiants et veille technologique : le blog de la licence pro DWCA de l’Université de Strasbourg."
     }

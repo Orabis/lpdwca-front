@@ -61,7 +61,7 @@ const LEAD_PHOTOS: Record<string, any> = {
 const scientificLeads = (c.leads ?? []).map((l: any) => ({
   name: l.name,
   role: l.role,
-  imageSrc: LEAD_PHOTOS[l.name] ?? ericPhoto,
+  imageSrc: LEAD_PHOTOS[l.name],
   imageAlt: l.photoAlt,
   align: l.align ?? undefined,
 }));

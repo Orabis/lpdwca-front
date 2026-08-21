@@ -563,6 +563,13 @@
   flex-shrink: 0;
 }
 
+/* Responsable sans portrait : le logo de la formation, jamais la photo d'un autre. */
+.lead-card__photo--fallback {
+  object-fit: contain;
+  padding: var(--space-md);
+  background-color: var(--color-bg-media);
+}
+
 .lead-card__content {
   display: flex;
   flex-direction: column;

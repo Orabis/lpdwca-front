@@ -3,8 +3,15 @@ import Navigation from './Navigation.astro'
 import BurgerButton from './BurgerButton.astro'
 import Logo from './Logo.astro'
 import { getNavigation } from '@/services/navigation'
+import { getUiLabels } from '@/services/ui-labels'
+import { isExternalHref } from '@/utils/links'
 
 const nav = await getNavigation()
+const labels = await getUiLabels()
+
+// La candidature se dépose sur eCandidat : quand Strapi sert une URL absolue,
+// le bouton ouvre un nouvel onglet au lieu de faire quitter le site.
+const ctaExternal = isExternalHref(nav.ctaHref)
 ---
 
 <nav class='nav'>
@@ -16,8 +23,12 @@ const nav = await getNavigation()
     <a
       href={nav.ctaHref}
       class='nav__cta'
-      >{nav.ctaLabel}</a
+      target={ctaExternal ? '_blank' : undefined}
+      rel={ctaExternal ? 'noopener noreferrer' : undefined}
     >
+      {nav.ctaLabel}
+      {ctaExternal && <span class='sr-only'> {labels.externalLinkSuffix}</span>}
+    </a>
 
     <BurgerButton
       class='nav__toggle'
